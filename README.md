@@ -71,10 +71,7 @@ values and 212 URIs.
 All snapshots come from the gem (`sh oracle/run.sh --regen`), about 25,000
 lines. None are written by hand.
 
-On Spinel master 3933b3bff, with spinel-nokogiri 4facdfc, **7
-of 8 match the gem line for line**. The eighth, `scrub` (every `style`
-value and URI the gem's suite checks), matched on e6691c7c and now fails
-to build on a Spinel regression,
-[spinel#6039](https://github.com/matz/spinel/issues/6039) (the `each_with_index` half of #6038): a String
-parameter mutated in place (`allowed_uri?`'s `downcase!`), fed a block
-variable over literal Strings.
+**All 8 match the gem line for line** on Spinel master 1963b7732 with
+spinel-nokogiri 4facdfc. The Spinel defects this corpus found, filed and
+fixed upstream the same day: #5984, #5994, #5995, #5996, #6038, #6039,
+and PRs #5998, #5999.
