@@ -1,0 +1,404 @@
+0 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+alert(1)
+</head></html>
+0 html5 strip: <html><head>alert(1)</head><body></body></html>
+0 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head></html>
+0 html5 prune: <html><head></head><body></body></html>
+0 html4 text: 
+0 html5 text: 
+0 html4 to_text: 
+0 html5 to_text: 
+0 html5 raw text: 
+1 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+foo
+</head>
+<body><div>bar</div></body>
+</html>
+1 html5 strip: <html><head>foo</head><body><div>bar</div></body></html>
+1 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body><div>bar</div></body>
+</html>
+1 html5 prune: <html><head></head><body><div>bar</div></body></html>
+1 html4 text: bar
+1 html5 text: bar
+1 html4 to_text: 
+bar
+1 html5 to_text: 
+bar
+1 html5 raw text: bar
+2 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div>a</div>
+<div>b</div>
+</body></html>
+2 html5 strip: <html><head></head><body><div>a</div>
+<div>b</div></body></html>
+2 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div>a</div>
+<div>b</div>
+</body></html>
+2 html5 prune: <html><head></head><body><div>a</div>
+<div>b</div></body></html>
+2 html4 text: a
+b
+2 html5 text: a
+b
+2 html4 to_text: 
+a
+
+b
+2 html5 to_text: 
+a
+
+b
+2 html5 raw text: a
+b
+3 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>hello<div>first line<br>second line</div>goodbye</body></html>
+3 html5 strip: <html><head></head><body>hello<div>first line<br>second line</div>goodbye</body></html>
+3 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>hello<div>first line<br>second line</div>goodbye</body></html>
+3 html5 prune: <html><head></head><body>hello<div>first line<br>second line</div>goodbye</body></html>
+3 html4 text: hellofirst linesecond linegoodbye
+3 html5 text: hellofirst linesecond linegoodbye
+3 html4 to_text: hello
+first line
+second line
+goodbye
+3 html5 to_text: hello
+first line
+second line
+goodbye
+3 html5 raw text: hellofirst linesecond linegoodbye
+4 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+4 html5 strip: <html><head></head><body><div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+4 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+4 html5 prune: <html><head></head><body><div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+4 html4 text: tweedlebeetlebottlepuddlepaddlebattlemuddle
+4 html5 text: tweedlebeetlebottlepuddlepaddlebattlemuddle
+4 html4 to_text: 
+tweedle
+beetle
+bottlepuddlepaddle
+battle
+muddle
+4 html5 to_text: 
+tweedle
+beetle
+bottlepuddlepaddle
+battle
+muddle
+4 html5 raw text: tweedlebeetlebottlepuddlepaddlebattlemuddle
+5 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+5 html5 strip: <html><head></head><body><div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+5 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+5 html5 prune: <html><head></head><body><div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div></body></html>
+5 html4 text: tweedlebeetlebottlepuddlepaddlebattlemuddle
+5 html5 text: tweedlebeetlebottlepuddlepaddlebattlemuddle
+5 html4 to_text: 
+tweedle
+beetle
+bottlepuddlepaddle
+battle
+muddle
+5 html5 to_text: 
+tweedle
+beetle
+bottlepuddlepaddle
+battle
+muddle
+5 html5 raw text: tweedlebeetlebottlepuddlepaddlebattlemuddle
+6 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>tweedle
+
+	
+ 
+beetle</div></body></html>
+6 html5 strip: <html><head></head><body><div>tweedle
+
+	
+ 
+beetle</div></body></html>
+6 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>tweedle
+
+	
+ 
+beetle</div></body></html>
+6 html5 prune: <html><head></head><body><div>tweedle
+
+	
+ 
+beetle</div></body></html>
+6 html4 text: tweedle
+
+	
+ 
+beetle
+6 html5 text: tweedle
+
+	
+ 
+beetle
+6 html4 to_text: 
+tweedle
+
+beetle
+6 html5 to_text: 
+tweedle
+
+beetle
+6 html5 raw text: tweedle
+
+	
+ 
+beetle
+7 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>hello
+</div></body></html>
+7 html5 strip: <!DOCTYPE html><html><head></head><body><div>hello
+</div></body></html>
+7 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div>hello
+</div></body></html>
+7 html5 prune: <!DOCTYPE html><html><head></head><body><div>hello
+</div></body></html>
+7 html4 text: hello
+7 html5 text: hello
+7 html4 to_text: 
+hello
+
+7 html5 to_text: 
+hello
+
+7 html5 raw text: hello
+8 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+&lt;!--
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{mso-style-parent:"";
+margin:0in;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";}
+@page Section1
+{size:8.5in 11.0in;
+margin:1.0in 1.25in 1.0in 1.25in;
+mso-header-margin:.5in;
+mso-footer-margin:.5in;
+mso-paper-source:0;}
+div.Section1
+{page:Section1;}
+--&gt;
+
+
+</head>
+<body>
+<p class="MsoNormal">Foo <b>BOLD</b></p>
+</body>
+</html>
+8 html5 strip: <html><head>
+&lt;!--
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{mso-style-parent:"";
+margin:0in;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";}
+@page Section1
+{size:8.5in 11.0in;
+margin:1.0in 1.25in 1.0in 1.25in;
+mso-header-margin:.5in;
+mso-footer-margin:.5in;
+mso-paper-source:0;}
+div.Section1
+{page:Section1;}
+--&gt;
+
+
+</head><body><p class="MsoNormal">Foo <b>BOLD</b></p>
+</body></html>
+8 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+<p class="MsoNormal">Foo <b>BOLD</b></p>
+</body>
+</html>
+8 html5 prune: <html><head>
+
+</head><body><p class="MsoNormal">Foo <b>BOLD</b></p>
+</body></html>
+8 html4 text: Foo BOLD
+8 html5 text: Foo BOLD
+8 html4 to_text: 
+Foo BOLD
+
+8 html5 to_text: 
+Foo BOLD
+
+8 html5 raw text: Foo BOLD
+9 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+9 html5 strip: <html><head></head><body></body></html>
+9 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+9 html5 prune: <html><head></head><body></body></html>
+9 html4 text: 
+9 html5 text: 
+9 html4 to_text: 
+9 html5 to_text: 
+9 html5 raw text: 
+10 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+<span>hello</span><span>goodbye</span>
+</body>
+</html>
+10 html5 strip: <html><head></head><body><span>hello</span><span>goodbye</span></body></html>
+10 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+<span>hello</span><span>goodbye</span>
+</body>
+</html>
+10 html5 prune: <html><head></head><body><span>hello</span><span>goodbye</span></body></html>
+10 html4 text: hellogoodbye
+10 html5 text: hellogoodbye
+10 html4 to_text: hellogoodbye
+10 html5 to_text: hellogoodbye
+10 html5 raw text: hellogoodbye
+11 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>string</p></body></html>
+11 html5 strip: <html><head></head><body>string</body></html>
+11 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>string</p></body></html>
+11 html5 prune: <html><head></head><body>string</body></html>
+11 html4 text: string
+11 html5 text: string
+11 html4 to_text: 
+string
+11 html5 to_text: string
+11 html5 raw text: string
+12 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>Foo</p>
+<p>Bar</p>
+</body></html>
+12 html5 strip: <html><head></head><body><p>Foo</p>
+<p>Bar</p></body></html>
+12 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>Foo</p>
+<p>Bar</p>
+</body></html>
+12 html5 prune: <html><head></head><body><p>Foo</p>
+<p>Bar</p></body></html>
+12 html4 text: Foo
+Bar
+12 html5 text: Foo
+Bar
+12 html4 to_text: 
+Foo
+
+Bar
+12 html5 to_text: 
+Foo
+
+Bar
+12 html5 raw text: Foo
+Bar
+13 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>What's up <strong>doc</strong>?
+</p></body></html>
+13 html5 strip: <html><head></head><body>What's up <strong>doc</strong>?
+</body></html>
+13 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>What's up <strong>doc</strong>?
+</p></body></html>
+13 html5 prune: <html><head></head><body>What's up <strong>doc</strong>?
+</body></html>
+13 html4 text: What's up doc?
+13 html5 text: What's up doc?
+13 html4 to_text: 
+What's up doc?
+
+13 html5 to_text: What's up doc?
+13 html5 raw text: What's up doc?
+14 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+test
+</head></html>
+14 html5 strip: <html><head>test</head><body></body></html>
+14 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head></html>
+14 html5 prune: <html><head></head><body></body></html>
+14 html4 text: 
+14 html5 text: 
+14 html4 to_text: 
+14 html5 to_text: 
+14 html5 raw text: 
+15 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>safe <b>description</b>
+</body></html>
+15 html5 strip: <html><head></head><body>safe <b>description</b></body></html>
+15 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>safe <b>description</b>
+</body></html>
+15 html5 prune: <html><head></head><body>safe <b>description</b></body></html>
+15 html4 text: safe description
+15 html5 text: safe description
+15 html4 to_text: safe
+
+ description
+15 html5 to_text: safe description
+15 html5 raw text: safe description
+16 html4 strip: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>Foo
+Bar</p></body></html>
+16 html5 strip: <html><head></head><body>Foo
+Bar</body></html>
+16 html4 prune: <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>Foo
+Bar</p></body></html>
+16 html5 prune: <html><head></head><body>Foo
+Bar</body></html>
+16 html4 text: Foo
+Bar
+16 html5 text: Foo
+Bar
+16 html4 to_text: 
+Foo
+Bar
+16 html5 to_text: Foo
+Bar
+16 html5 raw text: Foo
+Bar

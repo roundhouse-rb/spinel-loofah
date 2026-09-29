@@ -1,0 +1,7 @@
+[package]
+name = "loofah"
+version = "2.25.2"
+
+[dependencies]
+nokogiri = { path = "../spinel-nokogiri" }
+crass = { path = "../spinel-crass" }

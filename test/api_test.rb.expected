@@ -1,0 +1,97 @@
+-- support
+true
+[:escape, :prune, :whitewash, :strip, :nofollow, :noopener, :noreferrer, :targetblank, :newline_block_elements, :unprintable, :double_breakpoint]
+-- a block scrubber
+:top_down
+<p>a<b>b</b></p>
+["p", "text", "script", "text", "b", "text"]
+-- a bottom-up block scrubber
+["text", "i", "p", "text", "span", "div"]
+-- STOP ends the descent
+["div", "p", "span", "b", "text"]
+-- a subclass scrubber
+<p>HELLO <b>WORLD</b></p>
+<a href="/x" rel="me external nofollow">x</a><a href="/y" rel="external nofollow">y</a>
+-- scrubbers chain
+<a href="http://x/" rel="nofollow noopener" target="_blank">x</a>
+-- Node and NodeSet scrub!
+<p>one</p><p>two<script>2</script></p>
+<p>one</p><p>two&lt;script&gt;2&lt;/script&gt;</p>
+-- errors
+!Loofah::ScrubberNotFound: not a Scrubber or a scrubber name: :nope
+!Loofah::ScrubberNotFound: not a Scrubber or a scrubber name: "strip"
+!ArgumentError: direction sideways must be one of :top_down or :bottom_up
+!Loofah::ScrubberNotFound: No scrub method has been defined on Loofah::Scrubber
+-- fragments: to_s, serialize, text
+<p>in body &amp; <b>bold</b></p>
+<p>in body &amp; <b>bold</b></p>
+in body &amp; bold
+in body &amp; bold
+in body &amp; bold
+
+in body &amp; bold
+"\na\n\nb\n\nc"
+abc
+Loofah::HTML4::DocumentFragment
+Loofah::HTML4::Document
+Loofah::HTML5::DocumentFragment
+Loofah::HTML5::Document
+Loofah::XML::DocumentFragment
+Loofah::XML::Document
+-- documents drop the comments before <html>
+2
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<!-- c --><p>x</p>
+</body></html>
+1
+-- the scrub_ shortcuts
+<p>xy</p>
+<p>x&lt;script&gt;y&lt;/script&gt;</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>x</p></body></html>
+<html><head></head><body><p>x</p></body></html>
+a
+
+b
+
+c
+-- XML
+<root>
+  <good>y</good>
+</root>
+<?xml version="1.0"?>
+<root>
+  <good>y</good>
+</root>
+<a/>
+-- Helpers
+Hello there
+<div>Hello alert(1)<form>f</form>
+<b>there</b>
+</div>
+display:block;color:red;
+a
+
+b
+x &amp; y
+<i>x</i>
+color:red;
+-- the safe lists
+true
+true
+true
+true
+false
+true
+[183, 346, 70, 182, 27, 5]
+["afs", "aim", "callto", "data", "ed2k"]
+true
+true
+48
+true
+false
+-- attribute-level scrubbing
+<a title="t" style="color:red;">l</a>
+<svg><use></use><use xlink:href="#ok"></use><rect fill="url(#g) red"></rect></svg>
+<img src="a%20b.png" name="n m"><a name="a%20b" href="x%20y">z</a>

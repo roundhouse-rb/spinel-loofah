@@ -1,0 +1,303 @@
+0 css: font:12px Arial;
+1 css: background:#abc012;
+2 css: background:#ABC012;
+3 css: font:13px / 1.5 Arial , sans-serif;
+4 css: font:13px/1.5 Arial, sans-serif;
+5 css: font-family:'AvenirNext-Regular';
+6 css: font-family:"AvenirNext-Regular";
+7 css: font-family:'Avenir Next';
+8 css: font-family:"Avenir Next";
+9 css: 
+10 css: 
+11 css: 
+12 css: 
+13 css: 
+14 css: 
+15 css: 
+16 css: background-color:blue;
+17 css: background-color:brown;
+18 css: background-color:lightblue;
+19 css: background-color:linear-gradient(transparent 50%, #ffff66 50%);
+20 css: 
+21 css: background:linear-gradient(transparent 50%, #ffff66 50%);
+22 css: 
+23 css: flex-direction:row;
+24 css: width:42vmin;
+25 css: height:100vh;
+26 css: align-self:auto;
+27 css: display:block;width:100%;height:100%;background-color:black;background-x:center;background-y:center;
+28 css: 
+29 css: width:calc(5%);
+30 css: width:calc(5%);
+31 css: flex-basis:auto;
+32 css: color:blue;
+33 css: width:60ch;
+34 css: max-height:100%;
+35 css: background:bold  center  10px;
+36 css: border:2px dashed gray !important;
+37 css: color:BLUE;
+38 css: color:blue;
+39 css: order:5;
+40 css: page-break-after:always;
+41 css: margin-top:10rem;
+42 css: flex-wrap:wrap;
+43 css: color:blue;
+44 css: align-content:flex-start;
+45 css: flex-shrink:3;
+46 css: margin-left:0.3333333334em;
+47 css: min-width:100%;
+48 css: min-height:100%;
+49 css: justify-content:flex-start;
+50 css: 
+51 css: align-items:stretch;
+52 css: list-style:none;
+53 css: 
+54 css: 
+55 css: line-height:2lh;
+56 css: font-size:calc(16px + 1vw);
+57 css: 
+58 css: 
+59 css: list-style-type:lower-greek;
+60 css: 
+61 css: page-break-before:always;
+62 css: flex-flow:column wrap;
+63 css: flex-grow:4;
+64 css: margin-left:-0.05em;
+65 css: stroke-width:10px;
+66 css: letter-spacing:-0.03em;
+67 css: color:rgb(255, 0, 0);
+68 css: 
+69 css: 
+70 css: height:10Q;
+71 css: color:blue;
+72 css: max-width:100%;
+73 css: flex:none;
+74 css: page-break-inside:auto;
+75 css: 
+76 css: 
+77 css: width:42vmax;
+78 css: display:block;background-color:blue;
+79 css: border-collapse:collapse;
+80 css: border-collapse:separate;
+81 css: 
+82 css: border-collapse:inherit;
+83 css: border-collapse:initial;
+84 css: border-collapse:revert;
+85 css: border-collapse:unset;
+86 css: background-color:#000;
+87 css: font-size:36px;font-family:'AvenirNext-Regular';
+88 css: font-size:36px;font-family:AvenirNext-Regular;
+89 css: font-size:36px;font-family:'Avenir Next';
+90 css: font-size:36px;font-family:Avenir Next;
+0 uri: true
+1 uri: true
+2 uri: true
+3 uri: true
+4 uri: true
+5 uri: true
+6 uri: true
+7 uri: true
+8 uri: true
+9 uri: true
+10 uri: false
+11 uri: false
+12 uri: false
+13 uri: true
+14 uri: true
+15 uri: true
+16 uri: true
+17 uri: true
+18 uri: true
+19 uri: true
+20 uri: false
+21 uri: false
+22 uri: false
+23 uri: false
+24 uri: true
+25 uri: false
+26 uri: false
+27 uri: false
+28 uri: false
+29 uri: false
+30 uri: false
+31 uri: false
+32 uri: false
+33 uri: true
+34 uri: true
+35 uri: false
+36 uri: false
+37 uri: true
+38 uri: false
+39 uri: true
+40 uri: true
+41 uri: true
+42 uri: true
+43 uri: false
+44 uri: true
+45 uri: false
+46 uri: false
+47 uri: true
+48 uri: false
+49 uri: true
+50 uri: true
+51 uri: true
+52 uri: true
+53 uri: true
+54 uri: true
+55 uri: false
+56 uri: true
+57 uri: true
+58 uri: true
+59 uri: true
+60 uri: true
+61 uri: true
+62 uri: false
+63 uri: true
+64 uri: false
+65 uri: true
+66 uri: true
+67 uri: false
+68 uri: true
+69 uri: true
+70 uri: true
+71 uri: false
+72 uri: true
+73 uri: true
+74 uri: true
+75 uri: true
+76 uri: true
+77 uri: true
+78 uri: true
+79 uri: true
+80 uri: true
+81 uri: true
+82 uri: true
+83 uri: true
+84 uri: true
+85 uri: true
+86 uri: true
+87 uri: false
+88 uri: false
+89 uri: false
+90 uri: true
+91 uri: true
+92 uri: false
+93 uri: true
+94 uri: false
+95 uri: false
+96 uri: true
+97 uri: true
+98 uri: true
+99 uri: true
+100 uri: false
+101 uri: true
+102 uri: true
+103 uri: true
+104 uri: false
+105 uri: true
+106 uri: true
+107 uri: true
+108 uri: false
+109 uri: true
+110 uri: true
+111 uri: true
+112 uri: true
+113 uri: true
+114 uri: true
+115 uri: true
+116 uri: true
+117 uri: false
+118 uri: true
+119 uri: true
+120 uri: false
+121 uri: true
+122 uri: true
+123 uri: true
+124 uri: true
+125 uri: true
+126 uri: true
+127 uri: true
+128 uri: true
+129 uri: false
+130 uri: true
+131 uri: false
+132 uri: false
+133 uri: false
+134 uri: false
+135 uri: false
+136 uri: false
+137 uri: false
+138 uri: false
+139 uri: false
+140 uri: false
+141 uri: false
+142 uri: true
+143 uri: true
+144 uri: true
+145 uri: false
+146 uri: false
+147 uri: false
+148 uri: false
+149 uri: true
+150 uri: true
+151 uri: false
+152 uri: false
+153 uri: false
+154 uri: false
+155 uri: false
+156 uri: false
+157 uri: false
+158 uri: true
+159 uri: false
+160 uri: false
+161 uri: false
+162 uri: false
+163 uri: false
+164 uri: false
+165 uri: false
+166 uri: false
+167 uri: false
+168 uri: true
+169 uri: true
+170 uri: false
+171 uri: true
+172 uri: true
+173 uri: true
+174 uri: true
+175 uri: true
+176 uri: false
+177 uri: false
+178 uri: false
+179 uri: false
+180 uri: false
+181 uri: false
+182 uri: false
+183 uri: true
+184 uri: false
+185 uri: false
+186 uri: false
+187 uri: true
+188 uri: true
+189 uri: true
+190 uri: true
+191 uri: true
+192 uri: false
+193 uri: false
+194 uri: false
+195 uri: false
+196 uri: true
+197 uri: false
+198 uri: false
+199 uri: false
+200 uri: false
+201 uri: false
+202 uri: false
+203 uri: false
+204 uri: false
+205 uri: false
+206 uri: false
+207 uri: false
+208 uri: true
+209 uri: false
+210 uri: false
+211 uri: false

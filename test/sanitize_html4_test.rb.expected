@@ -1,0 +1,4269 @@
+0 escape: <div>omgwtfbbq</div><span>!!1!</span>
+0 prune: <div>omgwtfbbq</div><span>!!1!</span>
+0 strip: <div>omgwtfbbq</div><span>!!1!</span>
+0 whitewash: <div>omgwtfbbq</div><span>!!1!</span>
+1 escape: hello<div>first line<br>second line</div>goodbye
+1 prune: hello<div>first line<br>second line</div>goodbye
+1 strip: hello<div>first line<br>second line</div>goodbye
+1 whitewash: hello<div>first line<br>second line</div>goodbye
+2 escape: <div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+2 prune: <div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+2 strip: <div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+2 whitewash: <div>tweedle<h1>beetle</h1>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+3 escape: <div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+3 prune: <div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+3 strip: <div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+3 whitewash: <div>tweedle<section>beetle</section>bottle<span>puddle</span>paddle<div>battle</div>muddle</div>
+4 escape: <div>tweedle
+
+	
+ 
+beetle</div>
+4 prune: <div>tweedle
+
+	
+ 
+beetle</div>
+4 strip: <div>tweedle
+
+	
+ 
+beetle</div>
+4 whitewash: <div>tweedle
+
+	
+ 
+beetle</div>
+5 escape: &lt;script&gt;alert('evil')&lt;/script&gt;<form action="/foo/bar" method="post"><input></form><span>w00t</span>
+5 prune: <form action="/foo/bar" method="post"><input></form><span>w00t</span>
+5 strip: alert('evil')<form action="/foo/bar" method="post"><input></form><span>w00t</span>
+5 whitewash: <form><input></form><span>w00t</span>
+6 escape: &lt;script&gt;alert('evil')&lt;/script&gt;<span>w00t</span>
+6 prune: <span>w00t</span>
+6 strip: alert('evil')<span>w00t</span>
+6 whitewash: <span>w00t</span>
+7 escape: &lt;script&gt;alert('evil')&lt;/script&gt;
+7 prune: &lt;script&gt;alert('evil')&lt;/script&gt;
+7 strip: &lt;script&gt;alert('evil')&lt;/script&gt;
+7 whitewash: &lt;script&gt;alert('evil')&lt;/script&gt;
+8 escape: &lt;style&gt;foo&lt;/style&gt;<div>bar</div>
+8 prune: <div>bar</div>
+8 strip: foo<div>bar</div>
+8 whitewash: <div>bar</div>
+9 escape: <div>a</div>
+<div>b</div>
+9 prune: <div>a</div>
+<div>b</div>
+9 strip: <div>a</div>
+<div>b</div>
+9 whitewash: <div>a</div>
+<div>b</div>
+10 escape: <p depth="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+10 prune: <p depth="foo">foo  baz</p>
+10 strip: <p depth="foo">foo bar baz</p>
+10 whitewash: <p>foo  baz</p>
+11 escape: <p aria-owns="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+11 prune: <p aria-owns="foo">foo  baz</p>
+11 strip: <p aria-owns="foo">foo bar baz</p>
+11 whitewash: <p>foo  baz</p>
+12 escape: <p cap-height="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+12 prune: <p cap-height="foo">foo  baz</p>
+12 strip: <p cap-height="foo">foo bar baz</p>
+12 whitewash: <p>foo  baz</p>
+13 escape: <p open="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+13 prune: <p open="foo">foo  baz</p>
+13 strip: <p open="foo">foo bar baz</p>
+13 whitewash: <p>foo  baz</p>
+14 escape: <p mathematical="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+14 prune: <p mathematical="foo">foo  baz</p>
+14 strip: <p mathematical="foo">foo bar baz</p>
+14 whitewash: <p>foo  baz</p>
+15 escape: <altglyph href="#foo"></altglyph>
+15 prune: <altglyph href="#foo"></altglyph>
+15 strip: <altglyph href="#foo"></altglyph>
+15 whitewash: <altglyph></altglyph>
+16 escape: <p hanging="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+16 prune: <p hanging="foo">foo  baz</p>
+16 strip: <p hanging="foo">foo bar baz</p>
+16 whitewash: <p>foo  baz</p>
+17 escape: <rect fill="#fff"></rect>
+17 prune: <rect fill="#fff"></rect>
+17 strip: <rect fill="#fff"></rect>
+17 whitewash: <rect></rect>
+18 escape: <p visibility="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+18 prune: <p visibility="foo">foo  baz</p>
+18 strip: <p visibility="foo">foo bar baz</p>
+18 whitewash: <p>foo  baz</p>
+19 escape: <legend title="1">foo</legend>
+19 prune: <legend title="1">foo</legend>
+19 strip: <legend title="1">foo</legend>
+19 whitewash: <legend>foo</legend>
+20 escape: &lt;image src="foo"&gt;&lt;/image&gt;
+20 prune: 
+20 strip: 
+20 whitewash: 
+21 escape: <use></use>
+21 prune: <use></use>
+21 strip: <use></use>
+21 whitewash: <use></use>
+22 escape: <p longdesc="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+22 prune: <p longdesc="foo">foo  baz</p>
+22 strip: <p longdesc="foo">foo bar baz</p>
+22 whitewash: <p>foo  baz</p>
+23 escape: <p font-weight="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+23 prune: <p font-weight="foo">foo  baz</p>
+23 strip: <p font-weight="foo">foo bar baz</p>
+23 whitewash: <p>foo  baz</p>
+24 escape: <mark title="1">foo</mark>
+24 prune: <mark title="1">foo</mark>
+24 strip: <mark title="1">foo</mark>
+24 whitewash: <mark>foo</mark>
+25 escape: <p xml:space="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+25 prune: <p xml:space="foo">foo  baz</p>
+25 strip: <p xml:space="foo">foo bar baz</p>
+25 whitewash: <p>foo  baz</p>
+26 escape: <mroot title="1">foo</mroot>
+26 prune: <mroot title="1">foo</mroot>
+26 strip: <mroot title="1">foo</mroot>
+26 whitewash: <mroot>foo</mroot>
+27 escape: <animatecolor href="#foo"></animatecolor>
+27 prune: <animatecolor href="#foo"></animatecolor>
+27 strip: <animatecolor href="#foo"></animatecolor>
+27 whitewash: <animatecolor></animatecolor>
+28 escape: <mi title="1">foo</mi>
+28 prune: <mi title="1">foo</mi>
+28 strip: <mi title="1">foo</mi>
+28 whitewash: <mi>foo</mi>
+29 escape: <menclose title="1">foo</menclose>
+29 prune: <menclose title="1">foo</menclose>
+29 strip: <menclose title="1">foo</menclose>
+29 whitewash: <menclose>foo</menclose>
+30 escape: <animatetransform xlink:href="#foo"></animatetransform>
+30 prune: <animatetransform xlink:href="#foo"></animatetransform>
+30 strip: <animatetransform xlink:href="#foo"></animatetransform>
+30 whitewash: <animatetransform></animatetransform>
+31 escape: 
+31 prune: 
+31 strip: 
+31 whitewash: 
+32 escape: <p accesskey="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+32 prune: <p accesskey="foo">foo  baz</p>
+32 strip: <p accesskey="foo">foo bar baz</p>
+32 whitewash: <p>foo  baz</p>
+33 escape: <a href="tag">foo</a>
+33 prune: <a href="tag">foo</a>
+33 strip: <a href="tag">foo</a>
+33 whitewash: <a>foo</a>
+34 escape: <altglyph href="#foo"></altglyph>
+34 prune: <altglyph href="#foo"></altglyph>
+34 strip: <altglyph href="#foo"></altglyph>
+34 whitewash: <altglyph></altglyph>
+35 escape: <p shape="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+35 prune: <p shape="foo">foo  baz</p>
+35 strip: <p shape="foo">foo bar baz</p>
+35 whitewash: <p>foo  baz</p>
+36 escape: <animatecolor href="#foo"></animatecolor>
+36 prune: <animatecolor href="#foo"></animatecolor>
+36 strip: <animatecolor href="#foo"></animatecolor>
+36 whitewash: <animatecolor></animatecolor>
+37 escape: <animatetransform xlink:href="
+#foo"></animatetransform>
+37 prune: <animatetransform xlink:href="
+#foo"></animatetransform>
+37 strip: <animatetransform xlink:href="
+#foo"></animatetransform>
+37 whitewash: <animatetransform></animatetransform>
+38 escape: <p patterntransform="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+38 prune: <p patterntransform="foo">foo  baz</p>
+38 strip: <p patterntransform="foo">foo bar baz</p>
+38 whitewash: <p>foo  baz</p>
+39 escape: <p refx="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+39 prune: <p refx="foo">foo  baz</p>
+39 strip: <p refx="foo">foo bar baz</p>
+39 whitewash: <p>foo  baz</p>
+40 escape: <p loop="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+40 prune: <p loop="foo">foo  baz</p>
+40 strip: <p loop="foo">foo bar baz</p>
+40 whitewash: <p>foo  baz</p>
+41 escape: <metadata title="1">foo</metadata>
+41 prune: <metadata title="1">foo</metadata>
+41 strip: <metadata title="1">foo</metadata>
+41 whitewash: <metadata>foo</metadata>
+42 escape: <a href="data:text/css,">foo</a>
+42 prune: <a href="data:text/css,">foo</a>
+42 strip: <a href="data:text/css,">foo</a>
+42 whitewash: <a>foo</a>
+43 escape: <a href="data:text/css;base64,R0lGODlhAQABA">foo</a>
+43 prune: <a href="data:text/css;base64,R0lGODlhAQABA">foo</a>
+43 strip: <a href="data:text/css;base64,R0lGODlhAQABA">foo</a>
+43 whitewash: <a>foo</a>
+44 escape: <use xlink:href="#foo"></use>
+44 prune: <use xlink:href="#foo"></use>
+44 strip: <use xlink:href="#foo"></use>
+44 whitewash: <use></use>
+45 escape: <p patterncontentunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+45 prune: <p patterncontentunits="foo">foo  baz</p>
+45 strip: <p patterncontentunits="foo">foo bar baz</p>
+45 whitewash: <p>foo  baz</p>
+46 escape: <pattern title="1">foo</pattern>
+46 prune: <pattern title="1">foo</pattern>
+46 strip: <pattern title="1">foo</pattern>
+46 whitewash: <pattern>foo</pattern>
+47 escape: <div>foo</div>
+47 prune: <div>foo</div>
+47 strip: <div>foo</div>
+47 whitewash: <div>foo</div>
+48 escape: <animatecolor title="1">foo</animatecolor>
+48 prune: <animatecolor title="1">foo</animatecolor>
+48 strip: <animatecolor title="1">foo</animatecolor>
+48 whitewash: <animatecolor>foo</animatecolor>
+49 escape: <p value="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+49 prune: <p value="foo">foo  baz</p>
+49 strip: <p value="foo">foo bar baz</p>
+49 whitewash: <p>foo  baz</p>
+50 escape: <p aria-rowindextext="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+50 prune: <p aria-rowindextext="foo">foo  baz</p>
+50 strip: <p aria-rowindextext="foo">foo bar baz</p>
+50 whitewash: <p>foo  baz</p>
+51 escape: <a href="./this:that">foo</a>
+51 prune: <a href="./this:that">foo</a>
+51 strip: <a href="./this:that">foo</a>
+51 whitewash: <a>foo</a>
+52 escape: <img>
+52 prune: <img>
+52 strip: <img>
+52 whitewash: <img>
+53 escape: <p maskunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+53 prune: <p maskunits="foo">foo  baz</p>
+53 strip: <p maskunits="foo">foo bar baz</p>
+53 whitewash: <p>foo  baz</p>
+54 escape: <s title="1">foo</s>
+54 prune: <s title="1">foo</s>
+54 strip: <s title="1">foo</s>
+54 whitewash: <s>foo</s>
+55 escape: <textpath title="1">foo</textpath>
+55 prune: <textpath title="1">foo</textpath>
+55 strip: <textpath title="1">foo</textpath>
+55 whitewash: <textpath>foo</textpath>
+56 escape: <mpath title="1">foo</mpath>
+56 prune: <mpath title="1">foo</mpath>
+56 strip: <mpath title="1">foo</mpath>
+56 whitewash: <mpath>foo</mpath>
+57 escape: <mn title="1">foo</mn>
+57 prune: <mn title="1">foo</mn>
+57 strip: <mn title="1">foo</mn>
+57 whitewash: <mn>foo</mn>
+58 escape: <a title="1">foo</a>
+58 prune: <a title="1">foo</a>
+58 strip: <a title="1">foo</a>
+58 whitewash: <a>foo</a>
+59 escape: <p height="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+59 prune: <p height="foo">foo  baz</p>
+59 strip: <p height="foo">foo bar baz</p>
+59 whitewash: <p>foo  baz</p>
+60 escape: <img>
+60 prune: <img>
+60 strip: <img>
+60 whitewash: <img>
+61 escape: <img>
+61 prune: <img>
+61 strip: <img>
+61 whitewash: <img>
+62 escape: <p lang="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+62 prune: <p lang="foo">foo  baz</p>
+62 strip: <p lang="foo">foo bar baz</p>
+62 whitewash: <p>foo  baz</p>
+63 escape: <code title="1">foo</code>
+63 prune: <code title="1">foo</code>
+63 strip: <code title="1">foo</code>
+63 whitewash: <code>foo</code>
+64 escape: <p font-stretch="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+64 prune: <p font-stretch="foo">foo  baz</p>
+64 strip: <p font-stretch="foo">foo bar baz</p>
+64 whitewash: <p>foo  baz</p>
+65 escape: <radialgradient title="1">foo</radialgradient>
+65 prune: <radialgradient title="1">foo</radialgradient>
+65 strip: <radialgradient title="1">foo</radialgradient>
+65 whitewash: <radialgradient>foo</radialgradient>
+66 escape: &lt;link rel="stylesheet" href="javascript:alert('XSS');"&gt;
+66 prune: 
+66 strip: 
+66 whitewash: 
+67 escape: <p fx="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+67 prune: <p fx="foo">foo  baz</p>
+67 strip: <p fx="foo">foo bar baz</p>
+67 whitewash: <p>foo  baz</p>
+68 escape: <p aria-haspopup="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+68 prune: <p aria-haspopup="foo">foo  baz</p>
+68 strip: <p aria-haspopup="foo">foo bar baz</p>
+68 whitewash: <p>foo  baz</p>
+69 escape: <textpath xlink:href="
+#foo"></textpath>
+69 prune: <textpath xlink:href="
+#foo"></textpath>
+69 strip: <textpath xlink:href="
+#foo"></textpath>
+69 whitewash: <textpath></textpath>
+70 escape: <a href="sftp">foo</a>
+70 prune: <a href="sftp">foo</a>
+70 strip: <a href="sftp">foo</a>
+70 whitewash: <a>foo</a>
+71 escape: <a href="modem">foo</a>
+71 prune: <a href="modem">foo</a>
+71 strip: <a href="modem">foo</a>
+71 whitewash: <a>foo</a>
+72 escape: <p title="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+72 prune: <p title="foo">foo  baz</p>
+72 strip: <p title="foo">foo bar baz</p>
+72 whitewash: <p>foo  baz</p>
+73 escape: <p href="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+73 prune: <p href="foo">foo  baz</p>
+73 strip: <p href="foo">foo bar baz</p>
+73 whitewash: <p>foo  baz</p>
+74 escape: <rect filter="url(#foo)"></rect>
+74 prune: <rect filter="url(#foo)"></rect>
+74 strip: <rect filter="url(#foo)"></rect>
+74 whitewash: <rect></rect>
+75 escape: <p encoding="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+75 prune: <p encoding="foo">foo  baz</p>
+75 strip: <p encoding="foo">foo bar baz</p>
+75 whitewash: <p>foo  baz</p>
+76 escape: <animatecolor xlink:href="
+#foo"></animatecolor>
+76 prune: <animatecolor xlink:href="
+#foo"></animatecolor>
+76 strip: <animatecolor xlink:href="
+#foo"></animatecolor>
+76 whitewash: <animatecolor></animatecolor>
+77 escape: <a href="NNTP">foo</a>
+77 prune: <a href="NNTP">foo</a>
+77 strip: <a href="NNTP">foo</a>
+77 whitewash: <a>foo</a>
+78 escape: <p origin="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+78 prune: <p origin="foo">foo  baz</p>
+78 strip: <p origin="foo">foo bar baz</p>
+78 whitewash: <p>foo  baz</p>
+79 escape: <ins title="1">foo</ins>
+79 prune: <ins title="1">foo</ins>
+79 strip: <ins title="1">foo</ins>
+79 whitewash: <ins>foo</ins>
+80 escape: <bdi title="1">foo</bdi>
+80 prune: <bdi title="1">foo</bdi>
+80 strip: <bdi title="1">foo</bdi>
+80 whitewash: <bdi>foo</bdi>
+81 escape: <animatetransform></animatetransform>
+81 prune: <animatetransform></animatetransform>
+81 strip: <animatetransform></animatetransform>
+81 whitewash: <animatetransform></animatetransform>
+82 escape: <p refx="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+82 prune: <p refx="foo">foo  baz</p>
+82 strip: <p refx="foo">foo bar baz</p>
+82 whitewash: <p>foo  baz</p>
+83 escape: <a href="TEL">foo</a>
+83 prune: <a href="TEL">foo</a>
+83 strip: <a href="TEL">foo</a>
+83 whitewash: <a>foo</a>
+84 escape: <tref xlink:href="
+#foo"></tref>
+84 prune: <tref xlink:href="
+#foo"></tref>
+84 strip: <tref xlink:href="
+#foo"></tref>
+84 whitewash: <tref></tref>
+85 escape: <p xlink:actuate="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+85 prune: <p xlink:actuate="foo">foo  baz</p>
+85 strip: <p xlink:actuate="foo">foo bar baz</p>
+85 whitewash: <p>foo  baz</p>
+86 escape: <p preserveaspectratio="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+86 prune: <p preserveaspectratio="foo">foo  baz</p>
+86 strip: <p preserveaspectratio="foo">foo bar baz</p>
+86 whitewash: <p>foo  baz</p>
+87 escape: <animatetransform xlink:href="
+#foo"></animatetransform>
+87 prune: <animatetransform xlink:href="
+#foo"></animatetransform>
+87 strip: <animatetransform xlink:href="
+#foo"></animatetransform>
+87 whitewash: <animatetransform></animatetransform>
+88 escape: <textpath></textpath>
+88 prune: <textpath></textpath>
+88 strip: <textpath></textpath>
+88 whitewash: <textpath></textpath>
+89 escape: <p aria-brailleroledescription="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+89 prune: <p aria-brailleroledescription="foo">foo  baz</p>
+89 strip: <p aria-brailleroledescription="foo">foo bar baz</p>
+89 whitewash: <p>foo  baz</p>
+90 escape: <altglyph title="1">foo</altglyph>
+90 prune: <altglyph title="1">foo</altglyph>
+90 strip: <altglyph title="1">foo</altglyph>
+90 whitewash: <altglyph>foo</altglyph>
+91 escape: <p scriptlevel="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+91 prune: <p scriptlevel="foo">foo  baz</p>
+91 strip: <p scriptlevel="foo">foo bar baz</p>
+91 whitewash: <p>foo  baz</p>
+92 escape: <p rowalign="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+92 prune: <p rowalign="foo">foo  baz</p>
+92 strip: <p rowalign="foo">foo bar baz</p>
+92 whitewash: <p>foo  baz</p>
+93 escape: <animatetransform></animatetransform>
+93 prune: <animatetransform></animatetransform>
+93 strip: <animatetransform></animatetransform>
+93 whitewash: <animatetransform></animatetransform>
+94 escape: <lineargradient xlink:href="#foo"></lineargradient>
+94 prune: <lineargradient xlink:href="#foo"></lineargradient>
+94 strip: <lineargradient xlink:href="#foo"></lineargradient>
+94 whitewash: <lineargradient></lineargradient>
+95 escape: <a href="line">foo</a>
+95 prune: <a href="line">foo</a>
+95 strip: <a href="line">foo</a>
+95 whitewash: <a>foo</a>
+96 escape: <textpath href="#foo"></textpath>
+96 prune: <textpath href="#foo"></textpath>
+96 strip: <textpath href="#foo"></textpath>
+96 whitewash: <textpath></textpath>
+97 escape: &lt;bgsound src="javascript:alert('XSS');"&gt;&lt;/bgsound&gt;
+97 prune: 
+97 strip: 
+97 whitewash: 
+98 escape: <p aria-checked="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+98 prune: <p aria-checked="foo">foo  baz</p>
+98 strip: <p aria-checked="foo">foo bar baz</p>
+98 whitewash: <p>foo  baz</p>
+99 escape: <p attributename="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+99 prune: <p attributename="foo">foo  baz</p>
+99 strip: <p attributename="foo">foo bar baz</p>
+99 whitewash: <p>foo  baz</p>
+100 escape: <menu title="1">foo</menu>
+100 prune: <menu title="1">foo</menu>
+100 strip: <menu title="1">foo</menu>
+100 whitewash: <menu>foo</menu>
+101 escape: <p ry="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+101 prune: <p ry="foo">foo  baz</p>
+101 strip: <p ry="foo">foo bar baz</p>
+101 whitewash: <p>foo  baz</p>
+102 escape: <p underline-position="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+102 prune: <p underline-position="foo">foo  baz</p>
+102 strip: <p underline-position="foo">foo bar baz</p>
+102 whitewash: <p>foo  baz</p>
+103 escape: &lt;!--[if gte IE 4]&gt;&lt;script&gt;alert('XSS');&lt;/script&gt;&lt;![endif]--&gt;
+103 prune: 
+103 strip: 
+103 whitewash: 
+104 escape: <div><img></div>
+104 prune: <div><img></div>
+104 strip: <div><img></div>
+104 whitewash: <div><img></div>
+105 escape: <p viewbox="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+105 prune: <p viewbox="foo">foo  baz</p>
+105 strip: <p viewbox="foo">foo bar baz</p>
+105 whitewash: <p>foo  baz</p>
+106 escape: <annotation-xml title="1">foo</annotation-xml>
+106 prune: <annotation-xml title="1">foo</annotation-xml>
+106 strip: <annotation-xml title="1">foo</annotation-xml>
+106 whitewash: <annotation-xml>foo</annotation-xml>
+107 escape: <animatecolor></animatecolor>
+107 prune: <animatecolor></animatecolor>
+107 strip: <animatecolor></animatecolor>
+107 whitewash: <animatecolor></animatecolor>
+108 escape: <article title="1">foo</article>
+108 prune: <article title="1">foo</article>
+108 strip: <article title="1">foo</article>
+108 whitewash: <article>foo</article>
+109 escape: <altglyph href="#foo"></altglyph>
+109 prune: <altglyph href="#foo"></altglyph>
+109 strip: <altglyph href="#foo"></altglyph>
+109 whitewash: <altglyph></altglyph>
+110 escape: <a href="java">click here</a>
+110 prune: <a href="java">click here</a>
+110 strip: <a href="java">click here</a>
+110 whitewash: <a>click here</a>
+111 escape: <foreignobject title="1">foo</foreignobject>
+111 prune: <foreignobject title="1">foo</foreignobject>
+111 strip: <foreignobject title="1">foo</foreignobject>
+111 whitewash: <foreignobject>foo</foreignobject>
+112 escape: <p points="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+112 prune: <p points="foo">foo  baz</p>
+112 strip: <p points="foo">foo bar baz</p>
+112 whitewash: <p>foo  baz</p>
+113 escape: <p marker-start="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+113 prune: <p marker-start="foo">foo  baz</p>
+113 strip: <p marker-start="foo">foo bar baz</p>
+113 whitewash: <p>foo  baz</p>
+114 escape: <set></set>
+114 prune: <set></set>
+114 strip: <set></set>
+114 whitewash: <set></set>
+115 escape: <munderover title="1">foo</munderover>
+115 prune: <munderover title="1">foo</munderover>
+115 strip: <munderover title="1">foo</munderover>
+115 whitewash: <munderover>foo</munderover>
+116 escape: <a>foo</a>
+116 prune: <a>foo</a>
+116 strip: <a>foo</a>
+116 whitewash: <a>foo</a>
+117 escape: <a>foo</a>
+117 prune: <a>foo</a>
+117 strip: <a>foo</a>
+117 whitewash: <a>foo</a>
+118 escape: <p disabled>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+118 prune: <p disabled>foo  baz</p>
+118 strip: <p disabled>foo bar baz</p>
+118 whitewash: <p>foo  baz</p>
+119 escape: <h1 title="1">foo</h1>
+119 prune: <h1 title="1">foo</h1>
+119 strip: <h1 title="1">foo</h1>
+119 whitewash: <h1>foo</h1>
+120 escape: <radialgradient xlink:href="
+#foo"></radialgradient>
+120 prune: <radialgradient xlink:href="
+#foo"></radialgradient>
+120 strip: <radialgradient xlink:href="
+#foo"></radialgradient>
+120 whitewash: <radialgradient></radialgradient>
+121 escape: <feimage></feimage>
+121 prune: <feimage></feimage>
+121 strip: <feimage></feimage>
+121 whitewash: <feimage></feimage>
+122 escape: <set xlink:href="#foo"></set>
+122 prune: <set xlink:href="#foo"></set>
+122 strip: <set xlink:href="#foo"></set>
+122 whitewash: <set></set>
+123 escape: <p patterncontentunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+123 prune: <p patterncontentunits="foo">foo  baz</p>
+123 strip: <p patterncontentunits="foo">foo bar baz</p>
+123 whitewash: <p>foo  baz</p>
+124 escape: <p baseprofile="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+124 prune: <p baseprofile="foo">foo  baz</p>
+124 strip: <p baseprofile="foo">foo bar baz</p>
+124 whitewash: <p>foo  baz</p>
+125 escape: <img>
+125 prune: <img>
+125 strip: <img>
+125 whitewash: <img>
+126 escape: <p markerwidth="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+126 prune: <p markerwidth="foo">foo  baz</p>
+126 strip: <p markerwidth="foo">foo bar baz</p>
+126 whitewash: <p>foo  baz</p>
+127 escape: <use xlink:href="
+#foo"></use>
+127 prune: <use xlink:href="
+#foo"></use>
+127 strip: <use xlink:href="
+#foo"></use>
+127 whitewash: <use></use>
+128 escape: <p color-interpolation-filters="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+128 prune: <p color-interpolation-filters="foo">foo  baz</p>
+128 strip: <p color-interpolation-filters="foo">foo bar baz</p>
+128 whitewash: <p>foo  baz</p>
+129 escape: <p widths="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+129 prune: <p widths="foo">foo  baz</p>
+129 strip: <p widths="foo">foo bar baz</p>
+129 whitewash: <p>foo  baz</p>
+130 escape: <feimage></feimage>
+130 prune: <feimage></feimage>
+130 strip: <feimage></feimage>
+130 whitewash: <feimage></feimage>
+131 escape: <p aria-orientation="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+131 prune: <p aria-orientation="foo">foo  baz</p>
+131 strip: <p aria-orientation="foo">foo bar baz</p>
+131 whitewash: <p>foo  baz</p>
+132 escape: <p aria-flowto="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+132 prune: <p aria-flowto="foo">foo  baz</p>
+132 strip: <p aria-flowto="foo">foo bar baz</p>
+132 whitewash: <p>foo  baz</p>
+133 escape: <div>&lt;iframe src="http://ha.ckers.org/scriptlet.html"&gt;&lt;/iframe&gt;</div>
+133 prune: <div></div>
+133 strip: <div></div>
+133 whitewash: <div></div>
+134 escape: <p scope="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+134 prune: <p scope="foo">foo  baz</p>
+134 strip: <p scope="foo">foo bar baz</p>
+134 whitewash: <p>foo  baz</p>
+135 escape: <a href="http://www.ragingplatypus.com/" style="display:block;width:100%;height:100%;background-color:black;background-x:center;background-y:center;">never trust your upstream platypus</a>
+135 prune: <a href="http://www.ragingplatypus.com/" style="display:block;width:100%;height:100%;background-color:black;background-x:center;background-y:center;">never trust your upstream platypus</a>
+135 strip: <a href="http://www.ragingplatypus.com/" style="display:block;width:100%;height:100%;background-color:black;background-x:center;background-y:center;">never trust your upstream platypus</a>
+135 whitewash: <a>never trust your upstream platypus</a>
+136 escape: <animatetransform></animatetransform>
+136 prune: <animatetransform></animatetransform>
+136 strip: <animatetransform></animatetransform>
+136 whitewash: <animatetransform></animatetransform>
+137 escape: <img title="1">foo
+137 prune: <img title="1">foo
+137 strip: <img title="1">foo
+137 whitewash: <img>foo
+138 escape: <img>
+138 prune: <img>
+138 strip: <img>
+138 whitewash: <img>
+139 escape: <p pathlength="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+139 prune: <p pathlength="foo">foo  baz</p>
+139 strip: <p pathlength="foo">foo bar baz</p>
+139 whitewash: <p>foo  baz</p>
+140 escape: <feimage></feimage>
+140 prune: <feimage></feimage>
+140 strip: <feimage></feimage>
+140 whitewash: <feimage></feimage>
+141 escape: <p aria-valuemax="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+141 prune: <p aria-valuemax="foo">foo  baz</p>
+141 strip: <p aria-valuemax="foo">foo bar baz</p>
+141 whitewash: <p>foo  baz</p>
+142 escape: <p markerheight="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+142 prune: <p markerheight="foo">foo  baz</p>
+142 strip: <p markerheight="foo">foo bar baz</p>
+142 whitewash: <p>foo  baz</p>
+143 escape: <p rspace="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+143 prune: <p rspace="foo">foo  baz</p>
+143 strip: <p rspace="foo">foo bar baz</p>
+143 whitewash: <p>foo  baz</p>
+144 escape: <switch title="1">foo</switch>
+144 prune: <switch title="1">foo</switch>
+144 strip: <switch title="1">foo</switch>
+144 whitewash: <switch>foo</switch>
+145 escape: <p arabic-form="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+145 prune: <p arabic-form="foo">foo  baz</p>
+145 strip: <p arabic-form="foo">foo bar baz</p>
+145 whitewash: <p>foo  baz</p>
+146 escape: <p aria-live="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+146 prune: <p aria-live="foo">foo  baz</p>
+146 strip: <p aria-live="foo">foo bar baz</p>
+146 whitewash: <p>foo  baz</p>
+147 escape: <img>
+147 prune: <img>
+147 strip: <img>
+147 whitewash: <img>
+148 escape: <p aria-colindextext="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+148 prune: <p aria-colindextext="foo">foo  baz</p>
+148 strip: <p aria-colindextext="foo">foo bar baz</p>
+148 whitewash: <p>foo  baz</p>
+149 escape: <altglyph></altglyph>
+149 prune: <altglyph></altglyph>
+149 strip: <altglyph></altglyph>
+149 whitewash: <altglyph></altglyph>
+150 escape: <main title="1">foo</main>
+150 prune: <main title="1">foo</main>
+150 strip: <main title="1">foo</main>
+150 whitewash: <main>foo</main>
+151 escape: <p cellpadding="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+151 prune: <p cellpadding="foo">foo  baz</p>
+151 strip: <p cellpadding="foo">foo bar baz</p>
+151 whitewash: <p>foo  baz</p>
+152 escape: <p strikethrough-thickness="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+152 prune: <p strikethrough-thickness="foo">foo  baz</p>
+152 strip: <p strikethrough-thickness="foo">foo bar baz</p>
+152 whitewash: <p>foo  baz</p>
+153 escape: <feimage href="#foo"></feimage>
+153 prune: <feimage href="#foo"></feimage>
+153 strip: <feimage href="#foo"></feimage>
+153 whitewash: <feimage></feimage>
+154 escape: <img>
+154 prune: <img>
+154 strip: <img>
+154 whitewash: <img>
+155 escape: <p aria-labelledby="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+155 prune: <p aria-labelledby="foo">foo  baz</p>
+155 strip: <p aria-labelledby="foo">foo bar baz</p>
+155 whitewash: <p>foo  baz</p>
+156 escape: <p span="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+156 prune: <p span="foo">foo  baz</p>
+156 strip: <p span="foo">foo bar baz</p>
+156 whitewash: <p>foo  baz</p>
+157 escape: <p aria-atomic="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+157 prune: <p aria-atomic="foo">foo  baz</p>
+157 strip: <p aria-atomic="foo">foo bar baz</p>
+157 whitewash: <p>foo  baz</p>
+158 escape: <big title="1">foo</big>
+158 prune: <big title="1">foo</big>
+158 strip: <big title="1">foo</big>
+158 whitewash: <big>foo</big>
+159 escape: <ul title="1">foo</ul>
+159 prune: <ul title="1">foo</ul>
+159 strip: <ul title="1">foo</ul>
+159 whitewash: <ul>foo</ul>
+160 escape: <a>foo</a>
+160 prune: <a>foo</a>
+160 strip: <a>foo</a>
+160 whitewash: <a>foo</a>
+161 escape: <a>foo</a>
+161 prune: <a>foo</a>
+161 strip: <a>foo</a>
+161 whitewash: <a>foo</a>
+162 escape: <a>foo</a>
+162 prune: <a>foo</a>
+162 strip: <a>foo</a>
+162 whitewash: <a>foo</a>
+163 escape: <a>foo</a>
+163 prune: <a>foo</a>
+163 strip: <a>foo</a>
+163 whitewash: <a>foo</a>
+164 escape: <svg><use></use></svg>
+164 prune: <svg><use></use></svg>
+164 strip: <svg><use></use></svg>
+164 whitewash: <svg><use></use></svg>
+165 escape: <rect fill="url(
+#foo)"></rect>
+165 prune: <rect fill="url(
+#foo)"></rect>
+165 strip: <rect fill="url(
+#foo)"></rect>
+165 whitewash: <rect></rect>
+166 escape: <font-face-name title="1">foo</font-face-name>
+166 prune: <font-face-name title="1">foo</font-face-name>
+166 strip: <font-face-name title="1">foo</font-face-name>
+166 whitewash: <font-face-name>foo</font-face-name>
+167 escape: <p filterres="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+167 prune: <p filterres="foo">foo  baz</p>
+167 strip: <p filterres="foo">foo bar baz</p>
+167 whitewash: <p>foo  baz</p>
+168 escape: <p clear="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+168 prune: <p clear="foo">foo  baz</p>
+168 strip: <p clear="foo">foo bar baz</p>
+168 whitewash: <p>foo  baz</p>
+169 escape: <p aria-keyshortcuts="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+169 prune: <p aria-keyshortcuts="foo">foo  baz</p>
+169 strip: <p aria-keyshortcuts="foo">foo bar baz</p>
+169 whitewash: <p>foo  baz</p>
+170 escape: <feimage></feimage>
+170 prune: <feimage></feimage>
+170 strip: <feimage></feimage>
+170 whitewash: <feimage></feimage>
+171 escape: <a title="1">boo</a>
+171 prune: <a title="1">boo</a>
+171 strip: <a title="1">boo</a>
+171 whitewash: <a>boo</a>
+172 escape: <p filterunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+172 prune: <p filterunits="foo">foo  baz</p>
+172 strip: <p filterunits="foo">foo bar baz</p>
+172 whitewash: <p>foo  baz</p>
+173 escape: <p color="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+173 prune: <p color="foo">foo  baz</p>
+173 strip: <p color="foo">foo bar baz</p>
+173 whitewash: <p>foo  baz</p>
+174 escape: <p usemap="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+174 prune: <p usemap="foo">foo  baz</p>
+174 strip: <p usemap="foo">foo bar baz</p>
+174 whitewash: <p>foo  baz</p>
+175 escape: <lineargradient xlink:href="#foo"></lineargradient>
+175 prune: <lineargradient xlink:href="#foo"></lineargradient>
+175 strip: <lineargradient xlink:href="#foo"></lineargradient>
+175 whitewash: <lineargradient></lineargradient>
+176 escape: <a href="ed2k">foo</a>
+176 prune: <a href="ed2k">foo</a>
+176 strip: <a href="ed2k">foo</a>
+176 whitewash: <a>foo</a>
+177 escape: <p datetime="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+177 prune: <p datetime="foo">foo  baz</p>
+177 strip: <p datetime="foo">foo bar baz</p>
+177 whitewash: <p>foo  baz</p>
+178 escape: <a href="aim">foo</a>
+178 prune: <a href="aim">foo</a>
+178 strip: <a href="aim">foo</a>
+178 whitewash: <a>foo</a>
+179 escape: <feimage></feimage>
+179 prune: <feimage></feimage>
+179 strip: <feimage></feimage>
+179 whitewash: <feimage></feimage>
+180 escape: <p clip-rule="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+180 prune: <p clip-rule="foo">foo  baz</p>
+180 strip: <p clip-rule="foo">foo bar baz</p>
+180 whitewash: <p>foo  baz</p>
+181 escape: <rect marker-end="url(#foo)"></rect>
+181 prune: <rect marker-end="url(#foo)"></rect>
+181 strip: <rect marker-end="url(#foo)"></rect>
+181 whitewash: <rect></rect>
+182 escape: <img>
+182 prune: <img>
+182 strip: <img>
+182 whitewash: <img>
+183 escape: <p>fubar</p>
+183 prune: <p>fubar</p>
+183 strip: <p>fubar</p>
+183 whitewash: <p>fubar</p>
+184 escape: <a href="AFS">foo</a>
+184 prune: <a href="AFS">foo</a>
+184 strip: <a href="AFS">foo</a>
+184 whitewash: <a>foo</a>
+185 escape: <table><thead title="1">foo</thead></table>
+185 prune: <table><thead title="1">foo</thead></table>
+185 strip: <table><thead title="1">foo</thead></table>
+185 whitewash: <table><thead>foo</thead></table>
+186 escape: <p font-size="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+186 prune: <p font-size="foo">foo  baz</p>
+186 strip: <p font-size="foo">foo bar baz</p>
+186 whitewash: <p>foo  baz</p>
+187 escape: <lineargradient></lineargradient>
+187 prune: <lineargradient></lineargradient>
+187 strip: <lineargradient></lineargradient>
+187 whitewash: <lineargradient></lineargradient>
+188 escape: <p aria-description="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+188 prune: <p aria-description="foo">foo  baz</p>
+188 strip: <p aria-description="foo">foo bar baz</p>
+188 whitewash: <p>foo  baz</p>
+189 escape: <annotation title="1">foo</annotation>
+189 prune: <annotation title="1">foo</annotation>
+189 strip: <annotation title="1">foo</annotation>
+189 whitewash: <annotation>foo</annotation>
+190 escape: <radialgradient></radialgradient>
+190 prune: <radialgradient></radialgradient>
+190 strip: <radialgradient></radialgradient>
+190 whitewash: <radialgradient></radialgradient>
+191 escape: <input title="1">foo
+191 prune: <input title="1">foo
+191 strip: <input title="1">foo
+191 whitewash: <input>foo
+192 escape: <p size="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+192 prune: <p size="foo">foo  baz</p>
+192 strip: <p size="foo">foo bar baz</p>
+192 whitewash: <p>foo  baz</p>
+193 escape: <radialgradient></radialgradient>
+193 prune: <radialgradient></radialgradient>
+193 strip: <radialgradient></radialgradient>
+193 whitewash: <radialgradient></radialgradient>
+194 escape: <animatecolor href="#foo"></animatecolor>
+194 prune: <animatecolor href="#foo"></animatecolor>
+194 strip: <animatecolor href="#foo"></animatecolor>
+194 whitewash: <animatecolor></animatecolor>
+195 escape: <p equalrows="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+195 prune: <p equalrows="foo">foo  baz</p>
+195 strip: <p equalrows="foo">foo bar baz</p>
+195 whitewash: <p>foo  baz</p>
+196 escape: <rect filter='yellow #fff "blue"'></rect>
+196 prune: <rect filter='yellow #fff "blue"'></rect>
+196 strip: <rect filter='yellow #fff "blue"'></rect>
+196 whitewash: <rect></rect>
+197 escape: <filter></filter>
+197 prune: <filter></filter>
+197 strip: <filter></filter>
+197 whitewash: <filter></filter>
+198 escape: <p font-family="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+198 prune: <p font-family="foo">foo  baz</p>
+198 strip: <p font-family="foo">foo bar baz</p>
+198 whitewash: <p>foo  baz</p>
+199 escape: <p role="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+199 prune: <p role="foo">foo  baz</p>
+199 strip: <p role="foo">foo bar baz</p>
+199 whitewash: <p>foo  baz</p>
+200 escape: <div style="color:blue;"></div>
+200 prune: <div style="color:blue;"></div>
+200 strip: <div style="color:blue;"></div>
+200 whitewash: <div></div>
+201 escape: <section title="1">foo</section>
+201 prune: <section title="1">foo</section>
+201 strip: <section title="1">foo</section>
+201 whitewash: <section>foo</section>
+202 escape: &lt;script src="http://ha.ckers.org/xss.js"&gt;&lt;/script&gt;
+202 prune: 
+202 strip: 
+202 whitewash: 
+203 escape: <animatemotion></animatemotion>
+203 prune: <animatemotion></animatemotion>
+203 strip: <animatemotion></animatemotion>
+203 whitewash: <animatemotion></animatemotion>
+204 escape: <p strikethrough-position="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+204 prune: <p strikethrough-position="foo">foo  baz</p>
+204 strip: <p strikethrough-position="foo">foo bar baz</p>
+204 whitewash: <p>foo  baz</p>
+205 escape: <p aria-hidden="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+205 prune: <p aria-hidden="foo">foo  baz</p>
+205 strip: <p aria-hidden="foo">foo bar baz</p>
+205 whitewash: <p>foo  baz</p>
+206 escape: <p baseprofile="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+206 prune: <p baseprofile="foo">foo  baz</p>
+206 strip: <p baseprofile="foo">foo bar baz</p>
+206 whitewash: <p>foo  baz</p>
+207 escape: <p overline-position="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+207 prune: <p overline-position="foo">foo  baz</p>
+207 strip: <p overline-position="foo">foo bar baz</p>
+207 whitewash: <p>foo  baz</p>
+208 escape: <sub title="1">foo</sub>
+208 prune: <sub title="1">foo</sub>
+208 strip: <sub title="1">foo</sub>
+208 whitewash: <sub>foo</sub>
+209 escape: <fegaussianblur title="1">foo</fegaussianblur>
+209 prune: <fegaussianblur title="1">foo</fegaussianblur>
+209 strip: <fegaussianblur title="1">foo</fegaussianblur>
+209 whitewash: <fegaussianblur>foo</fegaussianblur>
+210 escape: <p fontstyle="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+210 prune: <p fontstyle="foo">foo  baz</p>
+210 strip: <p fontstyle="foo">foo bar baz</p>
+210 whitewash: <p>foo  baz</p>
+211 escape: <mphantom title="1">foo</mphantom>
+211 prune: <mphantom title="1">foo</mphantom>
+211 strip: <mphantom title="1">foo</mphantom>
+211 whitewash: <mphantom>foo</mphantom>
+212 escape: <small title="1">foo</small>
+212 prune: <small title="1">foo</small>
+212 strip: <small title="1">foo</small>
+212 whitewash: <small>foo</small>
+213 escape: <p media="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+213 prune: <p media="foo">foo  baz</p>
+213 strip: <p media="foo">foo bar baz</p>
+213 whitewash: <p>foo  baz</p>
+214 escape: <p label="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+214 prune: <p label="foo">foo  baz</p>
+214 strip: <p label="foo">foo bar baz</p>
+214 whitewash: <p>foo  baz</p>
+215 escape: <animatemotion></animatemotion>
+215 prune: <animatemotion></animatemotion>
+215 strip: <animatemotion></animatemotion>
+215 whitewash: <animatemotion></animatemotion>
+216 escape: <option title="1">foo</option>
+216 prune: <option title="1">foo</option>
+216 strip: <option title="1">foo</option>
+216 whitewash: <option>foo</option>
+217 escape: <img src="foo">
+217 prune: <img src="foo">
+217 strip: <img src="foo">
+217 whitewash: <img>
+218 escape: <div>&lt;script src="http://ha.ckers.org/scriptlet.html"&gt;&lt;/script&gt;</div>
+218 prune: <div></div>
+218 strip: <div></div>
+218 whitewash: <div></div>
+219 escape: <none title="1">foo</none>
+219 prune: <none title="1">foo</none>
+219 strip: <none title="1">foo</none>
+219 whitewash: <none>foo</none>
+220 escape: <feimage></feimage>
+220 prune: <feimage></feimage>
+220 strip: <feimage></feimage>
+220 whitewash: <feimage></feimage>
+221 escape: <feimage xlink:href="
+#foo"></feimage>
+221 prune: <feimage xlink:href="
+#foo"></feimage>
+221 strip: <feimage xlink:href="
+#foo"></feimage>
+221 whitewash: <feimage></feimage>
+222 escape: <animatemotion></animatemotion>
+222 prune: <animatemotion></animatemotion>
+222 strip: <animatemotion></animatemotion>
+222 whitewash: <animatemotion></animatemotion>
+223 escape: <img>
+223 prune: <img>
+223 strip: <img>
+223 whitewash: <img>
+224 escape: <p aria-invalid="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+224 prune: <p aria-invalid="foo">foo  baz</p>
+224 strip: <p aria-invalid="foo">foo bar baz</p>
+224 whitewash: <p>foo  baz</p>
+225 escape: <table><tr title="1">foo</tr></table>
+225 prune: <table><tr title="1">foo</tr></table>
+225 strip: <table><tr title="1">foo</tr></table>
+225 whitewash: <table><tr>foo</tr></table>
+226 escape: <p max="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+226 prune: <p max="foo">foo  baz</p>
+226 strip: <p max="foo">foo bar baz</p>
+226 whitewash: <p>foo  baz</p>
+227 escape: <u title="1">foo</u>
+227 prune: <u title="1">foo</u>
+227 strip: <u title="1">foo</u>
+227 whitewash: <u>foo</u>
+228 escape: <p aria-activedescendant="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+228 prune: <p aria-activedescendant="foo">foo  baz</p>
+228 strip: <p aria-activedescendant="foo">foo bar baz</p>
+228 whitewash: <p>foo  baz</p>
+229 escape: <img height="foo">
+229 prune: <img height="foo">
+229 strip: <img height="foo">
+229 whitewash: <img>
+230 escape: <a href="DATA:IMAGE/GIF,">foo</a>
+230 prune: <a href="DATA:IMAGE/GIF,">foo</a>
+230 strip: <a href="DATA:IMAGE/GIF,">foo</a>
+230 whitewash: <a>foo</a>
+231 escape: <p other="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+231 prune: <p other="foo">foo  baz</p>
+231 strip: <p other="foo">foo bar baz</p>
+231 whitewash: <p>foo  baz</p>
+232 escape: <pattern href="#foo"></pattern>
+232 prune: <pattern href="#foo"></pattern>
+232 strip: <pattern href="#foo"></pattern>
+232 whitewash: <pattern></pattern>
+233 escape: <br title="1">foo
+233 prune: <br title="1">foo
+233 strip: <br title="1">foo
+233 whitewash: <br>foo
+234 escape: <p mask="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+234 prune: <p mask="foo">foo  baz</p>
+234 strip: <p mask="foo">foo bar baz</p>
+234 whitewash: <p>foo  baz</p>
+235 escape: <set href="#foo"></set>
+235 prune: <set href="#foo"></set>
+235 strip: <set href="#foo"></set>
+235 whitewash: <set></set>
+236 escape: <animatemotion title="1">foo</animatemotion>
+236 prune: <animatemotion title="1">foo</animatemotion>
+236 strip: <animatemotion title="1">foo</animatemotion>
+236 whitewash: <animatemotion>foo</animatemotion>
+237 escape: <table><td title="1">foo</td></table>
+237 prune: <table><td title="1">foo</td></table>
+237 strip: <table><td title="1">foo</td></table>
+237 whitewash: <table><td>foo</td></table>
+238 escape: <animate xlink:href="#foo"></animate>
+238 prune: <animate xlink:href="#foo"></animate>
+238 strip: <animate xlink:href="#foo"></animate>
+238 whitewash: <animate></animate>
+239 escape: <img>
+239 prune: <img>
+239 strip: <img>
+239 whitewash: <img>
+240 escape: <altglyph xlink:href="
+#foo"></altglyph>
+240 prune: <altglyph xlink:href="
+#foo"></altglyph>
+240 strip: <altglyph xlink:href="
+#foo"></altglyph>
+240 whitewash: <altglyph></altglyph>
+241 escape: <p fill-rule="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+241 prune: <p fill-rule="foo">foo  baz</p>
+241 strip: <p fill-rule="foo">foo bar baz</p>
+241 whitewash: <p>foo  baz</p>
+242 escape: <p stemv="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+242 prune: <p stemv="foo">foo  baz</p>
+242 strip: <p stemv="foo">foo bar baz</p>
+242 whitewash: <p>foo  baz</p>
+243 escape: <a href="FAX">foo</a>
+243 prune: <a href="FAX">foo</a>
+243 strip: <a href="FAX">foo</a>
+243 whitewash: <a>foo</a>
+244 escape: <ol title="1">foo</ol>
+244 prune: <ol title="1">foo</ol>
+244 strip: <ol title="1">foo</ol>
+244 whitewash: <ol>foo</ol>
+245 escape: <div></div>
+245 prune: <div></div>
+245 strip: <div></div>
+245 whitewash: <div></div>
+246 escape: <a href="URN">foo</a>
+246 prune: <a href="URN">foo</a>
+246 strip: <a href="URN">foo</a>
+246 whitewash: <a>foo</a>
+247 escape: <p rowlines="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+247 prune: <p rowlines="foo">foo  baz</p>
+247 strip: <p rowlines="foo">foo bar baz</p>
+247 whitewash: <p>foo  baz</p>
+248 escape: <a href="http">foo</a>
+248 prune: <a href="http">foo</a>
+248 strip: <a href="http">foo</a>
+248 whitewash: <a>foo</a>
+249 escape: <textpath title="1">foo</textpath>
+249 prune: <textpath title="1">foo</textpath>
+249 strip: <textpath title="1">foo</textpath>
+249 whitewash: <textpath>foo</textpath>
+250 escape: <a>click here</a>
+250 prune: <a>click here</a>
+250 strip: <a>click here</a>
+250 whitewash: <a>click here</a>
+251 escape: <p fill-opacity="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+251 prune: <p fill-opacity="foo">foo  baz</p>
+251 strip: <p fill-opacity="foo">foo bar baz</p>
+251 whitewash: <p>foo  baz</p>
+252 escape: <marker title="1">foo</marker>
+252 prune: <marker title="1">foo</marker>
+252 strip: <marker title="1">foo</marker>
+252 whitewash: <marker>foo</marker>
+253 escape: <p displaystyle="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+253 prune: <p displaystyle="foo">foo  baz</p>
+253 strip: <p displaystyle="foo">foo bar baz</p>
+253 whitewash: <p>foo  baz</p>
+254 escape: <p method="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+254 prune: <p method="foo">foo  baz</p>
+254 strip: <p method="foo">foo bar baz</p>
+254 whitewash: <p>foo  baz</p>
+255 escape: <p aria-setsize="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+255 prune: <p aria-setsize="foo">foo  baz</p>
+255 strip: <p aria-setsize="foo">foo bar baz</p>
+255 whitewash: <p>foo  baz</p>
+256 escape: <radialgradient></radialgradient>
+256 prune: <radialgradient></radialgradient>
+256 strip: <radialgradient></radialgradient>
+256 whitewash: <radialgradient></radialgradient>
+257 escape: <p orient="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+257 prune: <p orient="foo">foo  baz</p>
+257 strip: <p orient="foo">foo bar baz</p>
+257 whitewash: <p>foo  baz</p>
+258 escape: <a href="IRC">foo</a>
+258 prune: <a href="IRC">foo</a>
+258 strip: <a href="IRC">foo</a>
+258 whitewash: <a>foo</a>
+259 escape: <hkern title="1">foo</hkern>
+259 prune: <hkern title="1">foo</hkern>
+259 strip: <hkern title="1">foo</hkern>
+259 whitewash: <hkern>foo</hkern>
+260 escape: <p horiz-adv-x="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+260 prune: <p horiz-adv-x="foo">foo  baz</p>
+260 strip: <p horiz-adv-x="foo">foo bar baz</p>
+260 whitewash: <p>foo  baz</p>
+261 escape: <select title="1">foo</select>
+261 prune: <select title="1">foo</select>
+261 strip: <select title="1">foo</select>
+261 whitewash: <select>foo</select>
+262 escape: <p xlink:role="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+262 prune: <p xlink:role="foo">foo  baz</p>
+262 strip: <p xlink:role="foo">foo bar baz</p>
+262 whitewash: <p>foo  baz</p>
+263 escape: <p text-anchor="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+263 prune: <p text-anchor="foo">foo  baz</p>
+263 strip: <p text-anchor="foo">foo bar baz</p>
+263 whitewash: <p>foo  baz</p>
+264 escape: <p descent="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+264 prune: <p descent="foo">foo  baz</p>
+264 strip: <p descent="foo">foo bar baz</p>
+264 whitewash: <p>foo  baz</p>
+265 escape: <img>
+265 prune: <img>
+265 strip: <img>
+265 whitewash: <img>
+266 escape: <p minsize="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+266 prune: <p minsize="foo">foo  baz</p>
+266 strip: <p minsize="foo">foo bar baz</p>
+266 whitewash: <p>foo  baz</p>
+267 escape: <p aria-selected="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+267 prune: <p aria-selected="foo">foo  baz</p>
+267 strip: <p aria-selected="foo">foo bar baz</p>
+267 whitewash: <p>foo  baz</p>
+268 escape: <cursor title="1">foo</cursor>
+268 prune: <cursor title="1">foo</cursor>
+268 strip: <cursor title="1">foo</cursor>
+268 whitewash: <cursor>foo</cursor>
+269 escape: <hr title="1">foo
+269 prune: <hr title="1">foo
+269 strip: <hr title="1">foo
+269 whitewash: <hr>foo
+270 escape: <p viewbox="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+270 prune: <p viewbox="foo">foo  baz</p>
+270 strip: <p viewbox="foo">foo bar baz</p>
+270 whitewash: <p>foo  baz</p>
+271 escape: <p name="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+271 prune: <p name="foo">foo  baz</p>
+271 strip: <p name="foo">foo bar baz</p>
+271 whitewash: <p>foo  baz</p>
+272 escape: <clippath title="1">foo</clippath>
+272 prune: <clippath title="1">foo</clippath>
+272 strip: <clippath title="1">foo</clippath>
+272 whitewash: <clippath>foo</clippath>
+273 escape: <figcaption title="1">foo</figcaption>
+273 prune: <figcaption title="1">foo</figcaption>
+273 strip: <figcaption title="1">foo</figcaption>
+273 whitewash: <figcaption>foo</figcaption>
+274 escape: <p min="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+274 prune: <p min="foo">foo  baz</p>
+274 strip: <p min="foo">foo bar baz</p>
+274 whitewash: <p>foo  baz</p>
+275 escape: <textpath href="#foo"></textpath>
+275 prune: <textpath href="#foo"></textpath>
+275 strip: <textpath href="#foo"></textpath>
+275 whitewash: <textpath></textpath>
+276 escape: <abbr title="1">foo</abbr>
+276 prune: <abbr title="1">foo</abbr>
+276 strip: <abbr title="1">foo</abbr>
+276 whitewash: <abbr>foo</abbr>
+277 escape: <img src="foo" title='"foo" bar'>
+277 prune: <img src="foo" title='"foo" bar'>
+277 strip: <img src="foo" title='"foo" bar'>
+277 whitewash: <img>
+278 escape: <p filterres="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+278 prune: <p filterres="foo">foo  baz</p>
+278 strip: <p filterres="foo">foo bar baz</p>
+278 whitewash: <p>foo  baz</p>
+279 escape: <p font-style="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+279 prune: <p font-style="foo">foo  baz</p>
+279 strip: <p font-style="foo">foo bar baz</p>
+279 whitewash: <p>foo  baz</p>
+280 escape: <img>
+280 prune: <img>
+280 strip: <img>
+280 whitewash: <img>
+281 escape: <p patternunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+281 prune: <p patternunits="foo">foo  baz</p>
+281 strip: <p patternunits="foo">foo bar baz</p>
+281 whitewash: <p>foo  baz</p>
+282 escape: <p aria-grabbed="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+282 prune: <p aria-grabbed="foo">foo  baz</p>
+282 strip: <p aria-grabbed="foo">foo bar baz</p>
+282 whitewash: <p>foo  baz</p>
+283 escape: <feimage></feimage>
+283 prune: <feimage></feimage>
+283 strip: <feimage></feimage>
+283 whitewash: <feimage></feimage>
+284 escape: <a href="AIM">foo</a>
+284 prune: <a href="AIM">foo</a>
+284 strip: <a href="AIM">foo</a>
+284 whitewash: <a>foo</a>
+285 escape: <p lspace="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+285 prune: <p lspace="foo">foo  baz</p>
+285 strip: <p lspace="foo">foo bar baz</p>
+285 whitewash: <p>foo  baz</p>
+286 escape: <font title="1">foo</font>
+286 prune: <font title="1">foo</font>
+286 strip: <font title="1">foo</font>
+286 whitewash: <font>foo</font>
+287 escape: <a>click here</a>
+287 prune: <a>click here</a>
+287 strip: <a>click here</a>
+287 whitewash: <a>click here</a>
+288 escape: <mtd title="1">foo</mtd>
+288 prune: <mtd title="1">foo</mtd>
+288 strip: <mtd title="1">foo</mtd>
+288 whitewash: <mtd>foo</mtd>
+289 escape: <altglyph xlink:href="
+#foo"></altglyph>
+289 prune: <altglyph xlink:href="
+#foo"></altglyph>
+289 strip: <altglyph xlink:href="
+#foo"></altglyph>
+289 whitewash: <altglyph></altglyph>
+290 escape: <p u2="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+290 prune: <p u2="foo">foo  baz</p>
+290 strip: <p u2="foo">foo bar baz</p>
+290 whitewash: <p>foo  baz</p>
+291 escape: <p rules="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+291 prune: <p rules="foo">foo  baz</p>
+291 strip: <p rules="foo">foo bar baz</p>
+291 whitewash: <p>foo  baz</p>
+292 escape: <altglyph></altglyph>
+292 prune: <altglyph></altglyph>
+292 strip: <altglyph></altglyph>
+292 whitewash: <altglyph></altglyph>
+293 escape: <p xlink:type="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+293 prune: <p xlink:type="foo">foo  baz</p>
+293 strip: <p xlink:type="foo">foo bar baz</p>
+293 whitewash: <p>foo  baz</p>
+294 escape: <p bbox="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+294 prune: <p bbox="foo">foo  baz</p>
+294 strip: <p bbox="foo">foo bar baz</p>
+294 whitewash: <p>foo  baz</p>
+295 escape: <p zoomandpan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+295 prune: <p zoomandpan="foo">foo  baz</p>
+295 strip: <p zoomandpan="foo">foo bar baz</p>
+295 whitewash: <p>foo  baz</p>
+296 escape: <feimage></feimage>
+296 prune: <feimage></feimage>
+296 strip: <feimage></feimage>
+296 whitewash: <feimage></feimage>
+297 escape: <mfrac title="1">foo</mfrac>
+297 prune: <mfrac title="1">foo</mfrac>
+297 strip: <mfrac title="1">foo</mfrac>
+297 whitewash: <mfrac>foo</mfrac>
+298 escape: <canvas title="1">foo</canvas>
+298 prune: <canvas title="1">foo</canvas>
+298 strip: <canvas title="1">foo</canvas>
+298 whitewash: <canvas>foo</canvas>
+299 escape: <p for="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+299 prune: <p for="foo">foo  baz</p>
+299 strip: <p for="foo">foo bar baz</p>
+299 whitewash: <p>foo  baz</p>
+300 escape: <p display="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+300 prune: <p display="foo">foo  baz</p>
+300 strip: <p display="foo">foo bar baz</p>
+300 whitewash: <p>foo  baz</p>
+301 escape: <animatetransform title="1">foo</animatetransform>
+301 prune: <animatetransform title="1">foo</animatetransform>
+301 strip: <animatetransform title="1">foo</animatetransform>
+301 whitewash: <animatetransform>foo</animatetransform>
+302 escape: <rect></rect>
+302 prune: <rect></rect>
+302 strip: <rect></rect>
+302 whitewash: <rect></rect>
+303 escape: <msup title="1">foo</msup>
+303 prune: <msup title="1">foo</msup>
+303 strip: <msup title="1">foo</msup>
+303 whitewash: <msup>foo</msup>
+304 escape: <p rotate="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+304 prune: <p rotate="foo">foo  baz</p>
+304 strip: <p rotate="foo">foo bar baz</p>
+304 whitewash: <p>foo  baz</p>
+305 escape: <p headers="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+305 prune: <p headers="foo">foo  baz</p>
+305 strip: <p headers="foo">foo bar baz</p>
+305 whitewash: <p>foo  baz</p>
+306 escape: <p stretchy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+306 prune: <p stretchy="foo">foo  baz</p>
+306 strip: <p stretchy="foo">foo bar baz</p>
+306 whitewash: <p>foo  baz</p>
+307 escape: <p attributetype="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+307 prune: <p attributetype="foo">foo  baz</p>
+307 strip: <p attributetype="foo">foo bar baz</p>
+307 whitewash: <p>foo  baz</p>
+308 escape: <img src="http://ha.ckers.org/scriptlet.html">
+308 prune: <img src="http://ha.ckers.org/scriptlet.html">
+308 strip: <img src="http://ha.ckers.org/scriptlet.html">
+308 whitewash: <img>
+309 escape: <a href="foo">&lt;script&gt;baz&lt;/script&gt;</a>
+309 prune: <a href="foo"></a>
+309 strip: <a href="foo">baz</a>
+309 whitewash: <a></a>
+310 escape: <p repeatdur="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+310 prune: <p repeatdur="foo">foo  baz</p>
+310 strip: <p repeatdur="foo">foo bar baz</p>
+310 whitewash: <p>foo  baz</p>
+311 escape: <p nohref>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+311 prune: <p nohref>foo  baz</p>
+311 strip: <p nohref>foo bar baz</p>
+311 whitewash: <p>foo  baz</p>
+312 escape: <font-face-src title="1">foo</font-face-src>
+312 prune: <font-face-src title="1">foo</font-face-src>
+312 strip: <font-face-src title="1">foo</font-face-src>
+312 whitewash: <font-face-src>foo</font-face-src>
+313 escape: <p xml:base="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+313 prune: <p xml:base="foo">foo  baz</p>
+313 strip: <p xml:base="foo">foo bar baz</p>
+313 whitewash: <p>foo  baz</p>
+314 escape: <p accept-charset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+314 prune: <p accept-charset="foo">foo  baz</p>
+314 strip: <p accept-charset="foo">foo bar baz</p>
+314 whitewash: <p>foo  baz</p>
+315 escape: <animate href="#foo"></animate>
+315 prune: <animate href="#foo"></animate>
+315 strip: <animate href="#foo"></animate>
+315 whitewash: <animate></animate>
+316 escape: <use href="#foo"></use>
+316 prune: <use href="#foo"></use>
+316 strip: <use href="#foo"></use>
+316 whitewash: <use></use>
+317 escape: <p action="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+317 prune: <p action="foo">foo  baz</p>
+317 strip: <p action="foo">foo bar baz</p>
+317 whitewash: <p>foo  baz</p>
+318 escape: <em title="1">foo</em>
+318 prune: <em title="1">foo</em>
+318 strip: <em title="1">foo</em>
+318 whitewash: <em>foo</em>
+319 escape: <path title="1">foo</path>
+319 prune: <path title="1">foo</path>
+319 strip: <path title="1">foo</path>
+319 whitewash: <path>foo</path>
+320 escape: <p aria-rowindex="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+320 prune: <p aria-rowindex="foo">foo  baz</p>
+320 strip: <p aria-rowindex="foo">foo bar baz</p>
+320 whitewash: <p>foo  baz</p>
+321 escape: <p stroke-dasharray="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+321 prune: <p stroke-dasharray="foo">foo  baz</p>
+321 strip: <p stroke-dasharray="foo">foo bar baz</p>
+321 whitewash: <p>foo  baz</p>
+322 escape: <p align="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+322 prune: <p align="foo">foo  baz</p>
+322 strip: <p align="foo">foo bar baz</p>
+322 whitewash: <p>foo  baz</p>
+323 escape: <p marker="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+323 prune: <p marker="foo">foo  baz</p>
+323 strip: <p marker="foo">foo bar baz</p>
+323 whitewash: <p>foo  baz</p>
+324 escape: <tref xlink:href="#foo"></tref>
+324 prune: <tref xlink:href="#foo"></tref>
+324 strip: <tref xlink:href="#foo"></tref>
+324 whitewash: <tref></tref>
+325 escape: <animatetransform href="#foo"></animatetransform>
+325 prune: <animatetransform href="#foo"></animatetransform>
+325 strip: <animatetransform href="#foo"></animatetransform>
+325 whitewash: <animatetransform></animatetransform>
+326 escape: <animatecolor href="#foo"></animatecolor>
+326 prune: <animatecolor href="#foo"></animatecolor>
+326 strip: <animatecolor href="#foo"></animatecolor>
+326 whitewash: <animatecolor></animatecolor>
+327 escape: <rect cursor='yellow #fff "blue"'></rect>
+327 prune: <rect cursor='yellow #fff "blue"'></rect>
+327 strip: <rect cursor='yellow #fff "blue"'></rect>
+327 whitewash: <rect></rect>
+328 escape: <p content="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+328 prune: <p content="foo">foo  baz</p>
+328 strip: <p content="foo">foo bar baz</p>
+328 whitewash: <p>foo  baz</p>
+329 escape: <tref></tref>
+329 prune: <tref></tref>
+329 strip: <tref></tref>
+329 whitewash: <tref></tref>
+330 escape: <datalist title="1">foo</datalist>
+330 prune: <datalist title="1">foo</datalist>
+330 strip: <datalist title="1">foo</datalist>
+330 whitewash: <datalist>foo</datalist>
+331 escape: <fegaussianblur title="1">foo</fegaussianblur>
+331 prune: <fegaussianblur title="1">foo</fegaussianblur>
+331 strip: <fegaussianblur title="1">foo</fegaussianblur>
+331 whitewash: <fegaussianblur>foo</fegaussianblur>
+332 escape: <p stroke-opacity="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+332 prune: <p stroke-opacity="foo">foo  baz</p>
+332 strip: <p stroke-opacity="foo">foo bar baz</p>
+332 whitewash: <p>foo  baz</p>
+333 escape: <a href="gopher">foo</a>
+333 prune: <a href="gopher">foo</a>
+333 strip: <a href="gopher">foo</a>
+333 whitewash: <a>foo</a>
+334 escape: <animate></animate>
+334 prune: <animate></animate>
+334 strip: <animate></animate>
+334 whitewash: <animate></animate>
+335 escape: <a href="TELNET">foo</a>
+335 prune: <a href="TELNET">foo</a>
+335 strip: <a href="TELNET">foo</a>
+335 whitewash: <a>foo</a>
+336 escape: <p stroke-dashoffset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+336 prune: <p stroke-dashoffset="foo">foo  baz</p>
+336 strip: <p stroke-dashoffset="foo">foo bar baz</p>
+336 whitewash: <p>foo  baz</p>
+337 escape: <cursor></cursor>
+337 prune: <cursor></cursor>
+337 strip: <cursor></cursor>
+337 whitewash: <cursor></cursor>
+338 escape: <set xlink:href="
+#foo"></set>
+338 prune: <set xlink:href="
+#foo"></set>
+338 strip: <set xlink:href="
+#foo"></set>
+338 whitewash: <set></set>
+339 escape: <p aria-colindex="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+339 prune: <p aria-colindex="foo">foo  baz</p>
+339 strip: <p aria-colindex="foo">foo bar baz</p>
+339 whitewash: <p>foo  baz</p>
+340 escape: <defs title="1">foo</defs>
+340 prune: <defs title="1">foo</defs>
+340 strip: <defs title="1">foo</defs>
+340 whitewash: <defs>foo</defs>
+341 escape: <p attributename="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+341 prune: <p attributename="foo">foo  baz</p>
+341 strip: <p attributename="foo">foo bar baz</p>
+341 whitewash: <p>foo  baz</p>
+342 escape: <p accept="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+342 prune: <p accept="foo">foo  baz</p>
+342 strip: <p accept="foo">foo bar baz</p>
+342 whitewash: <p>foo  baz</p>
+343 escape: <p aria-level="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+343 prune: <p aria-level="foo">foo  baz</p>
+343 strip: <p aria-level="foo">foo bar baz</p>
+343 whitewash: <p>foo  baz</p>
+344 escape: <p id="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+344 prune: <p id="foo">foo  baz</p>
+344 strip: <p id="foo">foo bar baz</p>
+344 whitewash: <p>foo  baz</p>
+345 escape: <div style="border:2px dashed gray !important;"></div>
+345 prune: <div style="border:2px dashed gray !important;"></div>
+345 strip: <div style="border:2px dashed gray !important;"></div>
+345 whitewash: <div></div>
+346 escape: <table title="1">foo</table>
+346 prune: <table title="1">foo</table>
+346 strip: <table title="1">foo</table>
+346 whitewash: <table>foo</table>
+347 escape: <p separators="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+347 prune: <p separators="foo">foo  baz</p>
+347 strip: <p separators="foo">foo bar baz</p>
+347 whitewash: <p>foo  baz</p>
+348 escape: <p u1="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+348 prune: <p u1="foo">foo  baz</p>
+348 strip: <p u1="foo">foo bar baz</p>
+348 whitewash: <p>foo  baz</p>
+349 escape: <altglyph></altglyph>
+349 prune: <altglyph></altglyph>
+349 strip: <altglyph></altglyph>
+349 whitewash: <altglyph></altglyph>
+350 escape: <p equalcolumns="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+350 prune: <p equalcolumns="foo">foo  baz</p>
+350 strip: <p equalcolumns="foo">foo bar baz</p>
+350 whitewash: <p>foo  baz</p>
+351 escape: <feimage href="#foo"></feimage>
+351 prune: <feimage href="#foo"></feimage>
+351 strip: <feimage href="#foo"></feimage>
+351 whitewash: <feimage></feimage>
+352 escape: <tspan title="1">foo</tspan>
+352 prune: <tspan title="1">foo</tspan>
+352 strip: <tspan title="1">foo</tspan>
+352 whitewash: <tspan>foo</tspan>
+353 escape: <p aria-errormessage="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+353 prune: <p aria-errormessage="foo">foo  baz</p>
+353 strip: <p aria-errormessage="foo">foo bar baz</p>
+353 whitewash: <p>foo  baz</p>
+354 escape: <rect title="1">foo</rect>
+354 prune: <rect title="1">foo</rect>
+354 strip: <rect title="1">foo</rect>
+354 whitewash: <rect>foo</rect>
+355 escape: <p patternunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+355 prune: <p patternunits="foo">foo  baz</p>
+355 strip: <p patternunits="foo">foo bar baz</p>
+355 whitewash: <p>foo  baz</p>
+356 escape: <p contenteditable="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+356 prune: <p contenteditable="foo">foo  baz</p>
+356 strip: <p contenteditable="foo">foo bar baz</p>
+356 whitewash: <p>foo  baz</p>
+357 escape: <p k="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+357 prune: <p k="foo">foo  baz</p>
+357 strip: <p k="foo">foo bar baz</p>
+357 whitewash: <p>foo  baz</p>
+358 escape: <p xlink:href="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+358 prune: <p xlink:href="foo">foo  baz</p>
+358 strip: <p xlink:href="foo">foo bar baz</p>
+358 whitewash: <p>foo  baz</p>
+359 escape: <clippath title="1">foo</clippath>
+359 prune: <clippath title="1">foo</clippath>
+359 strip: <clippath title="1">foo</clippath>
+359 whitewash: <clippath>foo</clippath>
+360 escape: <div style="color:blue;"></div>
+360 prune: <div style="color:blue;"></div>
+360 strip: <div style="color:blue;"></div>
+360 whitewash: <div></div>
+361 escape: <p rel="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+361 prune: <p rel="foo">foo  baz</p>
+361 strip: <p rel="foo">foo bar baz</p>
+361 whitewash: <p>foo  baz</p>
+362 escape: <a href="sms">foo</a>
+362 prune: <a href="sms">foo</a>
+362 strip: <a href="sms">foo</a>
+362 whitewash: <a>foo</a>
+363 escape: <animatetransform href="#foo"></animatetransform>
+363 prune: <animatetransform href="#foo"></animatetransform>
+363 strip: <animatetransform href="#foo"></animatetransform>
+363 whitewash: <animatetransform></animatetransform>
+364 escape: <button title="1">foo</button>
+364 prune: <button title="1">foo</button>
+364 strip: <button title="1">foo</button>
+364 whitewash: <button>foo</button>
+365 escape: <a href="irc">foo</a>
+365 prune: <a href="irc">foo</a>
+365 strip: <a href="irc">foo</a>
+365 whitewash: <a>foo</a>
+366 escape: <filter title="1">foo</filter>
+366 prune: <filter title="1">foo</filter>
+366 strip: <filter title="1">foo</filter>
+366 whitewash: <filter>foo</filter>
+367 escape: <p rev="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+367 prune: <p rev="foo">foo  baz</p>
+367 strip: <p rev="foo">foo bar baz</p>
+367 whitewash: <p>foo  baz</p>
+368 escape: <p ideographic="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+368 prune: <p ideographic="foo">foo  baz</p>
+368 strip: <p ideographic="foo">foo bar baz</p>
+368 whitewash: <p>foo  baz</p>
+369 escape: <table><tfoot title="1">foo</tfoot></table>
+369 prune: <table><tfoot title="1">foo</tfoot></table>
+369 strip: <table><tfoot title="1">foo</tfoot></table>
+369 whitewash: <table><tfoot>foo</tfoot></table>
+370 escape: <textpath xlink:href="#foo"></textpath>
+370 prune: <textpath xlink:href="#foo"></textpath>
+370 strip: <textpath xlink:href="#foo"></textpath>
+370 whitewash: <textpath></textpath>
+371 escape: <feimage xlink:href="
+#foo"></feimage>
+371 prune: <feimage xlink:href="
+#foo"></feimage>
+371 strip: <feimage xlink:href="
+#foo"></feimage>
+371 whitewash: <feimage></feimage>
+372 escape: <a href="SFTP">foo</a>
+372 prune: <a href="SFTP">foo</a>
+372 strip: <a href="SFTP">foo</a>
+372 whitewash: <a>foo</a>
+373 escape: <p xlink:title="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+373 prune: <p xlink:title="foo">foo  baz</p>
+373 strip: <p xlink:title="foo">foo bar baz</p>
+373 whitewash: <p>foo  baz</p>
+374 escape: <rect color-profile='yellow #fff "blue"'></rect>
+374 prune: <rect color-profile='yellow #fff "blue"'></rect>
+374 strip: <rect color-profile='yellow #fff "blue"'></rect>
+374 whitewash: <rect></rect>
+375 escape: <pre title="1">foo</pre>
+375 prune: <pre title="1">foo</pre>
+375 strip: <pre title="1">foo</pre>
+375 whitewash: <pre>foo</pre>
+376 escape: <img>
+376 prune: <img>
+376 strip: <img>
+376 whitewash: <img>
+377 escape: <cursor xlink:href="
+#foo"></cursor>
+377 prune: <cursor xlink:href="
+#foo"></cursor>
+377 strip: <cursor xlink:href="
+#foo"></cursor>
+377 whitewash: <cursor></cursor>
+378 escape: <animatecolor xlink:href="#foo"></animatecolor>
+378 prune: <animatecolor xlink:href="#foo"></animatecolor>
+378 strip: <animatecolor xlink:href="#foo"></animatecolor>
+378 whitewash: <animatecolor></animatecolor>
+379 escape: <rect clip-path='yellow #fff "blue"'></rect>
+379 prune: <rect clip-path='yellow #fff "blue"'></rect>
+379 strip: <rect clip-path='yellow #fff "blue"'></rect>
+379 whitewash: <rect></rect>
+380 escape: <p aria-roledescription="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+380 prune: <p aria-roledescription="foo">foo  baz</p>
+380 strip: <p aria-roledescription="foo">foo bar baz</p>
+380 whitewash: <p>foo  baz</p>
+381 escape: <tref href="#foo"></tref>
+381 prune: <tref href="#foo"></tref>
+381 strip: <tref href="#foo"></tref>
+381 whitewash: <tref></tref>
+382 escape: <altglyph></altglyph>
+382 prune: <altglyph></altglyph>
+382 strip: <altglyph></altglyph>
+382 whitewash: <altglyph></altglyph>
+383 escape: <p ascent="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+383 prune: <p ascent="foo">foo  baz</p>
+383 strip: <p ascent="foo">foo bar baz</p>
+383 whitewash: <p>foo  baz</p>
+384 escape: <cite title="1">foo</cite>
+384 prune: <cite title="1">foo</cite>
+384 strip: <cite title="1">foo</cite>
+384 whitewash: <cite>foo</cite>
+385 escape: <p stop-opacity="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+385 prune: <p stop-opacity="foo">foo  baz</p>
+385 strip: <p stop-opacity="foo">foo bar baz</p>
+385 whitewash: <p>foo  baz</p>
+386 escape: <desc title="1">foo</desc>
+386 prune: <desc title="1">foo</desc>
+386 strip: <desc title="1">foo</desc>
+386 whitewash: <desc>foo</desc>
+387 escape: <p frame="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+387 prune: <p frame="foo">foo  baz</p>
+387 strip: <p frame="foo">foo bar baz</p>
+387 whitewash: <p>foo  baz</p>
+388 escape: <img src="doesntexist.jpg%22'onerror=%22alert(1)">
+388 prune: <img src="doesntexist.jpg%22'onerror=%22alert(1)">
+388 strip: <img src="doesntexist.jpg%22'onerror=%22alert(1)">
+388 whitewash: <img>
+389 escape: <p aria-dropeffect="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+389 prune: <p aria-dropeffect="foo">foo  baz</p>
+389 strip: <p aria-dropeffect="foo">foo bar baz</p>
+389 whitewash: <p>foo  baz</p>
+390 escape: <lineargradient></lineargradient>
+390 prune: <lineargradient></lineargradient>
+390 strip: <lineargradient></lineargradient>
+390 whitewash: <lineargradient></lineargradient>
+391 escape: <p enctype="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+391 prune: <p enctype="foo">foo  baz</p>
+391 strip: <p enctype="foo">foo bar baz</p>
+391 whitewash: <p>foo  baz</p>
+392 escape: <radialgradient href="#foo"></radialgradient>
+392 prune: <radialgradient href="#foo"></radialgradient>
+392 strip: <radialgradient href="#foo"></radialgradient>
+392 whitewash: <radialgradient></radialgradient>
+393 escape: <p aria-autocomplete="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+393 prune: <p aria-autocomplete="foo">foo  baz</p>
+393 strip: <p aria-autocomplete="foo">foo bar baz</p>
+393 whitewash: <p>foo  baz</p>
+394 escape: <a href="data:image/png,">foo</a>
+394 prune: <a href="data:image/png,">foo</a>
+394 strip: <a href="data:image/png,">foo</a>
+394 whitewash: <a>foo</a>
+395 escape: <a href="data:image/png;base64,R0lGODlhAQABA">foo</a>
+395 prune: <a href="data:image/png;base64,R0lGODlhAQABA">foo</a>
+395 strip: <a href="data:image/png;base64,R0lGODlhAQABA">foo</a>
+395 whitewash: <a>foo</a>
+396 escape: <svg title="1">foo</svg>
+396 prune: <svg title="1">foo</svg>
+396 strip: <svg title="1">foo</svg>
+396 whitewash: <svg>foo</svg>
+397 escape: <p overline-thickness="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+397 prune: <p overline-thickness="foo">foo  baz</p>
+397 strip: <p overline-thickness="foo">foo bar baz</p>
+397 whitewash: <p>foo  baz</p>
+398 escape: <a href="data:image/gif,">foo</a>
+398 prune: <a href="data:image/gif,">foo</a>
+398 strip: <a href="data:image/gif,">foo</a>
+398 whitewash: <a>foo</a>
+399 escape: <a href="data:image/gif;base64,R0lGODlhAQABA">foo</a>
+399 prune: <a href="data:image/gif;base64,R0lGODlhAQABA">foo</a>
+399 strip: <a href="data:image/gif;base64,R0lGODlhAQABA">foo</a>
+399 whitewash: <a>foo</a>
+400 escape: <textarea title="1">foo</textarea>
+400 prune: <textarea title="1">foo</textarea>
+400 strip: <textarea title="1">foo</textarea>
+400 whitewash: <textarea>foo</textarea>
+401 escape: <p markerheight="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+401 prune: <p markerheight="foo">foo  baz</p>
+401 strip: <p markerheight="foo">foo bar baz</p>
+401 whitewash: <p>foo  baz</p>
+402 escape: <p start="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+402 prune: <p start="foo">foo  baz</p>
+402 strip: <p start="foo">foo bar baz</p>
+402 whitewash: <p>foo  baz</p>
+403 escape: <p actiontype="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+403 prune: <p actiontype="foo">foo  baz</p>
+403 strip: <p actiontype="foo">foo bar baz</p>
+403 whitewash: <p>foo  baz</p>
+404 escape: <filter></filter>
+404 prune: <filter></filter>
+404 strip: <filter></filter>
+404 whitewash: <filter></filter>
+405 escape: <p noshade>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+405 prune: <p noshade>foo  baz</p>
+405 strip: <p noshade>foo bar baz</p>
+405 whitewash: <p>foo  baz</p>
+406 escape: <msub title="1">foo</msub>
+406 prune: <msub title="1">foo</msub>
+406 strip: <msub title="1">foo</msub>
+406 whitewash: <msub>foo</msub>
+407 escape: <p slope="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+407 prune: <p slope="foo">foo  baz</p>
+407 strip: <p slope="foo">foo bar baz</p>
+407 whitewash: <p>foo  baz</p>
+408 escape: <radialgradient></radialgradient>
+408 prune: <radialgradient></radialgradient>
+408 strip: <radialgradient></radialgradient>
+408 whitewash: <radialgradient></radialgradient>
+409 escape: <bdo title="1">foo</bdo>
+409 prune: <bdo title="1">foo</bdo>
+409 strip: <bdo title="1">foo</bdo>
+409 whitewash: <bdo>foo</bdo>
+410 escape: <lineargradient></lineargradient>
+410 prune: <lineargradient></lineargradient>
+410 strip: <lineargradient></lineargradient>
+410 whitewash: <lineargradient></lineargradient>
+411 escape: <p char="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+411 prune: <p char="foo">foo  baz</p>
+411 strip: <p char="foo">foo bar baz</p>
+411 whitewash: <p>foo  baz</p>
+412 escape: <p loopstart="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+412 prune: <p loopstart="foo">foo  baz</p>
+412 strip: <p loopstart="foo">foo bar baz</p>
+412 whitewash: <p>foo  baz</p>
+413 escape: <p horiz-origin-x="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+413 prune: <p horiz-origin-x="foo">foo  baz</p>
+413 strip: <p horiz-origin-x="foo">foo bar baz</p>
+413 whitewash: <p>foo  baz</p>
+414 escape: <polyline title="1">foo</polyline>
+414 prune: <polyline title="1">foo</polyline>
+414 strip: <polyline title="1">foo</polyline>
+414 whitewash: <polyline>foo</polyline>
+415 escape: <a href="fax">foo</a>
+415 prune: <a href="fax">foo</a>
+415 strip: <a href="fax">foo</a>
+415 whitewash: <a>foo</a>
+416 escape: <p pathlength="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+416 prune: <p pathlength="foo">foo  baz</p>
+416 strip: <p pathlength="foo">foo bar baz</p>
+416 whitewash: <p>foo  baz</p>
+417 escape: <animatecolor></animatecolor>
+417 prune: <animatecolor></animatecolor>
+417 strip: <animatecolor></animatecolor>
+417 whitewash: <animatecolor></animatecolor>
+418 escape: <img>
+418 prune: <img>
+418 strip: <img>
+418 whitewash: <img>
+419 escape: <img>
+419 prune: <img>
+419 strip: <img>
+419 whitewash: <img>
+420 escape: <p requiredextensions="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+420 prune: <p requiredextensions="foo">foo  baz</p>
+420 strip: <p requiredextensions="foo">foo bar baz</p>
+420 whitewash: <p>foo  baz</p>
+421 escape: <img>
+421 prune: <img>
+421 strip: <img>
+421 whitewash: <img>
+422 escape: <p maxsize="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+422 prune: <p maxsize="foo">foo  baz</p>
+422 strip: <p maxsize="foo">foo bar baz</p>
+422 whitewash: <p>foo  baz</p>
+423 escape: <animatecolor></animatecolor>
+423 prune: <animatecolor></animatecolor>
+423 strip: <animatecolor></animatecolor>
+423 whitewash: <animatecolor></animatecolor>
+424 escape: <h4 title="1">foo</h4>
+424 prune: <h4 title="1">foo</h4>
+424 strip: <h4 title="1">foo</h4>
+424 whitewash: <h4>foo</h4>
+425 escape: <radialgradient xlink:href="
+#foo"></radialgradient>
+425 prune: <radialgradient xlink:href="
+#foo"></radialgradient>
+425 strip: <radialgradient xlink:href="
+#foo"></radialgradient>
+425 whitewash: <radialgradient></radialgradient>
+426 escape: <set href="#foo"></set>
+426 prune: <set href="#foo"></set>
+426 strip: <set href="#foo"></set>
+426 whitewash: <set></set>
+427 escape: <a href="GOPHER">foo</a>
+427 prune: <a href="GOPHER">foo</a>
+427 strip: <a href="GOPHER">foo</a>
+427 whitewash: <a>foo</a>
+428 escape: <acronym title="1">foo</acronym>
+428 prune: <acronym title="1">foo</acronym>
+428 strip: <acronym title="1">foo</acronym>
+428 whitewash: <acronym>foo</acronym>
+429 escape: <img title="1">boo
+429 prune: <img title="1">boo
+429 strip: <img title="1">boo
+429 whitewash: <img>boo
+430 escape: <p filter="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+430 prune: <p filter="foo">foo  baz</p>
+430 strip: <p filter="foo">foo bar baz</p>
+430 whitewash: <p>foo  baz</p>
+431 escape: <p aria-readonly="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+431 prune: <p aria-readonly="foo">foo  baz</p>
+431 strip: <p aria-readonly="foo">foo bar baz</p>
+431 whitewash: <p>foo  baz</p>
+432 escape: <a href="data:image/jpeg,">foo</a>
+432 prune: <a href="data:image/jpeg,">foo</a>
+432 strip: <a href="data:image/jpeg,">foo</a>
+432 whitewash: <a>foo</a>
+433 escape: <a href="data:image/jpeg;base64,R0lGODlhAQABA">foo</a>
+433 prune: <a href="data:image/jpeg;base64,R0lGODlhAQABA">foo</a>
+433 strip: <a href="data:image/jpeg;base64,R0lGODlhAQABA">foo</a>
+433 whitewash: <a>foo</a>
+434 escape: <animatetransform></animatetransform>
+434 prune: <animatetransform></animatetransform>
+434 strip: <animatetransform></animatetransform>
+434 whitewash: <animatetransform></animatetransform>
+435 escape: <a>click here</a>
+435 prune: <a>click here</a>
+435 strip: <a>click here</a>
+435 whitewash: <a>click here</a>
+436 escape: <rect stroke="url(#foo)"></rect>
+436 prune: <rect stroke="url(#foo)"></rect>
+436 strip: <rect stroke="url(#foo)"></rect>
+436 whitewash: <rect></rect>
+437 escape: <use href="#foo"></use>
+437 prune: <use href="#foo"></use>
+437 strip: <use href="#foo"></use>
+437 whitewash: <use></use>
+438 escape: <label title="1">foo</label>
+438 prune: <label title="1">foo</label>
+438 strip: <label title="1">foo</label>
+438 whitewash: <label>foo</label>
+439 escape: <animate href="#foo"></animate>
+439 prune: <animate href="#foo"></animate>
+439 strip: <animate href="#foo"></animate>
+439 whitewash: <animate></animate>
+440 escape: <p hspace="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+440 prune: <p hspace="foo">foo  baz</p>
+440 strip: <p hspace="foo">foo bar baz</p>
+440 whitewash: <p>foo  baz</p>
+441 escape: <filter href="#foo"></filter>
+441 prune: <filter href="#foo"></filter>
+441 strip: <filter href="#foo"></filter>
+441 whitewash: <filter></filter>
+442 escape: <lineargradient xlink:href="
+#foo"></lineargradient>
+442 prune: <lineargradient xlink:href="
+#foo"></lineargradient>
+442 strip: <lineargradient xlink:href="
+#foo"></lineargradient>
+442 whitewash: <lineargradient></lineargradient>
+443 escape: <radialgradient xlink:href="#foo"></radialgradient>
+443 prune: <radialgradient xlink:href="#foo"></radialgradient>
+443 strip: <radialgradient xlink:href="#foo"></radialgradient>
+443 whitewash: <radialgradient></radialgradient>
+444 escape: <rect mask='yellow #fff "blue"'></rect>
+444 prune: <rect mask='yellow #fff "blue"'></rect>
+444 strip: <rect mask='yellow #fff "blue"'></rect>
+444 whitewash: <rect></rect>
+445 escape: <animatemotion href="#foo"></animatemotion>
+445 prune: <animatemotion href="#foo"></animatemotion>
+445 strip: <animatemotion href="#foo"></animatemotion>
+445 whitewash: <animatemotion></animatemotion>
+446 escape: <p repeatdur="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+446 prune: <p repeatdur="foo">foo  baz</p>
+446 strip: <p repeatdur="foo">foo bar baz</p>
+446 whitewash: <p>foo  baz</p>
+447 escape: <filter href="#foo"></filter>
+447 prune: <filter href="#foo"></filter>
+447 strip: <filter href="#foo"></filter>
+447 whitewash: <filter></filter>
+448 escape: <a href="telnet">foo</a>
+448 prune: <a href="telnet">foo</a>
+448 strip: <a href="telnet">foo</a>
+448 whitewash: <a>foo</a>
+449 escape: <a href="FTP">foo</a>
+449 prune: <a href="FTP">foo</a>
+449 strip: <a href="FTP">foo</a>
+449 whitewash: <a>foo</a>
+450 escape: <set></set>
+450 prune: <set></set>
+450 strip: <set></set>
+450 whitewash: <set></set>
+451 escape: <p type="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+451 prune: <p type="foo">foo  baz</p>
+451 strip: <p type="foo">foo bar baz</p>
+451 whitewash: <p>foo  baz</p>
+452 escape: <lineargradient title="1">foo</lineargradient>
+452 prune: <lineargradient title="1">foo</lineargradient>
+452 strip: <lineargradient title="1">foo</lineargradient>
+452 whitewash: <lineargradient>foo</lineargradient>
+453 escape: <p keypoints="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+453 prune: <p keypoints="foo">foo  baz</p>
+453 strip: <p keypoints="foo">foo bar baz</p>
+453 whitewash: <p>foo  baz</p>
+454 escape: <ul><li title="1">foo</li></ul>
+454 prune: <ul><li title="1">foo</li></ul>
+454 strip: <ul><li title="1">foo</li></ul>
+454 whitewash: <ul><li>foo</li></ul>
+455 escape: <use></use>
+455 prune: <use></use>
+455 strip: <use></use>
+455 whitewash: <use></use>
+456 escape: <h6 title="1">foo</h6>
+456 prune: <h6 title="1">foo</h6>
+456 strip: <h6 title="1">foo</h6>
+456 whitewash: <h6>foo</h6>
+457 escape: <div style="color:blue;"></div>
+457 prune: <div style="color:blue;"></div>
+457 strip: <div style="color:blue;"></div>
+457 whitewash: <div></div>
+458 escape: <mrow title="1">foo</mrow>
+458 prune: <mrow title="1">foo</mrow>
+458 strip: <mrow title="1">foo</mrow>
+458 whitewash: <mrow>foo</mrow>
+459 escape: <p coords="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+459 prune: <p coords="foo">foo  baz</p>
+459 strip: <p coords="foo">foo bar baz</p>
+459 whitewash: <p>foo  baz</p>
+460 escape: <tref></tref>
+460 prune: <tref></tref>
+460 strip: <tref></tref>
+460 whitewash: <tref></tref>
+461 escape: <img>
+461 prune: <img>
+461 strip: <img>
+461 whitewash: <img>
+462 escape: <p end="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+462 prune: <p end="foo">foo  baz</p>
+462 strip: <p end="foo">foo bar baz</p>
+462 whitewash: <p>foo  baz</p>
+463 escape: <p y1="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+463 prune: <p y1="foo">foo  baz</p>
+463 strip: <p y1="foo">foo bar baz</p>
+463 whitewash: <p>foo  baz</p>
+464 escape: <tt title="1">foo</tt>
+464 prune: <tt title="1">foo</tt>
+464 strip: <tt title="1">foo</tt>
+464 whitewash: <tt>foo</tt>
+465 escape: <lineargradient title="1">foo</lineargradient>
+465 prune: <lineargradient title="1">foo</lineargradient>
+465 strip: <lineargradient title="1">foo</lineargradient>
+465 whitewash: <lineargradient>foo</lineargradient>
+466 escape: <text title="1">foo</text>
+466 prune: <text title="1">foo</text>
+466 strip: <text title="1">foo</text>
+466 whitewash: <text>foo</text>
+467 escape: <p columnspacing="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+467 prune: <p columnspacing="foo">foo  baz</p>
+467 strip: <p columnspacing="foo">foo bar baz</p>
+467 whitewash: <p>foo  baz</p>
+468 escape: <lineargradient></lineargradient>
+468 prune: <lineargradient></lineargradient>
+468 strip: <lineargradient></lineargradient>
+468 whitewash: <lineargradient></lineargradient>
+469 escape: <output title="1">foo</output>
+469 prune: <output title="1">foo</output>
+469 strip: <output title="1">foo</output>
+469 whitewash: <output>foo</output>
+470 escape: <b title="1">foo</b>
+470 prune: <b title="1">foo</b>
+470 strip: <b title="1">foo</b>
+470 whitewash: <b>foo</b>
+471 escape: <p aria-posinset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+471 prune: <p aria-posinset="foo">foo  baz</p>
+471 strip: <p aria-posinset="foo">foo bar baz</p>
+471 whitewash: <p>foo  baz</p>
+472 escape: <a href="TAG">foo</a>
+472 prune: <a href="TAG">foo</a>
+472 strip: <a href="TAG">foo</a>
+472 whitewash: <a>foo</a>
+473 escape: <p linethickness="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+473 prune: <p linethickness="foo">foo  baz</p>
+473 strip: <p linethickness="foo">foo bar baz</p>
+473 whitewash: <p>foo  baz</p>
+474 escape: <p charoff="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+474 prune: <p charoff="foo">foo  baz</p>
+474 strip: <p charoff="foo">foo bar baz</p>
+474 whitewash: <p>foo  baz</p>
+475 escape: <video title="1">foo</video>
+475 prune: <video title="1">foo</video>
+475 strip: <video title="1">foo</video>
+475 whitewash: <video>foo</video>
+476 escape: <a href="NEWS">foo</a>
+476 prune: <a href="NEWS">foo</a>
+476 strip: <a href="NEWS">foo</a>
+476 whitewash: <a>foo</a>
+477 escape: <animatetransform href="#foo"></animatetransform>
+477 prune: <animatetransform href="#foo"></animatetransform>
+477 strip: <animatetransform href="#foo"></animatetransform>
+477 whitewash: <animatetransform></animatetransform>
+478 escape: <semantics title="1">foo</semantics>
+478 prune: <semantics title="1">foo</semantics>
+478 strip: <semantics title="1">foo</semantics>
+478 whitewash: <semantics>foo</semantics>
+479 escape: <altglyph xlink:href="#foo"></altglyph>
+479 prune: <altglyph xlink:href="#foo"></altglyph>
+479 strip: <altglyph xlink:href="#foo"></altglyph>
+479 whitewash: <altglyph></altglyph>
+480 escape: <h3 title="1">foo</h3>
+480 prune: <h3 title="1">foo</h3>
+480 strip: <h3 title="1">foo</h3>
+480 whitewash: <h3>foo</h3>
+481 escape: <p stroke-linecap="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+481 prune: <p stroke-linecap="foo">foo  baz</p>
+481 strip: <p stroke-linecap="foo">foo bar baz</p>
+481 whitewash: <p>foo  baz</p>
+482 escape: <p path="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+482 prune: <p path="foo">foo  baz</p>
+482 strip: <p path="foo">foo bar baz</p>
+482 whitewash: <p>foo  baz</p>
+483 escape: <p begin="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+483 prune: <p begin="foo">foo  baz</p>
+483 strip: <p begin="foo">foo bar baz</p>
+483 whitewash: <p>foo  baz</p>
+484 escape: <p requiredfeatures="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+484 prune: <p requiredfeatures="foo">foo  baz</p>
+484 strip: <p requiredfeatures="foo">foo bar baz</p>
+484 whitewash: <p>foo  baz</p>
+485 escape: <q title="1">foo</q>
+485 prune: <q title="1">foo</q>
+485 strip: <q title="1">foo</q>
+485 whitewash: <q>foo</q>
+486 escape: <lineargradient href="#foo"></lineargradient>
+486 prune: <lineargradient href="#foo"></lineargradient>
+486 strip: <lineargradient href="#foo"></lineargradient>
+486 whitewash: <lineargradient></lineargradient>
+487 escape: <p maskcontentunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+487 prune: <p maskcontentunits="foo">foo  baz</p>
+487 strip: <p maskcontentunits="foo">foo bar baz</p>
+487 whitewash: <p>foo  baz</p>
+488 escape: <p patterntransform="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+488 prune: <p patterntransform="foo">foo  baz</p>
+488 strip: <p patterntransform="foo">foo bar baz</p>
+488 whitewash: <p>foo  baz</p>
+489 escape: <a href="XMPP">foo</a>
+489 prune: <a href="XMPP">foo</a>
+489 strip: <a href="XMPP">foo</a>
+489 whitewash: <a>foo</a>
+490 escape: <use title="1">foo</use>
+490 prune: <use title="1">foo</use>
+490 strip: <use title="1">foo</use>
+490 whitewash: <use>foo</use>
+491 escape: <del title="1">foo</del>
+491 prune: <del title="1">foo</del>
+491 strip: <del title="1">foo</del>
+491 whitewash: <del>foo</del>
+492 escape: <rect marker="url(#foo)"></rect>
+492 prune: <rect marker="url(#foo)"></rect>
+492 strip: <rect marker="url(#foo)"></rect>
+492 whitewash: <rect></rect>
+493 escape: <stop title="1">foo</stop>
+493 prune: <stop title="1">foo</stop>
+493 strip: <stop title="1">foo</stop>
+493 whitewash: <stop>foo</stop>
+494 escape: <a href="data:text/plain,">foo</a>
+494 prune: <a href="data:text/plain,">foo</a>
+494 strip: <a href="data:text/plain,">foo</a>
+494 whitewash: <a>foo</a>
+495 escape: <a href="data:text/plain;base64,R0lGODlhAQABA">foo</a>
+495 prune: <a href="data:text/plain;base64,R0lGODlhAQABA">foo</a>
+495 strip: <a href="data:text/plain;base64,R0lGODlhAQABA">foo</a>
+495 whitewash: <a>foo</a>
+496 escape: <p offset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+496 prune: <p offset="foo">foo  baz</p>
+496 strip: <p offset="foo">foo bar baz</p>
+496 whitewash: <p>foo  baz</p>
+497 escape: <p refy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+497 prune: <p refy="foo">foo  baz</p>
+497 strip: <p refy="foo">foo bar baz</p>
+497 whitewash: <p>foo  baz</p>
+498 escape: <header title="1">foo</header>
+498 prune: <header title="1">foo</header>
+498 strip: <header title="1">foo</header>
+498 whitewash: <header>foo</header>
+499 escape: <p panose-1="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+499 prune: <p panose-1="foo">foo  baz</p>
+499 strip: <p panose-1="foo">foo bar baz</p>
+499 whitewash: <p>foo  baz</p>
+500 escape: <p glyph-name="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+500 prune: <p glyph-name="foo">foo  baz</p>
+500 strip: <p glyph-name="foo">foo bar baz</p>
+500 whitewash: <p>foo  baz</p>
+501 escape: <p notation="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+501 prune: <p notation="foo">foo  baz</p>
+501 strip: <p notation="foo">foo bar baz</p>
+501 whitewash: <p>foo  baz</p>
+502 escape: <p cy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+502 prune: <p cy="foo">foo  baz</p>
+502 strip: <p cy="foo">foo bar baz</p>
+502 whitewash: <p>foo  baz</p>
+503 escape: <a href="callto">foo</a>
+503 prune: <a href="callto">foo</a>
+503 strip: <a href="callto">foo</a>
+503 whitewash: <a>foo</a>
+504 escape: <i title="1">foo</i>
+504 prune: <i title="1">foo</i>
+504 strip: <i title="1">foo</i>
+504 whitewash: <i>foo</i>
+505 escape: <filter></filter>
+505 prune: <filter></filter>
+505 strip: <filter></filter>
+505 whitewash: <filter></filter>
+506 escape: <g title="1">foo</g>
+506 prune: <g title="1">foo</g>
+506 strip: <g title="1">foo</g>
+506 whitewash: <g>foo</g>
+507 escape: <p preserveaspectratio="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+507 prune: <p preserveaspectratio="foo">foo  baz</p>
+507 strip: <p preserveaspectratio="foo">foo bar baz</p>
+507 whitewash: <p>foo  baz</p>
+508 escape: <radialgradient></radialgradient>
+508 prune: <radialgradient></radialgradient>
+508 strip: <radialgradient></radialgradient>
+508 whitewash: <radialgradient></radialgradient>
+509 escape: <p zoomandpan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+509 prune: <p zoomandpan="foo">foo  baz</p>
+509 strip: <p zoomandpan="foo">foo bar baz</p>
+509 whitewash: <p>foo  baz</p>
+510 escape: <optgroup title="1">foo</optgroup>
+510 prune: <optgroup title="1">foo</optgroup>
+510 strip: <optgroup title="1">foo</optgroup>
+510 whitewash: <optgroup>foo</optgroup>
+511 escape: <p nowrap>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+511 prune: <p nowrap>foo  baz</p>
+511 strip: <p nowrap>foo bar baz</p>
+511 whitewash: <p>foo  baz</p>
+512 escape: <animatemotion></animatemotion>
+512 prune: <animatemotion></animatemotion>
+512 strip: <animatemotion></animatemotion>
+512 whitewash: <animatemotion></animatemotion>
+513 escape: <p alt="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+513 prune: <p alt="foo">foo  baz</p>
+513 strip: <p alt="foo">foo bar baz</p>
+513 whitewash: <p>foo  baz</p>
+514 escape: <rect marker-start='yellow #fff "blue"'></rect>
+514 prune: <rect marker-start='yellow #fff "blue"'></rect>
+514 strip: <rect marker-start='yellow #fff "blue"'></rect>
+514 whitewash: <rect></rect>
+515 escape: <foreignobject title="1">foo</foreignobject>
+515 prune: <foreignobject title="1">foo</foreignobject>
+515 strip: <foreignobject title="1">foo</foreignobject>
+515 whitewash: <foreignobject>foo</foreignobject>
+516 escape: <p aria-label="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+516 prune: <p aria-label="foo">foo  baz</p>
+516 strip: <p aria-label="foo">foo bar baz</p>
+516 whitewash: <p>foo  baz</p>
+517 escape: <animatemotion></animatemotion>
+517 prune: <animatemotion></animatemotion>
+517 strip: <animatemotion></animatemotion>
+517 whitewash: <animatemotion></animatemotion>
+518 escape: <p gradientunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+518 prune: <p gradientunits="foo">foo  baz</p>
+518 strip: <p gradientunits="foo">foo bar baz</p>
+518 whitewash: <p>foo  baz</p>
+519 escape: <p aria-busy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+519 prune: <p aria-busy="foo">foo  baz</p>
+519 strip: <p aria-busy="foo">foo bar baz</p>
+519 whitewash: <p>foo  baz</p>
+520 escape: &lt;scr&gt;&lt;/scr&gt;
+520 prune: 
+520 strip: 
+520 whitewash: 
+521 escape: <a href="nntp">foo</a>
+521 prune: <a href="nntp">foo</a>
+521 strip: <a href="nntp">foo</a>
+521 whitewash: <a>foo</a>
+522 escape: <rect color-profile="url(#foo)"></rect>
+522 prune: <rect color-profile="url(#foo)"></rect>
+522 strip: <rect color-profile="url(#foo)"></rect>
+522 whitewash: <rect></rect>
+523 escape: <lineargradient xlink:href="
+#foo"></lineargradient>
+523 prune: <lineargradient xlink:href="
+#foo"></lineargradient>
+523 strip: <lineargradient xlink:href="
+#foo"></lineargradient>
+523 whitewash: <lineargradient></lineargradient>
+524 escape: <a href="SSH">foo</a>
+524 prune: <a href="SSH">foo</a>
+524 strip: <a href="SSH">foo</a>
+524 whitewash: <a>foo</a>
+525 escape: <p title="1">foo</p>
+525 prune: <p title="1">foo</p>
+525 strip: <p title="1">foo</p>
+525 whitewash: <p>foo</p>
+526 escape: <p fontweight="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+526 prune: <p fontweight="foo">foo  baz</p>
+526 strip: <p fontweight="foo">foo bar baz</p>
+526 whitewash: <p>foo  baz</p>
+527 escape: <mtable title="1">foo</mtable>
+527 prune: <mtable title="1">foo</mtable>
+527 strip: <mtable title="1">foo</mtable>
+527 whitewash: <mtable>foo</mtable>
+528 escape: &lt;script src="http://ha.ckers.org/xss.js?&amp;lt;b"&gt;&lt;/script&gt;
+528 prune: 
+528 strip: 
+528 whitewash: 
+529 escape: <p primitiveunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+529 prune: <p primitiveunits="foo">foo  baz</p>
+529 strip: <p primitiveunits="foo">foo bar baz</p>
+529 whitewash: <p>foo  baz</p>
+530 escape: <mstyle title="1">foo</mstyle>
+530 prune: <mstyle title="1">foo</mstyle>
+530 strip: <mstyle title="1">foo</mstyle>
+530 whitewash: <mstyle>foo</mstyle>
+531 escape: <map title="1">foo</map>
+531 prune: <map title="1">foo</map>
+531 strip: <map title="1">foo</map>
+531 whitewash: <map>foo</map>
+532 escape: <a href="urn">foo</a>
+532 prune: <a href="urn">foo</a>
+532 strip: <a href="urn">foo</a>
+532 whitewash: <a>foo</a>
+533 escape: <lineargradient></lineargradient>
+533 prune: <lineargradient></lineargradient>
+533 strip: <lineargradient></lineargradient>
+533 whitewash: <lineargradient></lineargradient>
+534 escape: <p version="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+534 prune: <p version="foo">foo  baz</p>
+534 strip: <p version="foo">foo bar baz</p>
+534 whitewash: <p>foo  baz</p>
+535 escape: <strong title="1">foo</strong>
+535 prune: <strong title="1">foo</strong>
+535 strip: <strong title="1">foo</strong>
+535 whitewash: <strong>foo</strong>
+536 escape: <altglyph></altglyph>
+536 prune: <altglyph></altglyph>
+536 strip: <altglyph></altglyph>
+536 whitewash: <altglyph></altglyph>
+537 escape: <pattern></pattern>
+537 prune: <pattern></pattern>
+537 strip: <pattern></pattern>
+537 whitewash: <pattern></pattern>
+538 escape: <p unicode-range="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+538 prune: <p unicode-range="foo">foo  baz</p>
+538 strip: <p unicode-range="foo">foo bar baz</p>
+538 whitewash: <p>foo  baz</p>
+539 escape: <command title="1">foo</command>
+539 prune: <command title="1">foo</command>
+539 strip: <command title="1">foo</command>
+539 whitewash: <command>foo</command>
+540 escape: <p markerunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+540 prune: <p markerunits="foo">foo  baz</p>
+540 strip: <p markerunits="foo">foo bar baz</p>
+540 whitewash: <p>foo  baz</p>
+541 escape: <feimage title="1">foo</feimage>
+541 prune: <feimage title="1">foo</feimage>
+541 strip: <feimage title="1">foo</feimage>
+541 whitewash: <feimage>foo</feimage>
+542 escape: <a href="RTSP">foo</a>
+542 prune: <a href="RTSP">foo</a>
+542 strip: <a href="RTSP">foo</a>
+542 whitewash: <a>foo</a>
+543 escape: <p fy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+543 prune: <p fy="foo">foo  baz</p>
+543 strip: <p fy="foo">foo bar baz</p>
+543 whitewash: <p>foo  baz</p>
+544 escape: <img title="1">boo
+544 prune: <img title="1">boo
+544 strip: <img title="1">boo
+544 whitewash: <img>boo
+545 escape: <a href="HTTPS">foo</a>
+545 prune: <a href="HTTPS">foo</a>
+545 strip: <a href="HTTPS">foo</a>
+545 whitewash: <a>foo</a>
+546 escape: <p readonly>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+546 prune: <p readonly>foo  baz</p>
+546 strip: <p readonly>foo bar baz</p>
+546 whitewash: <p>foo  baz</p>
+547 escape: <glyph title="1">foo</glyph>
+547 prune: <glyph title="1">foo</glyph>
+547 strip: <glyph title="1">foo</glyph>
+547 whitewash: <glyph>foo</glyph>
+548 escape: <animatemotion></animatemotion>
+548 prune: <animatemotion></animatemotion>
+548 strip: <animatemotion></animatemotion>
+548 whitewash: <animatemotion></animatemotion>
+549 escape: <a href="mailto">foo</a>
+549 prune: <a href="mailto">foo</a>
+549 strip: <a href="mailto">foo</a>
+549 whitewash: <a>foo</a>
+550 escape: <a href="data::text/html,x">foo</a>
+550 prune: <a href="data::text/html,x">foo</a>
+550 strip: <a href="data::text/html,x">foo</a>
+550 whitewash: <a>foo</a>
+551 escape: <a href="data:image/png:text/html,x">foo</a>
+551 prune: <a href="data:image/png:text/html,x">foo</a>
+551 strip: <a href="data:image/png:text/html,x">foo</a>
+551 whitewash: <a>foo</a>
+552 escape: <a href="data::text/html,payload">foo</a>
+552 prune: <a href="data::text/html,payload">foo</a>
+552 strip: <a href="data::text/html,payload">foo</a>
+552 whitewash: <a>foo</a>
+553 escape: &lt;iframe src="http://ha.ckers.org/scriptlet.html"&gt;&lt;/iframe&gt;
+553 prune: 
+553 strip: 
+553 whitewash: 
+554 escape: <line title="1">foo</line>
+554 prune: <line title="1">foo</line>
+554 strip: <line title="1">foo</line>
+554 whitewash: <line>foo</line>
+555 escape: <mprescripts title="1">foo</mprescripts>
+555 prune: <mprescripts title="1">foo</mprescripts>
+555 strip: <mprescripts title="1">foo</mprescripts>
+555 whitewash: <mprescripts>foo</mprescripts>
+556 escape: <math title="1">foo</math>
+556 prune: <math title="1">foo</math>
+556 strip: <math title="1">foo</math>
+556 whitewash: <math>foo</math>
+557 escape: <p spacing="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+557 prune: <p spacing="foo">foo  baz</p>
+557 strip: <p spacing="foo">foo bar baz</p>
+557 whitewash: <p>foo  baz</p>
+558 escape: <animatetransform></animatetransform>
+558 prune: <animatetransform></animatetransform>
+558 strip: <animatetransform></animatetransform>
+558 whitewash: <animatetransform></animatetransform>
+559 escape: <img>
+559 prune: <img>
+559 strip: <img>
+559 whitewash: <img>
+560 escape: <msqrt title="1">foo</msqrt>
+560 prune: <msqrt title="1">foo</msqrt>
+560 strip: <msqrt title="1">foo</msqrt>
+560 whitewash: <msqrt>foo</msqrt>
+561 escape: <tref href="#foo"></tref>
+561 prune: <tref href="#foo"></tref>
+561 strip: <tref href="#foo"></tref>
+561 whitewash: <tref></tref>
+562 escape: <img>
+562 prune: <img>
+562 strip: <img>
+562 whitewash: <img>
+563 escape: <p valign="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+563 prune: <p valign="foo">foo  baz</p>
+563 strip: <p valign="foo">foo bar baz</p>
+563 whitewash: <p>foo  baz</p>
+564 escape: <p font-variant="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+564 prune: <p font-variant="foo">foo  baz</p>
+564 strip: <p font-variant="foo">foo bar baz</p>
+564 whitewash: <p>foo  baz</p>
+565 escape: <animatecolor></animatecolor>
+565 prune: <animatecolor></animatecolor>
+565 strip: <animatecolor></animatecolor>
+565 whitewash: <animatecolor></animatecolor>
+566 escape: <aside title="1">foo</aside>
+566 prune: <aside title="1">foo</aside>
+566 strip: <aside title="1">foo</aside>
+566 whitewash: <aside>foo</aside>
+567 escape: <a href="data:,hello">foo</a>
+567 prune: <a href="data:,hello">foo</a>
+567 strip: <a href="data:,hello">foo</a>
+567 whitewash: <a>foo</a>
+568 escape: <a href="data:;base64,aGVsbG8=">foo</a>
+568 prune: <a href="data:;base64,aGVsbG8=">foo</a>
+568 strip: <a href="data:;base64,aGVsbG8=">foo</a>
+568 whitewash: <a>foo</a>
+569 escape: <p border="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+569 prune: <p border="foo">foo  baz</p>
+569 strip: <p border="foo">foo bar baz</p>
+569 whitewash: <p>foo  baz</p>
+570 escape: <p aria-rowcount="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+570 prune: <p aria-rowcount="foo">foo  baz</p>
+570 strip: <p aria-rowcount="foo">foo bar baz</p>
+570 whitewash: <p>foo  baz</p>
+571 escape: <a title="1">boo</a>
+571 prune: <a title="1">boo</a>
+571 strip: <a title="1">boo</a>
+571 whitewash: <a>boo</a>
+572 escape: <filter xlink:href="
+#foo"></filter>
+572 prune: <filter xlink:href="
+#foo"></filter>
+572 strip: <filter xlink:href="
+#foo"></filter>
+572 whitewash: <filter></filter>
+573 escape: <audio title="1">foo</audio>
+573 prune: <audio title="1">foo</audio>
+573 strip: <audio title="1">foo</audio>
+573 whitewash: <audio>foo</audio>
+574 escape: <msubsup title="1">foo</msubsup>
+574 prune: <msubsup title="1">foo</msubsup>
+574 strip: <msubsup title="1">foo</msubsup>
+574 whitewash: <msubsup>foo</msubsup>
+575 escape: <samp title="1">foo</samp>
+575 prune: <samp title="1">foo</samp>
+575 strip: <samp title="1">foo</samp>
+575 whitewash: <samp>foo</samp>
+576 escape: <radialgradient href="#foo"></radialgradient>
+576 prune: <radialgradient href="#foo"></radialgradient>
+576 strip: <radialgradient href="#foo"></radialgradient>
+576 whitewash: <radialgradient></radialgradient>
+577 escape: <details title="1">foo</details>
+577 prune: <details title="1">foo</details>
+577 strip: <details title="1">foo</details>
+577 whitewash: <details>foo</details>
+578 escape: <p underline-thickness="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+578 prune: <p underline-thickness="foo">foo  baz</p>
+578 strip: <p underline-thickness="foo">foo bar baz</p>
+578 whitewash: <p>foo  baz</p>
+579 escape: <p repeatcount="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+579 prune: <p repeatcount="foo">foo  baz</p>
+579 strip: <p repeatcount="foo">foo bar baz</p>
+579 whitewash: <p>foo  baz</p>
+580 escape: <tref></tref>
+580 prune: <tref></tref>
+580 strip: <tref></tref>
+580 whitewash: <tref></tref>
+581 escape: <mmultiscripts title="1">foo</mmultiscripts>
+581 prune: <mmultiscripts title="1">foo</mmultiscripts>
+581 strip: <mmultiscripts title="1">foo</mmultiscripts>
+581 whitewash: <mmultiscripts>foo</mmultiscripts>
+582 escape: <p aria-sort="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+582 prune: <p aria-sort="foo">foo  baz</p>
+582 strip: <p aria-sort="foo">foo bar baz</p>
+582 whitewash: <p>foo  baz</p>
+583 escape: <p cols="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+583 prune: <p cols="foo">foo  baz</p>
+583 strip: <p cols="foo">foo bar baz</p>
+583 whitewash: <p>foo  baz</p>
+584 escape: <rect marker-mid="url(#foo)"></rect>
+584 prune: <rect marker-mid="url(#foo)"></rect>
+584 strip: <rect marker-mid="url(#foo)"></rect>
+584 whitewash: <rect></rect>
+585 escape: <p aria-required="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+585 prune: <p aria-required="foo">foo  baz</p>
+585 strip: <p aria-required="foo">foo bar baz</p>
+585 whitewash: <p>foo  baz</p>
+586 escape: <img>
+586 prune: <img>
+586 strip: <img>
+586 whitewash: <img>
+587 escape: <p maxlength="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+587 prune: <p maxlength="foo">foo  baz</p>
+587 strip: <p maxlength="foo">foo bar baz</p>
+587 whitewash: <p>foo  baz</p>
+588 escape: <animatemotion></animatemotion>
+588 prune: <animatemotion></animatemotion>
+588 strip: <animatemotion></animatemotion>
+588 whitewash: <animatemotion></animatemotion>
+589 escape: <munder title="1">foo</munder>
+589 prune: <munder title="1">foo</munder>
+589 strip: <munder title="1">foo</munder>
+589 whitewash: <munder>foo</munder>
+590 escape: &lt;script src="//ha.ckers.org/.j"&gt;&lt;/script&gt;
+590 prune: 
+590 strip: 
+590 whitewash: 
+591 escape: <p dur="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+591 prune: <p dur="foo">foo  baz</p>
+591 strip: <p dur="foo">foo bar baz</p>
+591 whitewash: <p>foo  baz</p>
+592 escape: <pattern></pattern>
+592 prune: <pattern></pattern>
+592 strip: <pattern></pattern>
+592 whitewash: <pattern></pattern>
+593 escape: <maction title="1">foo</maction>
+593 prune: <maction title="1">foo</maction>
+593 strip: <maction title="1">foo</maction>
+593 whitewash: <maction>foo</maction>
+594 escape: &lt;script src="http://ha.ckers.org/xss.js"&gt;&lt;/script&gt;
+594 prune: 
+594 strip: 
+594 whitewash: 
+595 escape: <table><th title="1">foo</th></table>
+595 prune: <table><th title="1">foo</th></table>
+595 strip: <table><th title="1">foo</th></table>
+595 whitewash: <table><th>foo</th></table>
+596 escape: <pattern xlink:href="#foo"></pattern>
+596 prune: <pattern xlink:href="#foo"></pattern>
+596 strip: <pattern xlink:href="#foo"></pattern>
+596 whitewash: <pattern></pattern>
+597 escape: <img src="notthere.jpg%22%22onerror=%22alert(2)">
+597 prune: <img src="notthere.jpg%22%22onerror=%22alert(2)">
+597 strip: <img src="notthere.jpg%22%22onerror=%22alert(2)">
+597 whitewash: <img>
+598 escape: <filter></filter>
+598 prune: <filter></filter>
+598 strip: <filter></filter>
+598 whitewash: <filter></filter>
+599 escape: <rect stroke='yellow #fff "blue"'></rect>
+599 prune: <rect stroke='yellow #fff "blue"'></rect>
+599 strip: <rect stroke='yellow #fff "blue"'></rect>
+599 whitewash: <rect></rect>
+600 escape: <input type="image">
+600 prune: <input type="image">
+600 strip: <input type="image">
+600 whitewash: <input>
+601 escape: <p maskcontentunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+601 prune: <p maskcontentunits="foo">foo  baz</p>
+601 strip: <p maskcontentunits="foo">foo bar baz</p>
+601 whitewash: <p>foo  baz</p>
+602 escape: <p rowspan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+602 prune: <p rowspan="foo">foo  baz</p>
+602 strip: <p rowspan="foo">foo bar baz</p>
+602 whitewash: <p>foo  baz</p>
+603 escape: <img>
+603 prune: <img>
+603 strip: <img>
+603 whitewash: <img>
+604 escape: <p marker-mid="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+604 prune: <p marker-mid="foo">foo  baz</p>
+604 strip: <p marker-mid="foo">foo bar baz</p>
+604 whitewash: <p>foo  baz</p>
+605 escape: <tref title="1">foo</tref>
+605 prune: <tref title="1">foo</tref>
+605 strip: <tref title="1">foo</tref>
+605 whitewash: <tref>foo</tref>
+606 escape: <p class="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+606 prune: <p class="foo">foo  baz</p>
+606 strip: <p class="foo">foo bar baz</p>
+606 whitewash: <p>foo  baz</p>
+607 escape: &lt;script&gt;alert('XSS');&lt;/script&gt;
+607 prune: 
+607 strip: alert('XSS');
+607 whitewash: 
+608 escape: <radialgradient></radialgradient>
+608 prune: <radialgradient></radialgradient>
+608 strip: <radialgradient></radialgradient>
+608 whitewash: <radialgradient></radialgradient>
+609 escape: <form title="1">foo</form>
+609 prune: <form title="1">foo</form>
+609 strip: <form title="1">foo</form>
+609 whitewash: <form>foo</form>
+610 escape: <p y2="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+610 prune: <p y2="foo">foo  baz</p>
+610 strip: <p y2="foo">foo bar baz</p>
+610 whitewash: <p>foo  baz</p>
+611 escape: <p contenteditable="false">Hi!</p>
+611 prune: <p contenteditable="false">Hi!</p>
+611 strip: <p contenteditable="false">Hi!</p>
+611 whitewash: <p>Hi!</p>
+612 escape: <animatetransform></animatetransform>
+612 prune: <animatetransform></animatetransform>
+612 strip: <animatetransform></animatetransform>
+612 whitewash: <animatetransform></animatetransform>
+613 escape: <img>&lt;script&gt;alert("XSS")&lt;/script&gt;"&gt;
+613 prune: <img>"&gt;
+613 strip: <img>alert("XSS")"&gt;
+613 whitewash: <img>"&gt;
+614 escape: <p tabindex="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+614 prune: <p tabindex="foo">foo  baz</p>
+614 strip: <p tabindex="foo">foo bar baz</p>
+614 whitewash: <p>foo  baz</p>
+615 escape: <p columnlines="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+615 prune: <p columnlines="foo">foo  baz</p>
+615 strip: <p columnlines="foo">foo bar baz</p>
+615 whitewash: <p>foo  baz</p>
+616 escape: <p multiple>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+616 prune: <p multiple>foo  baz</p>
+616 strip: <p multiple>foo bar baz</p>
+616 whitewash: <p>foo  baz</p>
+617 escape: abc
+617 prune: abc
+617 strip: abc
+617 whitewash: abc
+618 escape: <p calcmode="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+618 prune: <p calcmode="foo">foo  baz</p>
+618 strip: <p calcmode="foo">foo bar baz</p>
+618 whitewash: <p>foo  baz</p>
+619 escape: <p aria-disabled="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+619 prune: <p aria-disabled="foo">foo  baz</p>
+619 strip: <p aria-disabled="foo">foo bar baz</p>
+619 whitewash: <p>foo  baz</p>
+620 escape: <summary title="1">foo</summary>
+620 prune: <summary title="1">foo</summary>
+620 strip: <summary title="1">foo</summary>
+620 whitewash: <summary>foo</summary>
+621 escape: <rect fill="url(#foo)"></rect>
+621 prune: <rect fill="url(#foo)"></rect>
+621 strip: <rect fill="url(#foo)"></rect>
+621 whitewash: <rect></rect>
+622 escape: <feimage href="#foo"></feimage>
+622 prune: <feimage href="#foo"></feimage>
+622 strip: <feimage href="#foo"></feimage>
+622 whitewash: <feimage></feimage>
+623 escape: <rect fill='yellow #fff "blue"'></rect>
+623 prune: <rect fill='yellow #fff "blue"'></rect>
+623 strip: <rect fill='yellow #fff "blue"'></rect>
+623 whitewash: <rect></rect>
+624 escape: <p cite="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+624 prune: <p cite="foo">foo  baz</p>
+624 strip: <p cite="foo">foo bar baz</p>
+624 whitewash: <p>foo  baz</p>
+625 escape: <time title="1">foo</time>
+625 prune: <time title="1">foo</time>
+625 strip: <time title="1">foo</time>
+625 whitewash: <time>foo</time>
+626 escape: <a href="CALLTO">foo</a>
+626 prune: <a href="CALLTO">foo</a>
+626 strip: <a href="CALLTO">foo</a>
+626 whitewash: <a>foo</a>
+627 escape: <p stroke-linejoin="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+627 prune: <p stroke-linejoin="foo">foo  baz</p>
+627 strip: <p stroke-linejoin="foo">foo bar baz</p>
+627 whitewash: <p>foo  baz</p>
+628 escape: <a href="DATA:IMAGE/JPEG,">foo</a>
+628 prune: <a href="DATA:IMAGE/JPEG,">foo</a>
+628 strip: <a href="DATA:IMAGE/JPEG,">foo</a>
+628 whitewash: <a>foo</a>
+629 escape: <animatemotion></animatemotion>
+629 prune: <animatemotion></animatemotion>
+629 strip: <animatemotion></animatemotion>
+629 whitewash: <animatemotion></animatemotion>
+630 escape: <animate title="1">foo</animate>
+630 prune: <animate title="1">foo</animate>
+630 strip: <animate title="1">foo</animate>
+630 whitewash: <animate>foo</animate>
+631 escape: <p aria-current="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+631 prune: <p aria-current="foo">foo  baz</p>
+631 strip: <p aria-current="foo">foo bar baz</p>
+631 whitewash: <p>foo  baz</p>
+632 escape: <a href="DATA:TEXT/PLAIN,">foo</a>
+632 prune: <a href="DATA:TEXT/PLAIN,">foo</a>
+632 strip: <a href="DATA:TEXT/PLAIN,">foo</a>
+632 whitewash: <a>foo</a>
+633 escape: &lt;&lt;script&gt;alert("XSS");//&lt;&lt;/script&gt;
+633 prune: &lt;
+633 strip: &lt;alert("XSS");//&lt;
+633 whitewash: &lt;
+634 escape: <mtext title="1">foo</mtext>
+634 prune: <mtext title="1">foo</mtext>
+634 strip: <mtext title="1">foo</mtext>
+634 whitewash: <mtext>foo</mtext>
+635 escape: <p systemlanguage="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+635 prune: <p systemlanguage="foo">foo  baz</p>
+635 strip: <p systemlanguage="foo">foo bar baz</p>
+635 whitewash: <p>foo  baz</p>
+636 escape: <feimage href="#foo"></feimage>
+636 prune: <feimage href="#foo"></feimage>
+636 strip: <feimage href="#foo"></feimage>
+636 whitewash: <feimage></feimage>
+637 escape: <p aria-pressed="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+637 prune: <p aria-pressed="foo">foo  baz</p>
+637 strip: <p aria-pressed="foo">foo bar baz</p>
+637 whitewash: <p>foo  baz</p>
+638 escape: <animate xlink:href="
+#foo"></animate>
+638 prune: <animate xlink:href="
+#foo"></animate>
+638 strip: <animate xlink:href="
+#foo"></animate>
+638 whitewash: <animate></animate>
+639 escape: <p mathbackground="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+639 prune: <p mathbackground="foo">foo  baz</p>
+639 strip: <p mathbackground="foo">foo bar baz</p>
+639 whitewash: <p>foo  baz</p>
+640 escape: <animatemotion href="#foo"></animatemotion>
+640 prune: <animatemotion href="#foo"></animatemotion>
+640 strip: <animatemotion href="#foo"></animatemotion>
+640 whitewash: <animatemotion></animatemotion>
+641 escape: <p g1="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+641 prune: <p g1="foo">foo  baz</p>
+641 strip: <p g1="foo">foo bar baz</p>
+641 whitewash: <p>foo  baz</p>
+642 escape: <p xlink:arcrole="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+642 prune: <p xlink:arcrole="foo">foo  baz</p>
+642 strip: <p xlink:arcrole="foo">foo bar baz</p>
+642 whitewash: <p>foo  baz</p>
+643 escape: <dt title="1">foo</dt>
+643 prune: <dt title="1">foo</dt>
+643 strip: <dt title="1">foo</dt>
+643 whitewash: <dt>foo</dt>
+644 escape: <p stroke-miterlimit="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+644 prune: <p stroke-miterlimit="foo">foo  baz</p>
+644 strip: <p stroke-miterlimit="foo">foo bar baz</p>
+644 whitewash: <p>foo  baz</p>
+645 escape: <div>foo</div>
+645 prune: <div>foo</div>
+645 strip: <div>foo</div>
+645 whitewash: <div>foo</div>
+646 escape: <p requiredfeatures="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+646 prune: <p requiredfeatures="foo">foo  baz</p>
+646 strip: <p requiredfeatures="foo">foo bar baz</p>
+646 whitewash: <p>foo  baz</p>
+647 escape: <p markerunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+647 prune: <p markerunits="foo">foo  baz</p>
+647 strip: <p markerunits="foo">foo bar baz</p>
+647 whitewash: <p>foo  baz</p>
+648 escape: <animatecolor title="1">foo</animatecolor>
+648 prune: <animatecolor title="1">foo</animatecolor>
+648 strip: <animatecolor title="1">foo</animatecolor>
+648 whitewash: <animatecolor>foo</animatecolor>
+649 escape: <fieldset title="1">foo</fieldset>
+649 prune: <fieldset title="1">foo</fieldset>
+649 strip: <fieldset title="1">foo</fieldset>
+649 whitewash: <fieldset>foo</fieldset>
+650 escape: <div>foo</div>
+650 prune: <div>foo</div>
+650 strip: <div>foo</div>
+650 whitewash: <div>foo</div>
+651 escape: <strike title="1">foo</strike>
+651 prune: <strike title="1">foo</strike>
+651 strip: <strike title="1">foo</strike>
+651 whitewash: <strike>foo</strike>
+652 escape: <p rowspacing="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+652 prune: <p rowspacing="foo">foo  baz</p>
+652 strip: <p rowspacing="foo">foo bar baz</p>
+652 whitewash: <p>foo  baz</p>
+653 escape: <div>foo</div>
+653 prune: <div>foo</div>
+653 strip: <div>foo</div>
+653 whitewash: <div>foo</div>
+654 escape: <p cx="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+654 prune: <p cx="foo">foo  baz</p>
+654 strip: <p cx="foo">foo bar baz</p>
+654 whitewash: <p>foo  baz</p>
+655 escape: <cursor href="#foo"></cursor>
+655 prune: <cursor href="#foo"></cursor>
+655 strip: <cursor href="#foo"></cursor>
+655 whitewash: <cursor></cursor>
+656 escape: <var title="1">foo</var>
+656 prune: <var title="1">foo</var>
+656 strip: <var title="1">foo</var>
+656 whitewash: <var>foo</var>
+657 escape: <animate></animate>
+657 prune: <animate></animate>
+657 strip: <animate></animate>
+657 whitewash: <animate></animate>
+658 escape: <nav title="1">foo</nav>
+658 prune: <nav title="1">foo</nav>
+658 strip: <nav title="1">foo</nav>
+658 whitewash: <nav>foo</nav>
+659 escape: &lt;link rel="stylesheet" href="http://ha.ckers.org/xss.css"&gt;
+659 prune: 
+659 strip: 
+659 whitewash: 
+660 escape: <altglyph></altglyph>
+660 prune: <altglyph></altglyph>
+660 strip: <altglyph></altglyph>
+660 whitewash: <altglyph></altglyph>
+661 escape: <blockquote title="1">foo</blockquote>
+661 prune: <blockquote title="1">foo</blockquote>
+661 strip: <blockquote title="1">foo</blockquote>
+661 whitewash: <blockquote>foo</blockquote>
+662 escape: <tref></tref>
+662 prune: <tref></tref>
+662 strip: <tref></tref>
+662 whitewash: <tref></tref>
+663 escape: <p data-foo data-bar="">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+663 prune: <p data-foo data-bar="">foo  baz</p>
+663 strip: <p data-foo data-bar="">foo bar baz</p>
+663 whitewash: <p>foo  baz</p>
+664 escape: <p stddeviation="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+664 prune: <p stddeviation="foo">foo  baz</p>
+664 strip: <p stddeviation="foo">foo bar baz</p>
+664 whitewash: <p>foo  baz</p>
+665 escape: <a href="xmpp">foo</a>
+665 prune: <a href="xmpp">foo</a>
+665 strip: <a href="xmpp">foo</a>
+665 whitewash: <a>foo</a>
+666 escape: <p repeatcount="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+666 prune: <p repeatcount="foo">foo  baz</p>
+666 strip: <p repeatcount="foo">foo bar baz</p>
+666 whitewash: <p>foo  baz</p>
+667 escape: <p filterunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+667 prune: <p filterunits="foo">foo  baz</p>
+667 strip: <p filterunits="foo">foo bar baz</p>
+667 whitewash: <p>foo  baz</p>
+668 escape: <textpath></textpath>
+668 prune: <textpath></textpath>
+668 strip: <textpath></textpath>
+668 whitewash: <textpath></textpath>
+669 escape: <p aria-valuemin="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+669 prune: <p aria-valuemin="foo">foo  baz</p>
+669 strip: <p aria-valuemin="foo">foo bar baz</p>
+669 whitewash: <p>foo  baz</p>
+670 escape: <p d="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+670 prune: <p d="foo">foo  baz</p>
+670 strip: <p d="foo">foo bar baz</p>
+670 whitewash: <p>foo  baz</p>
+671 escape: <title title="1">foo</title>
+671 prune: <title title="1">foo</title>
+671 strip: <title title="1">foo</title>
+671 whitewash: <title>foo</title>
+672 escape: <div>foo</div>
+672 prune: <div>foo</div>
+672 strip: <div>foo</div>
+672 whitewash: <div>foo</div>
+673 escape: <dl title="1">foo</dl>
+673 prune: <dl title="1">foo</dl>
+673 strip: <dl title="1">foo</dl>
+673 whitewash: <dl>foo</dl>
+674 escape: <p accent-height="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+674 prune: <p accent-height="foo">foo  baz</p>
+674 strip: <p accent-height="foo">foo bar baz</p>
+674 whitewash: <p>foo  baz</p>
+675 escape: <lineargradient href="#foo"></lineargradient>
+675 prune: <lineargradient href="#foo"></lineargradient>
+675 strip: <lineargradient href="#foo"></lineargradient>
+675 whitewash: <lineargradient></lineargradient>
+676 escape: <p mathcolor="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+676 prune: <p mathcolor="foo">foo  baz</p>
+676 strip: <p mathcolor="foo">foo bar baz</p>
+676 whitewash: <p>foo  baz</p>
+677 escape: <p data-foo-bar-id="11">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+677 prune: <p data-foo-bar-id="11">foo  baz</p>
+677 strip: <p data-foo-bar-id="11">foo bar baz</p>
+677 whitewash: <p>foo  baz</p>
+678 escape: <ms title="1">foo</ms>
+678 prune: <ms title="1">foo</ms>
+678 strip: <ms title="1">foo</ms>
+678 whitewash: <ms>foo</ms>
+679 escape: <p keytimes="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+679 prune: <p keytimes="foo">foo  baz</p>
+679 strip: <p keytimes="foo">foo bar baz</p>
+679 whitewash: <p>foo  baz</p>
+680 escape: <p preload="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+680 prune: <p preload="foo">foo  baz</p>
+680 strip: <p preload="foo">foo bar baz</p>
+680 whitewash: <p>foo  baz</p>
+681 escape: <use></use>
+681 prune: <use></use>
+681 strip: <use></use>
+681 whitewash: <use></use>
+682 escape: <p rx="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+682 prune: <p rx="foo">foo  baz</p>
+682 strip: <p rx="foo">foo bar baz</p>
+682 whitewash: <p>foo  baz</p>
+683 escape: <a href="DATA">foo</a>
+683 prune: <a href="DATA">foo</a>
+683 strip: <a href="DATA">foo</a>
+683 whitewash: <a>foo</a>
+684 escape: <p aria-valuenow="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+684 prune: <p aria-valuenow="foo">foo  baz</p>
+684 strip: <p aria-valuenow="foo">foo bar baz</p>
+684 whitewash: <p>foo  baz</p>
+685 escape: <p aria-colcount="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+685 prune: <p aria-colcount="foo">foo  baz</p>
+685 strip: <p aria-colcount="foo">foo bar baz</p>
+685 whitewash: <p>foo  baz</p>
+686 escape: <circle title="1">foo</circle>
+686 prune: <circle title="1">foo</circle>
+686 strip: <circle title="1">foo</circle>
+686 whitewash: <circle>foo</circle>
+687 escape: <p keytimes="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+687 prune: <p keytimes="foo">foo  baz</p>
+687 strip: <p keytimes="foo">foo bar baz</p>
+687 whitewash: <p>foo  baz</p>
+688 escape: <rect marker='yellow #fff "blue"'></rect>
+688 prune: <rect marker='yellow #fff "blue"'></rect>
+688 strip: <rect marker='yellow #fff "blue"'></rect>
+688 whitewash: <rect></rect>
+689 escape: <p charset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+689 prune: <p charset="foo">foo  baz</p>
+689 strip: <p charset="foo">foo bar baz</p>
+689 whitewash: <p>foo  baz</p>
+690 escape: <radialgradient xlink:href="#foo"></radialgradient>
+690 prune: <radialgradient xlink:href="#foo"></radialgradient>
+690 strip: <radialgradient xlink:href="#foo"></radialgradient>
+690 whitewash: <radialgradient></radialgradient>
+691 escape: <mspace title="1">foo</mspace>
+691 prune: <mspace title="1">foo</mspace>
+691 strip: <mspace title="1">foo</mspace>
+691 whitewash: <mspace>foo</mspace>
+692 escape: <rect marker-end='yellow #fff "blue"'></rect>
+692 prune: <rect marker-end='yellow #fff "blue"'></rect>
+692 strip: <rect marker-end='yellow #fff "blue"'></rect>
+692 whitewash: <rect></rect>
+693 escape: <animatetransform href="#foo"></animatetransform>
+693 prune: <animatetransform href="#foo"></animatetransform>
+693 strip: <animatetransform href="#foo"></animatetransform>
+693 whitewash: <animatetransform></animatetransform>
+694 escape: <center title="1">foo</center>
+694 prune: <center title="1">foo</center>
+694 strip: <center title="1">foo</center>
+694 whitewash: <center>foo</center>
+695 escape: <dir title="1">foo</dir>
+695 prune: <dir title="1">foo</dir>
+695 strip: <dir title="1">foo</dir>
+695 whitewash: <dir>foo</dir>
+696 escape: <radialgradient></radialgradient>
+696 prune: <radialgradient></radialgradient>
+696 strip: <radialgradient></radialgradient>
+696 whitewash: <radialgradient></radialgradient>
+697 escape: <p loopend="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+697 prune: <p loopend="foo">foo  baz</p>
+697 strip: <p loopend="foo">foo bar baz</p>
+697 whitewash: <p>foo  baz</p>
+698 escape: <animatemotion xlink:href="#foo"></animatemotion>
+698 prune: <animatemotion xlink:href="#foo"></animatemotion>
+698 strip: <animatemotion xlink:href="#foo"></animatemotion>
+698 whitewash: <animatemotion></animatemotion>
+699 escape: <p stddeviation="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+699 prune: <p stddeviation="foo">foo  baz</p>
+699 strip: <p stddeviation="foo">foo bar baz</p>
+699 whitewash: <p>foo  baz</p>
+700 escape: <p xmlns="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+700 prune: <p xmlns="foo">foo  baz</p>
+700 strip: <p xmlns="foo">foo bar baz</p>
+700 whitewash: <p>foo  baz</p>
+701 escape: <p markerwidth="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+701 prune: <p markerwidth="foo">foo  baz</p>
+701 strip: <p markerwidth="foo">foo bar baz</p>
+701 whitewash: <p>foo  baz</p>
+702 escape: <p calcmode="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+702 prune: <p calcmode="foo">foo  baz</p>
+702 strip: <p calcmode="foo">foo bar baz</p>
+702 whitewash: <p>foo  baz</p>
+703 escape: <p refy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+703 prune: <p refy="foo">foo  baz</p>
+703 strip: <p refy="foo">foo bar baz</p>
+703 whitewash: <p>foo  baz</p>
+704 escape: <p stroke="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+704 prune: <p stroke="foo">foo  baz</p>
+704 strip: <p stroke="foo">foo bar baz</p>
+704 whitewash: <p>foo  baz</p>
+705 escape: <p aria-multiline="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+705 prune: <p aria-multiline="foo">foo  baz</p>
+705 strip: <p aria-multiline="foo">foo bar baz</p>
+705 whitewash: <p>foo  baz</p>
+706 escape: <pattern xlink:href="
+#foo"></pattern>
+706 prune: <pattern xlink:href="
+#foo"></pattern>
+706 strip: <pattern xlink:href="
+#foo"></pattern>
+706 whitewash: <pattern></pattern>
+707 escape: <p axis="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+707 prune: <p axis="foo">foo  baz</p>
+707 strip: <p axis="foo">foo bar baz</p>
+707 whitewash: <p>foo  baz</p>
+708 escape: <a>foo</a>
+708 prune: <a>foo</a>
+708 strip: <a>foo</a>
+708 whitewash: <a>foo</a>
+709 escape: <mask title="1">foo</mask>
+709 prune: <mask title="1">foo</mask>
+709 strip: <mask title="1">foo</mask>
+709 whitewash: <mask>foo</mask>
+710 escape: <a href="data">foo</a>
+710 prune: <a href="data">foo</a>
+710 strip: <a href="data">foo</a>
+710 whitewash: <a>foo</a>
+711 escape: <animatemotion title="1">foo</animatemotion>
+711 prune: <animatemotion title="1">foo</animatemotion>
+711 strip: <animatemotion title="1">foo</animatemotion>
+711 whitewash: <animatemotion>foo</animatemotion>
+712 escape: <p transform="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+712 prune: <p transform="foo">foo  baz</p>
+712 strip: <p transform="foo">foo bar baz</p>
+712 whitewash: <p>foo  baz</p>
+713 escape: <p aria-describedby="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+713 prune: <p aria-describedby="foo">foo  baz</p>
+713 strip: <p aria-describedby="foo">foo bar baz</p>
+713 whitewash: <p>foo  baz</p>
+714 escape: <img>
+714 prune: <img>
+714 strip: <img>
+714 whitewash: <img>
+715 escape: <rect mask="url(#foo)"></rect>
+715 prune: <rect mask="url(#foo)"></rect>
+715 strip: <rect mask="url(#foo)"></rect>
+715 whitewash: <rect></rect>
+716 escape: <lineargradient></lineargradient>
+716 prune: <lineargradient></lineargradient>
+716 strip: <lineargradient></lineargradient>
+716 whitewash: <lineargradient></lineargradient>
+717 escape: <set></set>
+717 prune: <set></set>
+717 strip: <set></set>
+717 whitewash: <set></set>
+718 escape: <p x-height="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+718 prune: <p x-height="foo">foo  baz</p>
+718 strip: <p x-height="foo">foo bar baz</p>
+718 whitewash: <p>foo  baz</p>
+719 escape: <p aria-relevant="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+719 prune: <p aria-relevant="foo">foo  baz</p>
+719 strip: <p aria-relevant="foo">foo bar baz</p>
+719 whitewash: <p>foo  baz</p>
+720 escape: <rect marker-start="url(#foo)"></rect>
+720 prune: <rect marker-start="url(#foo)"></rect>
+720 strip: <rect marker-start="url(#foo)"></rect>
+720 whitewash: <rect></rect>
+721 escape: <feimage title="1">foo</feimage>
+721 prune: <feimage title="1">foo</feimage>
+721 strip: <feimage title="1">foo</feimage>
+721 whitewash: <feimage>foo</feimage>
+722 escape: <mtr title="1">foo</mtr>
+722 prune: <mtr title="1">foo</mtr>
+722 strip: <mtr title="1">foo</mtr>
+722 whitewash: <mtr>foo</mtr>
+723 escape: <use></use>
+723 prune: <use></use>
+723 strip: <use></use>
+723 whitewash: <use></use>
+724 escape: <p attributetype="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+724 prune: <p attributetype="foo">foo  baz</p>
+724 strip: <p attributetype="foo">foo bar baz</p>
+724 whitewash: <p>foo  baz</p>
+725 escape: <p mathvariant="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+725 prune: <p mathvariant="foo">foo  baz</p>
+725 strip: <p mathvariant="foo">foo bar baz</p>
+725 whitewash: <p>foo  baz</p>
+726 escape: <animatecolor></animatecolor>
+726 prune: <animatecolor></animatecolor>
+726 strip: <animatecolor></animatecolor>
+726 whitewash: <animatecolor></animatecolor>
+727 escape: <p rquote="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+727 prune: <p rquote="foo">foo  baz</p>
+727 strip: <p rquote="foo">foo bar baz</p>
+727 whitewash: <p>foo  baz</p>
+728 escape: <p selection="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+728 prune: <p selection="foo">foo  baz</p>
+728 strip: <p selection="foo">foo bar baz</p>
+728 whitewash: <p>foo  baz</p>
+729 escape: <p xmlns:xlink="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+729 prune: <p xmlns:xlink="foo">foo  baz</p>
+729 strip: <p xmlns:xlink="foo">foo bar baz</p>
+729 whitewash: <p>foo  baz</p>
+730 escape: <filter xlink:href="#foo"></filter>
+730 prune: <filter xlink:href="#foo"></filter>
+730 strip: <filter xlink:href="#foo"></filter>
+730 whitewash: <filter></filter>
+731 escape: <a>foo</a>
+731 prune: <a>foo</a>
+731 strip: <a>foo</a>
+731 whitewash: <a>foo</a>
+732 escape: <p vspace="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+732 prune: <p vspace="foo">foo  baz</p>
+732 strip: <p vspace="foo">foo bar baz</p>
+732 whitewash: <p>foo  baz</p>
+733 escape: <p unicode="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+733 prune: <p unicode="foo">foo  baz</p>
+733 strip: <p unicode="foo">foo bar baz</p>
+733 whitewash: <p>foo  baz</p>
+734 escape: <wbr title="1">foo</wbr>
+734 prune: <wbr title="1">foo</wbr>
+734 strip: <wbr title="1">foo</wbr>
+734 whitewash: <wbr>foo</wbr>
+735 escape: <lineargradient></lineargradient>
+735 prune: <lineargradient></lineargradient>
+735 strip: <lineargradient></lineargradient>
+735 whitewash: <lineargradient></lineargradient>
+736 escape: <a href="MAILTO">foo</a>
+736 prune: <a href="MAILTO">foo</a>
+736 strip: <a href="MAILTO">foo</a>
+736 whitewash: <a>foo</a>
+737 escape: <p startoffset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+737 prune: <p startoffset="foo">foo  baz</p>
+737 strip: <p startoffset="foo">foo bar baz</p>
+737 whitewash: <p>foo  baz</p>
+738 escape: <p x2="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+738 prune: <p x2="foo">foo  baz</p>
+738 strip: <p x2="foo">foo bar baz</p>
+738 whitewash: <p>foo  baz</p>
+739 escape: <p fill="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+739 prune: <p fill="foo">foo  baz</p>
+739 strip: <p fill="foo">foo bar baz</p>
+739 whitewash: <p>foo  baz</p>
+740 escape: <cursor></cursor>
+740 prune: <cursor></cursor>
+740 strip: <cursor></cursor>
+740 whitewash: <cursor></cursor>
+741 escape: <a href="news">foo</a>
+741 prune: <a href="news">foo</a>
+741 strip: <a href="news">foo</a>
+741 whitewash: <a>foo</a>
+742 escape: <lineargradient href="#foo"></lineargradient>
+742 prune: <lineargradient href="#foo"></lineargradient>
+742 strip: <lineargradient href="#foo"></lineargradient>
+742 whitewash: <lineargradient></lineargradient>
+743 escape: <a href="webcal">foo</a>
+743 prune: <a href="webcal">foo</a>
+743 strip: <a href="webcal">foo</a>
+743 whitewash: <a>foo</a>
+744 escape: <cursor></cursor>
+744 prune: <cursor></cursor>
+744 strip: <cursor></cursor>
+744 whitewash: <cursor></cursor>
+745 escape: <radialgradient href="#foo"></radialgradient>
+745 prune: <radialgradient href="#foo"></radialgradient>
+745 strip: <radialgradient href="#foo"></radialgradient>
+745 whitewash: <radialgradient></radialgradient>
+746 escape: <footer title="1">foo</footer>
+746 prune: <footer title="1">foo</footer>
+746 strip: <footer title="1">foo</footer>
+746 whitewash: <footer>foo</footer>
+747 escape: <p close="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+747 prune: <p close="foo">foo  baz</p>
+747 strip: <p close="foo">foo bar baz</p>
+747 whitewash: <p>foo  baz</p>
+748 escape: <mover title="1">foo</mover>
+748 prune: <mover title="1">foo</mover>
+748 strip: <mover title="1">foo</mover>
+748 whitewash: <mover>foo</mover>
+749 escape: <altglyph title="1">foo</altglyph>
+749 prune: <altglyph title="1">foo</altglyph>
+749 strip: <altglyph title="1">foo</altglyph>
+749 whitewash: <altglyph>foo</altglyph>
+750 escape: <p mathsize="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+750 prune: <p mathsize="foo">foo  baz</p>
+750 strip: <p mathsize="foo">foo bar baz</p>
+750 whitewash: <p>foo  baz</p>
+751 escape: <table>
+<col title="1">foo</table>
+751 prune: <table>
+<col title="1">foo</table>
+751 strip: <table>
+<col title="1">foo</table>
+751 whitewash: <table>
+<col>foo</table>
+752 escape: <p cellspacing="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+752 prune: <p cellspacing="foo">foo  baz</p>
+752 strip: <p cellspacing="foo">foo bar baz</p>
+752 whitewash: <p>foo  baz</p>
+753 escape: <img>
+753 prune: <img>
+753 strip: <img>
+753 whitewash: <img>
+754 escape: <address title="1">foo</address>
+754 prune: <address title="1">foo</address>
+754 strip: <address title="1">foo</address>
+754 whitewash: <address>foo</address>
+755 escape: <a href="https">foo</a>
+755 prune: <a href="https">foo</a>
+755 strip: <a href="https">foo</a>
+755 whitewash: <a>foo</a>
+756 escape: <p color-rendering="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+756 prune: <p color-rendering="foo">foo  baz</p>
+756 strip: <p color-rendering="foo">foo bar baz</p>
+756 whitewash: <p>foo  baz</p>
+757 escape: <figure title="1">foo</figure>
+757 prune: <figure title="1">foo</figure>
+757 strip: <figure title="1">foo</figure>
+757 whitewash: <figure>foo</figure>
+758 escape: <p aria-colspan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+758 prune: <p aria-colspan="foo">foo  baz</p>
+758 strip: <p aria-colspan="foo">foo bar baz</p>
+758 whitewash: <p>foo  baz</p>
+759 escape: <radialgradient></radialgradient>
+759 prune: <radialgradient></radialgradient>
+759 strip: <radialgradient></radialgradient>
+759 whitewash: <radialgradient></radialgradient>
+760 escape: <meter title="1">foo</meter>
+760 prune: <meter title="1">foo</meter>
+760 strip: <meter title="1">foo</meter>
+760 whitewash: <meter>foo</meter>
+761 escape: <a href="WEBCAL">foo</a>
+761 prune: <a href="WEBCAL">foo</a>
+761 strip: <a href="WEBCAL">foo</a>
+761 whitewash: <a>foo</a>
+762 escape: <span title="1">foo</span>
+762 prune: <span title="1">foo</span>
+762 strip: <span title="1">foo</span>
+762 whitewash: <span>foo</span>
+763 escape: <area title="1">foo
+763 prune: <area title="1">foo
+763 strip: <area title="1">foo
+763 whitewash: <area>foo
+764 escape: <font-face title="1">foo</font-face>
+764 prune: <font-face title="1">foo</font-face>
+764 strip: <font-face title="1">foo</font-face>
+764 whitewash: <font-face>foo</font-face>
+765 escape: <a href="ED2K">foo</a>
+765 prune: <a href="ED2K">foo</a>
+765 strip: <a href="ED2K">foo</a>
+765 whitewash: <a>foo</a>
+766 escape: <cursor></cursor>
+766 prune: <cursor></cursor>
+766 strip: <cursor></cursor>
+766 whitewash: <cursor></cursor>
+767 escape: <radialgradient href="#foo"></radialgradient>
+767 prune: <radialgradient href="#foo"></radialgradient>
+767 strip: <radialgradient href="#foo"></radialgradient>
+767 whitewash: <radialgradient></radialgradient>
+768 escape: <set title="1">foo</set>
+768 prune: <set title="1">foo</set>
+768 strip: <set title="1">foo</set>
+768 whitewash: <set>foo</set>
+769 escape: <animatemotion xlink:href="#foo"></animatemotion>
+769 prune: <animatemotion xlink:href="#foo"></animatemotion>
+769 strip: <animatemotion xlink:href="#foo"></animatemotion>
+769 whitewash: <animatemotion></animatemotion>
+770 escape: <p checked>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+770 prune: <p checked>foo  baz</p>
+770 strip: <p checked>foo bar baz</p>
+770 whitewash: <p>foo  baz</p>
+771 escape: <animatemotion xlink:href="
+#foo"></animatemotion>
+771 prune: <animatemotion xlink:href="
+#foo"></animatemotion>
+771 strip: <animatemotion xlink:href="
+#foo"></animatemotion>
+771 whitewash: <animatemotion></animatemotion>
+772 escape: <a href="afs">foo</a>
+772 prune: <a href="afs">foo</a>
+772 strip: <a href="afs">foo</a>
+772 whitewash: <a>foo</a>
+773 escape: <p alphabetic="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+773 prune: <p alphabetic="foo">foo  baz</p>
+773 strip: <p alphabetic="foo">foo bar baz</p>
+773 whitewash: <p>foo  baz</p>
+774 escape: <animatetransform xlink:href="#foo"></animatetransform>
+774 prune: <animatetransform xlink:href="#foo"></animatetransform>
+774 strip: <animatetransform xlink:href="#foo"></animatetransform>
+774 whitewash: <animatetransform></animatetransform>
+775 escape: <p restart="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+775 prune: <p restart="foo">foo  baz</p>
+775 strip: <p restart="foo">foo bar baz</p>
+775 whitewash: <p>foo  baz</p>
+776 escape: <p compact>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+776 prune: <p compact>foo  baz</p>
+776 strip: <p compact>foo bar baz</p>
+776 whitewash: <p>foo  baz</p>
+777 escape: <animatetransform></animatetransform>
+777 prune: <animatetransform></animatetransform>
+777 strip: <animatetransform></animatetransform>
+777 whitewash: <animatetransform></animatetransform>
+778 escape: <img width="foo">
+778 prune: <img width="foo">
+778 strip: <img width="foo">
+778 whitewash: <img>
+779 escape: <set></set>
+779 prune: <set></set>
+779 strip: <set></set>
+779 whitewash: <set></set>
+780 escape: <p lquote="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+780 prune: <p lquote="foo">foo  baz</p>
+780 strip: <p lquote="foo">foo bar baz</p>
+780 whitewash: <p>foo  baz</p>
+781 escape: <p requiredextensions="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+781 prune: <p requiredextensions="foo">foo  baz</p>
+781 strip: <p requiredextensions="foo">foo bar baz</p>
+781 whitewash: <p>foo  baz</p>
+782 escape: <img>
+782 prune: <img>
+782 strip: <img>
+782 whitewash: <img>
+783 escape: <sup title="1">foo</sup>
+783 prune: <sup title="1">foo</sup>
+783 strip: <sup title="1">foo</sup>
+783 whitewash: <sup>foo</sup>
+784 escape: <lineargradient href="#foo"></lineargradient>
+784 prune: <lineargradient href="#foo"></lineargradient>
+784 strip: <lineargradient href="#foo"></lineargradient>
+784 whitewash: <lineargradient></lineargradient>
+785 escape: <h5 title="1">foo</h5>
+785 prune: <h5 title="1">foo</h5>
+785 strip: <h5 title="1">foo</h5>
+785 whitewash: <h5>foo</h5>
+786 escape: <table><caption title="1">foo</caption></table>
+786 prune: <table><caption title="1">foo</caption></table>
+786 strip: <table><caption title="1">foo</caption></table>
+786 whitewash: <table><caption>foo</caption></table>
+787 escape: <p aria-controls="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+787 prune: <p aria-controls="foo">foo  baz</p>
+787 strip: <p aria-controls="foo">foo bar baz</p>
+787 whitewash: <p>foo  baz</p>
+788 escape: <altglyph></altglyph>
+788 prune: <altglyph></altglyph>
+788 strip: <altglyph></altglyph>
+788 whitewash: <altglyph></altglyph>
+789 escape: <img>
+789 prune: <img>
+789 strip: <img>
+789 whitewash: <img>
+790 escape: <p opacity="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+790 prune: <p opacity="foo">foo  baz</p>
+790 strip: <p opacity="foo">foo bar baz</p>
+790 whitewash: <p>foo  baz</p>
+791 escape: <p keypoints="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+791 prune: <p keypoints="foo">foo  baz</p>
+791 strip: <p keypoints="foo">foo bar baz</p>
+791 whitewash: <p>foo  baz</p>
+792 escape: <p dy="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+792 prune: <p dy="foo">foo  baz</p>
+792 strip: <p dy="foo">foo bar baz</p>
+792 whitewash: <p>foo  baz</p>
+793 escape: <polygon title="1">foo</polygon>
+793 prune: <polygon title="1">foo</polygon>
+793 strip: <polygon title="1">foo</polygon>
+793 whitewash: <polygon>foo</polygon>
+794 escape: <a href="DATA:TEXT/CSS,">foo</a>
+794 prune: <a href="DATA:TEXT/CSS,">foo</a>
+794 strip: <a href="DATA:TEXT/CSS,">foo</a>
+794 whitewash: <a>foo</a>
+795 escape: <animatecolor xlink:href="#foo"></animatecolor>
+795 prune: <animatecolor xlink:href="#foo"></animatecolor>
+795 strip: <animatecolor xlink:href="#foo"></animatecolor>
+795 whitewash: <animatecolor></animatecolor>
+796 escape: <p data-foo="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+796 prune: <p data-foo="foo">foo  baz</p>
+796 strip: <p data-foo="foo">foo bar baz</p>
+796 whitewash: <p>foo  baz</p>
+797 escape: <div>foo</div>
+797 prune: <div>foo</div>
+797 strip: <div>foo</div>
+797 whitewash: <div>foo</div>
+798 escape: <p accumulate="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+798 prune: <p accumulate="foo">foo  baz</p>
+798 strip: <p accumulate="foo">foo bar baz</p>
+798 whitewash: <p>foo  baz</p>
+799 escape: <p systemlanguage="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+799 prune: <p systemlanguage="foo">foo  baz</p>
+799 strip: <p systemlanguage="foo">foo bar baz</p>
+799 whitewash: <p>foo  baz</p>
+800 escape: <p keysplines="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+800 prune: <p keysplines="foo">foo  baz</p>
+800 strip: <p keysplines="foo">foo bar baz</p>
+800 whitewash: <p>foo  baz</p>
+801 escape: <animatecolor></animatecolor>
+801 prune: <animatecolor></animatecolor>
+801 strip: <animatecolor></animatecolor>
+801 whitewash: <animatecolor></animatecolor>
+802 escape: <rect clip-path="url(#foo)"></rect>
+802 prune: <rect clip-path="url(#foo)"></rect>
+802 strip: <rect clip-path="url(#foo)"></rect>
+802 whitewash: <rect></rect>
+803 escape: <textpath></textpath>
+803 prune: <textpath></textpath>
+803 strip: <textpath></textpath>
+803 whitewash: <textpath></textpath>
+804 escape: <p separator="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+804 prune: <p separator="foo">foo  baz</p>
+804 strip: <p separator="foo">foo bar baz</p>
+804 whitewash: <p>foo  baz</p>
+805 escape: <p color-profile="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+805 prune: <p color-profile="foo">foo  baz</p>
+805 strip: <p color-profile="foo">foo bar baz</p>
+805 whitewash: <p>foo  baz</p>
+806 escape: <p startoffset="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+806 prune: <p startoffset="foo">foo  baz</p>
+806 strip: <p startoffset="foo">foo bar baz</p>
+806 whitewash: <p>foo  baz</p>
+807 escape: <p dir="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+807 prune: <p dir="foo">foo  baz</p>
+807 strip: <p dir="foo">foo bar baz</p>
+807 whitewash: <p>foo  baz</p>
+808 escape: <p stemh="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+808 prune: <p stemh="foo">foo  baz</p>
+808 strip: <p stemh="foo">foo bar baz</p>
+808 whitewash: <p>foo  baz</p>
+809 escape: <a href="tel">foo</a>
+809 prune: <a href="tel">foo</a>
+809 strip: <a href="tel">foo</a>
+809 whitewash: <a>foo</a>
+810 escape: <altglyph></altglyph>
+810 prune: <altglyph></altglyph>
+810 strip: <altglyph></altglyph>
+810 whitewash: <altglyph></altglyph>
+811 escape: <p aria-expanded="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+811 prune: <p aria-expanded="foo">foo  baz</p>
+811 strip: <p aria-expanded="foo">foo bar baz</p>
+811 whitewash: <p>foo  baz</p>
+812 escape: <p rows="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+812 prune: <p rows="foo">foo  baz</p>
+812 strip: <p rows="foo">foo bar baz</p>
+812 whitewash: <p>foo  baz</p>
+813 escape: <pattern></pattern>
+813 prune: <pattern></pattern>
+813 strip: <pattern></pattern>
+813 whitewash: <pattern></pattern>
+814 escape: <a href="RSYNC">foo</a>
+814 prune: <a href="RSYNC">foo</a>
+814 strip: <a href="RSYNC">foo</a>
+814 whitewash: <a>foo</a>
+815 escape: <cursor xlink:href="#foo"></cursor>
+815 prune: <cursor xlink:href="#foo"></cursor>
+815 strip: <cursor xlink:href="#foo"></cursor>
+815 whitewash: <cursor></cursor>
+816 escape: <a href="HTTP">foo</a>
+816 prune: <a href="HTTP">foo</a>
+816 strip: <a href="HTTP">foo</a>
+816 whitewash: <a>foo</a>
+817 escape: <table><tbody title="1">foo</tbody></table>
+817 prune: <table><tbody title="1">foo</tbody></table>
+817 strip: <table><tbody title="1">foo</tbody></table>
+817 whitewash: <table><tbody>foo</tbody></table>
+818 escape: <h2 title="1">foo</h2>
+818 prune: <h2 title="1">foo</h2>
+818 strip: <h2 title="1">foo</h2>
+818 whitewash: <h2>foo</h2>
+819 escape: <missing-glyph title="1">foo</missing-glyph>
+819 prune: <missing-glyph title="1">foo</missing-glyph>
+819 strip: <missing-glyph title="1">foo</missing-glyph>
+819 whitewash: <missing-glyph>foo</missing-glyph>
+820 escape: <mo title="1">foo</mo>
+820 prune: <mo title="1">foo</mo>
+820 strip: <mo title="1">foo</mo>
+820 whitewash: <mo>foo</mo>
+821 escape: <table><colgroup title="1">foo</colgroup></table>
+821 prune: <table><colgroup title="1">foo</colgroup></table>
+821 strip: <table><colgroup title="1">foo</colgroup></table>
+821 whitewash: <table><colgroup>foo</colgroup></table>
+822 escape: <pattern></pattern>
+822 prune: <pattern></pattern>
+822 strip: <pattern></pattern>
+822 whitewash: <pattern></pattern>
+823 escape: <div>foo</div>
+823 prune: <div>foo</div>
+823 strip: <div>foo</div>
+823 whitewash: <div>foo</div>
+824 escape: <img>
+824 prune: <img>
+824 strip: <img>
+824 whitewash: <img>
+825 escape: <altglyph xlink:href="#foo"></altglyph>
+825 prune: <altglyph xlink:href="#foo"></altglyph>
+825 strip: <altglyph xlink:href="#foo"></altglyph>
+825 whitewash: <altglyph></altglyph>
+826 escape: <a>click here</a>
+826 prune: <a>click here</a>
+826 strip: <a>click here</a>
+826 whitewash: <a>click here</a>
+827 escape: <p aria-placeholder="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+827 prune: <p aria-placeholder="foo">foo  baz</p>
+827 strip: <p aria-placeholder="foo">foo bar baz</p>
+827 whitewash: <p>foo  baz</p>
+828 escape: <p units-per-em="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+828 prune: <p units-per-em="foo">foo  baz</p>
+828 strip: <p units-per-em="foo">foo bar baz</p>
+828 whitewash: <p>foo  baz</p>
+829 escape: <img alt="foo">
+829 prune: <img alt="foo">
+829 strip: <img alt="foo">
+829 whitewash: <img>
+830 escape: <div style="color:blue;"></div>
+830 prune: <div style="color:blue;"></div>
+830 strip: <div style="color:blue;"></div>
+830 whitewash: <div></div>
+831 escape: <img>
+831 prune: <img>
+831 strip: <img>
+831 whitewash: <img>
+832 escape: <a href="SMS">foo</a>
+832 prune: <a href="SMS">foo</a>
+832 strip: <a href="SMS">foo</a>
+832 whitewash: <a>foo</a>
+833 escape: <p gradientunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+833 prune: <p gradientunits="foo">foo  baz</p>
+833 strip: <p gradientunits="foo">foo bar baz</p>
+833 whitewash: <p>foo  baz</p>
+834 escape: <a href="ftp">foo</a>
+834 prune: <a href="ftp">foo</a>
+834 strip: <a href="ftp">foo</a>
+834 whitewash: <a>foo</a>
+835 escape: <p summary="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+835 prune: <p summary="foo">foo  baz</p>
+835 strip: <p summary="foo">foo bar baz</p>
+835 whitewash: <p>foo  baz</p>
+836 escape: <p additive="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+836 prune: <p additive="foo">foo  baz</p>
+836 strip: <p additive="foo">foo bar baz</p>
+836 whitewash: <p>foo  baz</p>
+837 escape: <img>
+837 prune: <img>
+837 strip: <img>
+837 whitewash: <img>
+838 escape: <animate></animate>
+838 prune: <animate></animate>
+838 strip: <animate></animate>
+838 whitewash: <animate></animate>
+839 escape: <a href="LINE">foo</a>
+839 prune: <a href="LINE">foo</a>
+839 strip: <a href="LINE">foo</a>
+839 whitewash: <a>foo</a>
+840 escape: <mfenced title="1">foo</mfenced>
+840 prune: <mfenced title="1">foo</mfenced>
+840 strip: <mfenced title="1">foo</mfenced>
+840 whitewash: <mfenced>foo</mfenced>
+841 escape: <p x1="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+841 prune: <p x1="foo">foo  baz</p>
+841 strip: <p x1="foo">foo bar baz</p>
+841 whitewash: <p>foo  baz</p>
+842 escape: <img>
+842 prune: <img>
+842 strip: <img>
+842 whitewash: <img>
+843 escape: <a href="DATA:IMAGE/PNG,">foo</a>
+843 prune: <a href="DATA:IMAGE/PNG,">foo</a>
+843 strip: <a href="DATA:IMAGE/PNG,">foo</a>
+843 whitewash: <a>foo</a>
+844 escape: <altglyph href="#foo"></altglyph>
+844 prune: <altglyph href="#foo"></altglyph>
+844 strip: <altglyph href="#foo"></altglyph>
+844 whitewash: <altglyph></altglyph>
+845 escape: <dfn title="1">foo</dfn>
+845 prune: <dfn title="1">foo</dfn>
+845 strip: <dfn title="1">foo</dfn>
+845 whitewash: <dfn>foo</dfn>
+846 escape: <p abbr="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+846 prune: <p abbr="foo">foo  baz</p>
+846 strip: <p abbr="foo">foo bar baz</p>
+846 whitewash: <p>foo  baz</p>
+847 escape: <textpath></textpath>
+847 prune: <textpath></textpath>
+847 strip: <textpath></textpath>
+847 whitewash: <textpath></textpath>
+848 escape: <p aria-rowspan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+848 prune: <p aria-rowspan="foo">foo  baz</p>
+848 strip: <p aria-rowspan="foo">foo bar baz</p>
+848 whitewash: <p>foo  baz</p>
+849 escape: <p g2="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+849 prune: <p g2="foo">foo  baz</p>
+849 strip: <p g2="foo">foo bar baz</p>
+849 whitewash: <p>foo  baz</p>
+850 escape: <feimage xlink:href="#foo"></feimage>
+850 prune: <feimage xlink:href="#foo"></feimage>
+850 strip: <feimage xlink:href="#foo"></feimage>
+850 whitewash: <feimage></feimage>
+851 escape: &lt;script src="http://ha.ckers.org/scriptlet.html"&gt;&lt;/script&gt;
+851 prune: 
+851 strip: 
+851 whitewash: 
+852 escape: <p target="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+852 prune: <p target="foo">foo  baz</p>
+852 strip: <p target="foo">foo bar baz</p>
+852 whitewash: <p>foo  baz</p>
+853 escape: <p aria-multiselectable="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+853 prune: <p aria-multiselectable="foo">foo  baz</p>
+853 strip: <p aria-multiselectable="foo">foo bar baz</p>
+853 whitewash: <p>foo  baz</p>
+854 escape: <animatecolor xlink:href="
+#foo"></animatecolor>
+854 prune: <animatecolor xlink:href="
+#foo"></animatecolor>
+854 strip: <animatecolor xlink:href="
+#foo"></animatecolor>
+854 whitewash: <animatecolor></animatecolor>
+855 escape: <a href="rsync">foo</a>
+855 prune: <a href="rsync">foo</a>
+855 strip: <a href="rsync">foo</a>
+855 whitewash: <a>foo</a>
+856 escape: <div>foo</div>
+856 prune: <div>foo</div>
+856 strip: <div>foo</div>
+856 whitewash: <div>foo</div>
+857 escape: <p cursor="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+857 prune: <p cursor="foo">foo  baz</p>
+857 strip: <p cursor="foo">foo bar baz</p>
+857 whitewash: <p>foo  baz</p>
+858 escape: <li>foo</li>
+858 prune: <li>foo</li>
+858 strip: <li>foo</li>
+858 whitewash: <li>foo</li>
+859 escape: <p width="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+859 prune: <p width="foo">foo  baz</p>
+859 strip: <p width="foo">foo bar baz</p>
+859 whitewash: <p>foo  baz</p>
+860 escape: <p selected>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+860 prune: <p selected>foo  baz</p>
+860 strip: <p selected>foo bar baz</p>
+860 whitewash: <p>foo  baz</p>
+861 escape: <radialgradient title="1">foo</radialgradient>
+861 prune: <radialgradient title="1">foo</radialgradient>
+861 strip: <radialgradient title="1">foo</radialgradient>
+861 whitewash: <radialgradient>foo</radialgradient>
+862 escape: <animate></animate>
+862 prune: <animate></animate>
+862 strip: <animate></animate>
+862 whitewash: <animate></animate>
+863 escape: <rect cursor="url(#foo)"></rect>
+863 prune: <rect cursor="url(#foo)"></rect>
+863 strip: <rect cursor="url(#foo)"></rect>
+863 whitewash: <rect></rect>
+864 escape: <p columnspan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+864 prune: <p columnspan="foo">foo  baz</p>
+864 strip: <p columnspan="foo">foo bar baz</p>
+864 whitewash: <p>foo  baz</p>
+865 escape: <p aria-braillelabel="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+865 prune: <p aria-braillelabel="foo">foo  baz</p>
+865 strip: <p aria-braillelabel="foo">foo bar baz</p>
+865 whitewash: <p>foo  baz</p>
+866 escape: <animatetransform title="1">foo</animatetransform>
+866 prune: <animatetransform title="1">foo</animatetransform>
+866 strip: <animatetransform title="1">foo</animatetransform>
+866 whitewash: <animatetransform>foo</animatetransform>
+867 escape: <lineargradient></lineargradient>
+867 prune: <lineargradient></lineargradient>
+867 strip: <lineargradient></lineargradient>
+867 whitewash: <lineargradient></lineargradient>
+868 escape: <div><img src="http://ha.ckers.org/scriptlet.html"></div>
+868 prune: <div><img src="http://ha.ckers.org/scriptlet.html"></div>
+868 strip: <div><img src="http://ha.ckers.org/scriptlet.html"></div>
+868 whitewash: <div><img></div>
+869 escape: <p loopcount="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+869 prune: <p loopcount="foo">foo  baz</p>
+869 strip: <p loopcount="foo">foo bar baz</p>
+869 whitewash: <p>foo  baz</p>
+870 escape: <p maskunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+870 prune: <p maskunits="foo">foo  baz</p>
+870 strip: <p maskunits="foo">foo bar baz</p>
+870 whitewash: <p>foo  baz</p>
+871 escape: <animatetransform></animatetransform>
+871 prune: <animatetransform></animatetransform>
+871 strip: <animatetransform></animatetransform>
+871 whitewash: <animatetransform></animatetransform>
+872 escape: <p aria-valuetext="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+872 prune: <p aria-valuetext="foo">foo  baz</p>
+872 strip: <p aria-valuetext="foo">foo bar baz</p>
+872 whitewash: <p>foo  baz</p>
+873 escape: <p y="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+873 prune: <p y="foo">foo  baz</p>
+873 strip: <p y="foo">foo bar baz</p>
+873 whitewash: <p>foo  baz</p>
+874 escape: <p src="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+874 prune: <p src="foo">foo  baz</p>
+874 strip: <p src="foo">foo bar baz</p>
+874 whitewash: <p>foo  baz</p>
+875 escape: <mpadded title="1">foo</mpadded>
+875 prune: <mpadded title="1">foo</mpadded>
+875 strip: <mpadded title="1">foo</mpadded>
+875 whitewash: <mpadded>foo</mpadded>
+876 escape: <rect marker-mid='yellow #fff "blue"'></rect>
+876 prune: <rect marker-mid='yellow #fff "blue"'></rect>
+876 strip: <rect marker-mid='yellow #fff "blue"'></rect>
+876 whitewash: <rect></rect>
+877 escape: <p stroke-width="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+877 prune: <p stroke-width="foo">foo  baz</p>
+877 strip: <p stroke-width="foo">foo bar baz</p>
+877 whitewash: <p>foo  baz</p>
+878 escape: <p stop-color="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+878 prune: <p stop-color="foo">foo  baz</p>
+878 strip: <p stop-color="foo">foo bar baz</p>
+878 whitewash: <p>foo  baz</p>
+879 escape: <ellipse title="1">foo</ellipse>
+879 prune: <ellipse title="1">foo</ellipse>
+879 strip: <ellipse title="1">foo</ellipse>
+879 whitewash: <ellipse>foo</ellipse>
+880 escape: <cursor href="#foo"></cursor>
+880 prune: <cursor href="#foo"></cursor>
+880 strip: <cursor href="#foo"></cursor>
+880 whitewash: <cursor></cursor>
+881 escape: <a href="MODEM">foo</a>
+881 prune: <a href="MODEM">foo</a>
+881 strip: <a href="MODEM">foo</a>
+881 whitewash: <a>foo</a>
+882 escape: <p ismap>foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+882 prune: <p ismap>foo  baz</p>
+882 strip: <p ismap>foo bar baz</p>
+882 whitewash: <p>foo  baz</p>
+883 escape: <p xlink:show="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+883 prune: <p xlink:show="foo">foo  baz</p>
+883 strip: <p xlink:show="foo">foo bar baz</p>
+883 whitewash: <p>foo  baz</p>
+884 escape: <animatemotion href="#foo"></animatemotion>
+884 prune: <animatemotion href="#foo"></animatemotion>
+884 strip: <animatemotion href="#foo"></animatemotion>
+884 whitewash: <animatemotion></animatemotion>
+885 escape: <a href="rtsp">foo</a>
+885 prune: <a href="rtsp">foo</a>
+885 strip: <a href="rtsp">foo</a>
+885 whitewash: <a>foo</a>
+886 escape: <p x="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+886 prune: <p x="foo">foo  baz</p>
+886 strip: <p x="foo">foo bar baz</p>
+886 whitewash: <p>foo  baz</p>
+887 escape: <animatemotion xlink:href="
+#foo"></animatemotion>
+887 prune: <animatemotion xlink:href="
+#foo"></animatemotion>
+887 strip: <animatemotion xlink:href="
+#foo"></animatemotion>
+887 whitewash: <animatemotion></animatemotion>
+888 escape: <p dx="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+888 prune: <p dx="foo">foo  baz</p>
+888 strip: <p dx="foo">foo bar baz</p>
+888 whitewash: <p>foo  baz</p>
+889 escape: <p aria-details="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+889 prune: <p aria-details="foo">foo  baz</p>
+889 strip: <p aria-details="foo">foo bar baz</p>
+889 whitewash: <p>foo  baz</p>
+890 escape: <merror title="1">foo</merror>
+890 prune: <merror title="1">foo</merror>
+890 strip: <merror title="1">foo</merror>
+890 whitewash: <merror>foo</merror>
+891 escape: <a>foo</a>
+891 prune: <a>foo</a>
+891 strip: <a>foo</a>
+891 whitewash: <a>foo</a>
+892 escape: <kbd title="1">foo</kbd>
+892 prune: <kbd title="1">foo</kbd>
+892 strip: <kbd title="1">foo</kbd>
+892 whitewash: <kbd>foo</kbd>
+893 escape: <p primitiveunits="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+893 prune: <p primitiveunits="foo">foo  baz</p>
+893 strip: <p primitiveunits="foo">foo bar baz</p>
+893 whitewash: <p>foo  baz</p>
+894 escape: <p keysplines="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+894 prune: <p keysplines="foo">foo  baz</p>
+894 strip: <p keysplines="foo">foo bar baz</p>
+894 whitewash: <p>foo  baz</p>
+895 escape: <animatecolor></animatecolor>
+895 prune: <animatecolor></animatecolor>
+895 strip: <animatecolor></animatecolor>
+895 whitewash: <animatecolor></animatecolor>
+896 escape: <p fence="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+896 prune: <p fence="foo">foo  baz</p>
+896 strip: <p fence="foo">foo bar baz</p>
+896 whitewash: <p>foo  baz</p>
+897 escape: <dd title="1">foo</dd>
+897 prune: <dd title="1">foo</dd>
+897 strip: <dd title="1">foo</dd>
+897 whitewash: <dd>foo</dd>
+898 escape: <p xml:lang="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+898 prune: <p xml:lang="foo">foo  baz</p>
+898 strip: <p xml:lang="foo">foo bar baz</p>
+898 whitewash: <p>foo  baz</p>
+899 escape: <symbol title="1">foo</symbol>
+899 prune: <symbol title="1">foo</symbol>
+899 strip: <symbol title="1">foo</symbol>
+899 whitewash: <symbol>foo</symbol>
+900 escape: <p poster="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+900 prune: <p poster="foo">foo  baz</p>
+900 strip: <p poster="foo">foo bar baz</p>
+900 whitewash: <p>foo  baz</p>
+901 escape: <animatemotion href="#foo"></animatemotion>
+901 prune: <animatemotion href="#foo"></animatemotion>
+901 strip: <animatemotion href="#foo"></animatemotion>
+901 whitewash: <animatemotion></animatemotion>
+902 escape: <p hreflang="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+902 prune: <p hreflang="foo">foo  baz</p>
+902 strip: <p hreflang="foo">foo bar baz</p>
+902 whitewash: <p>foo  baz</p>
+903 escape: <pattern href="#foo"></pattern>
+903 prune: <pattern href="#foo"></pattern>
+903 strip: <pattern href="#foo"></pattern>
+903 whitewash: <pattern></pattern>
+904 escape: <animatecolor></animatecolor>
+904 prune: <animatecolor></animatecolor>
+904 strip: <animatecolor></animatecolor>
+904 whitewash: <animatecolor></animatecolor>
+905 escape: <a href="ssh">foo</a>
+905 prune: <a href="ssh">foo</a>
+905 strip: <a href="ssh">foo</a>
+905 whitewash: <a>foo</a>
+906 escape: <p r="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+906 prune: <p r="foo">foo  baz</p>
+906 strip: <p r="foo">foo bar baz</p>
+906 whitewash: <p>foo  baz</p>
+907 escape: <p prompt="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+907 prune: <p prompt="foo">foo  baz</p>
+907 strip: <p prompt="foo">foo bar baz</p>
+907 whitewash: <p>foo  baz</p>
+908 escape: <p columnalign="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+908 prune: <p columnalign="foo">foo  baz</p>
+908 strip: <p columnalign="foo">foo bar baz</p>
+908 whitewash: <p>foo  baz</p>
+909 escape: <p clip-path="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+909 prune: <p clip-path="foo">foo  baz</p>
+909 strip: <p clip-path="foo">foo bar baz</p>
+909 whitewash: <p>foo  baz</p>
+910 escape: <feimage xlink:href="#foo"></feimage>
+910 prune: <feimage xlink:href="#foo"></feimage>
+910 strip: <feimage xlink:href="#foo"></feimage>
+910 whitewash: <feimage></feimage>
+911 escape: <p marker-end="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+911 prune: <p marker-end="foo">foo  baz</p>
+911 strip: <p marker-end="foo">foo bar baz</p>
+911 whitewash: <p>foo  baz</p>
+912 escape: <div title="1">foo</div>
+912 prune: <div title="1">foo</div>
+912 strip: <div title="1">foo</div>
+912 whitewash: <div>foo</div>
+913 escape: <p colspan="foo">foo &lt;bad&gt;bar&lt;/bad&gt; baz</p>
+913 prune: <p colspan="foo">foo  baz</p>
+913 strip: <p colspan="foo">foo bar baz</p>
+913 whitewash: <p>foo  baz</p>
+914 escape: <div>bar&lt;!-- comment1 --&gt;</div>&lt;!-- comment2 --&gt;
+914 prune: <div>bar</div>
+914 strip: <div>bar</div>
+914 whitewash: <div>bar</div>
+915 escape: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+915 prune: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+915 strip: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+915 whitewash: <div>test</div>
+916 escape: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+916 prune: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+916 strip: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+916 whitewash: <div>test</div>
+917 escape: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+917 prune: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+917 strip: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+917 whitewash: <div>test</div>
+918 escape: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+918 prune: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+918 strip: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+918 whitewash: <div>test</div>
+919 escape: &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;&lt;meta name="ProgId" content="Word.Document"&gt;&lt;meta name="Generator" content="Microsoft Word 11"&gt;&lt;meta name="Originator" content="Microsoft Word 11"&gt;&lt;link rel="File-List" href="file:///C:%5CDOCUME%7E1%5CNICOLE%7E1%5CLOCALS%7E1%5CTemp%5Cmsohtml1%5C01%5Cclip_filelist.xml"&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+&lt;w:WordDocument&gt;
+ &lt;w:View&gt;Normal&lt;/w:View&gt;
+ &lt;w:Zoom&gt;0&lt;/w:Zoom&gt;
+ &lt;w:PunctuationKerning/&gt;
+ &lt;w:ValidateAgainstSchemas/&gt;
+ &lt;w:SaveIfXMLInvalid&gt;false&lt;/w:SaveIfXMLInvalid&gt;
+ &lt;w:IgnoreMixedContent&gt;false&lt;/w:IgnoreMixedContent&gt;
+ &lt;w:AlwaysShowPlaceholderText&gt;false&lt;/w:AlwaysShowPlaceholderText&gt;
+ &lt;w:Compatibility&gt;
+  &lt;w:BreakWrappedTables/&gt;
+  &lt;w:SnapToGridInCell/&gt;
+  &lt;w:WrapTextWithPunct/&gt;
+  &lt;w:UseAsianBreakRules/&gt;
+  &lt;w:DontGrowAutofit/&gt;
+ &lt;/w:Compatibility&gt;
+ &lt;w:BrowserLevel&gt;MicrosoftInternetExplorer4&lt;/w:BrowserLevel&gt;
+&lt;/w:WordDocument&gt;
+&lt;/xml&gt;&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;
+&lt;w:LatentStyles DefLockedState="false" LatentStyleCount="156"&gt;
+&lt;/w:LatentStyles&gt;
+&lt;/xml&gt;&lt;![endif]--&gt;&lt;style&gt;
+&lt;!--
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{mso-style-parent:"";
+margin:0in;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";}
+@page Section1
+{size:8.5in 11.0in;
+margin:1.0in 1.25in 1.0in 1.25in;
+mso-header-margin:.5in;
+mso-footer-margin:.5in;
+mso-paper-source:0;}
+div.Section1
+{page:Section1;}
+--&gt;
+&lt;/style&gt;&lt;!--[if gte mso 10]&gt;
+&lt;style&gt;
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:"Table Normal";
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-parent:"";
+mso-padding-alt:0in 5.4pt 0in 5.4pt;
+mso-para-margin:0in;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.0pt;
+font-family:"Times New Roman";
+mso-ansi-language:#0400;
+mso-fareast-language:#0400;
+mso-bidi-language:#0400;}
+&lt;/style&gt;
+&lt;![endif]--&gt;
+
+<p class="MsoNormal">Foo <b>BOLD&lt;o:p&gt;&lt;/o:p&gt;</b></p>
+919 prune: 
+
+<p class="MsoNormal">Foo <b>BOLD</b></p>
+919 strip: 
+&lt;!--
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{mso-style-parent:"";
+margin:0in;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";}
+@page Section1
+{size:8.5in 11.0in;
+margin:1.0in 1.25in 1.0in 1.25in;
+mso-header-margin:.5in;
+mso-footer-margin:.5in;
+mso-paper-source:0;}
+div.Section1
+{page:Section1;}
+--&gt;
+
+
+<p class="MsoNormal">Foo <b>BOLD</b></p>
+919 whitewash: 
+
+<p>Foo <b>BOLD</b></p>
+920 escape: &lt;script&gt;&lt;script src="malicious.js"&gt;this &amp; that&lt;/script&gt;
+920 prune: 
+920 strip: &lt;script src="malicious.js"&gt;this &amp; that
+920 whitewash: 
+921 escape: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+921 prune: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+921 strip: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+921 whitewash: <div>test</div>
+922 escape: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+922 prune: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+922 strip: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+922 whitewash: <div>test</div>
+923 escape: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+923 prune: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+923 strip: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+923 whitewash: <div>test</div>
+924 escape: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+924 prune: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+924 strip: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+924 whitewash: <div>test</div>
+925 escape: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+925 prune: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+925 strip: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+925 whitewash: <a>test</a>
+926 escape: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+926 prune: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+926 strip: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+926 whitewash: <a>test</a>
+927 escape: <div>&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;alert(1);&lt;/script&gt;</div>
+927 prune: <div></div>
+927 strip: <div>&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;&lt;script&gt;alert(1);</div>
+927 whitewash: <div></div>
+928 escape: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+928 prune: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+928 strip: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+928 whitewash: <a>test</a>
+929 escape: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+929 prune: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+929 strip: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+929 whitewash: <a>test</a>
+930 escape: &lt;script&gt;&lt;script&gt;alert('a');&lt;/script&gt;
+930 prune: 
+930 strip: &lt;script&gt;alert('a');
+930 whitewash: 
+931 escape: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+931 prune: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+931 strip: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+931 whitewash: <a>test</a>
+932 escape: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+932 prune: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+932 strip: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+932 whitewash: <a>test</a>
+933 escape: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+933 prune: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+933 strip: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+933 whitewash: <a>test</a>
+934 escape: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+934 prune: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+934 strip: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+934 whitewash: <a>test</a>
+935 escape: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+935 prune: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+935 strip: <div href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+935 whitewash: <div>test</div>
+936 escape: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+936 prune: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+936 strip: <div action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+936 whitewash: <div>test</div>
+937 escape: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+937 prune: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+937 strip: <div name='examp&lt;!--" unsafeattr=foo()&gt;--&gt;le.com'>test</div>
+937 whitewash: <div>test</div>
+938 escape: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+938 prune: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+938 strip: <div src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</div>
+938 whitewash: <div>test</div>
+939 escape: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+939 prune: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+939 strip: <a href="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+939 whitewash: <a>test</a>
+940 escape: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+940 prune: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+940 strip: <a action="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+940 whitewash: <a>test</a>
+941 escape: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+941 prune: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+941 strip: <a name="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+941 whitewash: <a>test</a>
+942 escape: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+942 prune: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+942 strip: <a src="examp&lt;!--%22%20unsafeattr=foo()&gt;--&gt;le.com">test</a>
+942 whitewash: <a>test</a>
+943 escape: <span>hello</span><span>goodbye</span>
+943 prune: <span>hello</span><span>goodbye</span>
+943 strip: <span>hello</span><span>goodbye</span>
+943 whitewash: <span>hello</span><span>goodbye</span>
+944 escape: <svg> <animate href="#foo" attributename="href"></animate> <a id="foo"> <circle r="400"></circle> </a> </svg>
+944 prune: <svg> <animate href="#foo" attributename="href"></animate> <a id="foo"> <circle r="400"></circle> </a> </svg>
+944 strip: <svg> <animate href="#foo" attributename="href"></animate> <a id="foo"> <circle r="400"></circle> </a> </svg>
+944 whitewash: <svg> <animate></animate> <a> <circle></circle> </a> </svg>
+945 escape: <svg><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="?"><circle r="400"></circle><animate attributename="xlink:href" begin="0"></animate></a></svg>
+945 prune: <svg><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="?"><circle r="400"></circle><animate attributename="xlink:href" begin="0"></animate></a></svg>
+945 strip: <svg><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="?"><circle r="400"></circle><animate attributename="xlink:href" begin="0"></animate></a></svg>
+945 whitewash: <svg><a><circle></circle><animate></animate></a></svg>
+946 escape: 日本語
+946 prune: 日本語
+946 strip: 日本語
+946 whitewash: 日本語
+947 escape: string
+947 prune: string
+947 strip: string
+947 whitewash: string
+948 escape: <div style="flex-direction:row;"></div>
+948 prune: <div style="flex-direction:row;"></div>
+948 strip: <div style="flex-direction:row;"></div>
+948 whitewash: <div></div>
+949 escape: <div style="width:42vmin;"></div>
+949 prune: <div style="width:42vmin;"></div>
+949 strip: <div style="width:42vmin;"></div>
+949 whitewash: <div></div>
+950 escape: <div style="height:100vh;"></div>
+950 prune: <div style="height:100vh;"></div>
+950 strip: <div style="height:100vh;"></div>
+950 whitewash: <div></div>
+951 escape: <div style="align-self:auto;"></div>
+951 prune: <div style="align-self:auto;"></div>
+951 strip: <div style="align-self:auto;"></div>
+951 whitewash: <div></div>
+952 escape: <span style="width:calc(5%);"></span>
+952 prune: <span style="width:calc(5%);"></span>
+952 strip: <span style="width:calc(5%);"></span>
+952 whitewash: <span></span>
+953 escape: <span style="width:calc(5%);"></span>
+953 prune: <span style="width:calc(5%);"></span>
+953 strip: <span style="width:calc(5%);"></span>
+953 whitewash: <span></span>
+954 escape: <div style="flex-basis:auto;"></div>
+954 prune: <div style="flex-basis:auto;"></div>
+954 strip: <div style="flex-basis:auto;"></div>
+954 whitewash: <div></div>
+955 escape: <div style="width:60ch;"></div>
+955 prune: <div style="width:60ch;"></div>
+955 strip: <div style="width:60ch;"></div>
+955 whitewash: <div></div>
+956 escape: <div style="max-height:100%;"></div>
+956 prune: <div style="max-height:100%;"></div>
+956 strip: <div style="max-height:100%;"></div>
+956 whitewash: <div></div>
+957 escape: <div style="background:bold  center  10px;">asdf</div>
+957 prune: <div style="background:bold  center  10px;">asdf</div>
+957 strip: <div style="background:bold  center  10px;">asdf</div>
+957 whitewash: <div>asdf</div>
+958 escape: <div style="color:BLUE;">asdf</div>
+958 prune: <div style="color:BLUE;">asdf</div>
+958 strip: <div style="color:BLUE;">asdf</div>
+958 whitewash: <div>asdf</div>
+959 escape: <div style="order:5;"></div>
+959 prune: <div style="order:5;"></div>
+959 strip: <div style="order:5;"></div>
+959 whitewash: <div></div>
+960 escape: <div style="page-break-after:always;"></div>
+960 prune: <div style="page-break-after:always;"></div>
+960 strip: <div style="page-break-after:always;"></div>
+960 whitewash: <div></div>
+961 escape: <span style="margin-top:10rem;"></span>
+961 prune: <span style="margin-top:10rem;"></span>
+961 strip: <span style="margin-top:10rem;"></span>
+961 whitewash: <span></span>
+962 escape: <div style="flex-wrap:wrap;"></div>
+962 prune: <div style="flex-wrap:wrap;"></div>
+962 strip: <div style="flex-wrap:wrap;"></div>
+962 whitewash: <div></div>
+963 escape: <div style="align-content:flex-start;"></div>
+963 prune: <div style="align-content:flex-start;"></div>
+963 strip: <div style="align-content:flex-start;"></div>
+963 whitewash: <div></div>
+964 escape: <div style="flex-shrink:3;"></div>
+964 prune: <div style="flex-shrink:3;"></div>
+964 strip: <div style="flex-shrink:3;"></div>
+964 whitewash: <div></div>
+965 escape: <span style="margin-left:0.3333333334em;"></span>
+965 prune: <span style="margin-left:0.3333333334em;"></span>
+965 strip: <span style="margin-left:0.3333333334em;"></span>
+965 whitewash: <span></span>
+966 escape: <div style="min-width:100%;"></div>
+966 prune: <div style="min-width:100%;"></div>
+966 strip: <div style="min-width:100%;"></div>
+966 whitewash: <div></div>
+967 escape: <div style="min-height:100%;"></div>
+967 prune: <div style="min-height:100%;"></div>
+967 strip: <div style="min-height:100%;"></div>
+967 whitewash: <div></div>
+968 escape: <div style="justify-content:flex-start;"></div>
+968 prune: <div style="justify-content:flex-start;"></div>
+968 strip: <div style="justify-content:flex-start;"></div>
+968 whitewash: <div></div>
+969 escape: <div>asdf</div>
+969 prune: <div>asdf</div>
+969 strip: <div>asdf</div>
+969 whitewash: <div>asdf</div>
+970 escape: <div style="align-items:stretch;"></div>
+970 prune: <div style="align-items:stretch;"></div>
+970 strip: <div style="align-items:stretch;"></div>
+970 whitewash: <div></div>
+971 escape: <ul style="list-style:none;"></ul>
+971 prune: <ul style="list-style:none;"></ul>
+971 strip: <ul style="list-style:none;"></ul>
+971 whitewash: <ul></ul>
+972 escape: <span>hello</span> <figure>asd</figure>
+972 prune: <span>hello</span> <figure>asd</figure>
+972 strip: <span>hello</span> <figure>asd</figure>
+972 whitewash: <span>hello</span> <figure>asd</figure>
+973 escape: <span></span>
+973 prune: <span></span>
+973 strip: <span></span>
+973 whitewash: <span></span>
+974 escape: <span></span>
+974 prune: <span></span>
+974 strip: <span></span>
+974 whitewash: <span></span>
+975 escape: <p style="line-height:2lh;"></p>
+975 prune: <p style="line-height:2lh;"></p>
+975 strip: <p style="line-height:2lh;"></p>
+975 whitewash: <p></p>
+976 escape: <div style="font-size:calc(16px + 1vw);"></div>
+976 prune: <div style="font-size:calc(16px + 1vw);"></div>
+976 strip: <div style="font-size:calc(16px + 1vw);"></div>
+976 whitewash: <div></div>
+977 escape: <ol style="list-style-type:lower-greek;"></ol>
+977 prune: <ol style="list-style-type:lower-greek;"></ol>
+977 strip: <ol style="list-style-type:lower-greek;"></ol>
+977 whitewash: <ol></ol>
+978 escape: <div style="page-break-before:always;"></div>
+978 prune: <div style="page-break-before:always;"></div>
+978 strip: <div style="page-break-before:always;"></div>
+978 whitewash: <div></div>
+979 escape: <div style="flex-flow:column wrap;"></div>
+979 prune: <div style="flex-flow:column wrap;"></div>
+979 strip: <div style="flex-flow:column wrap;"></div>
+979 whitewash: <div></div>
+980 escape: <div style="flex-grow:4;"></div>
+980 prune: <div style="flex-grow:4;"></div>
+980 strip: <div style="flex-grow:4;"></div>
+980 whitewash: <div></div>
+981 escape: <span style="margin-left:-0.05em;"></span>
+981 prune: <span style="margin-left:-0.05em;"></span>
+981 strip: <span style="margin-left:-0.05em;"></span>
+981 whitewash: <span></span>
+982 escape: <line style="stroke-width:10px;"></line>
+982 prune: <line style="stroke-width:10px;"></line>
+982 strip: <line style="stroke-width:10px;"></line>
+982 whitewash: <line></line>
+983 escape: <span style="letter-spacing:-0.03em;"></span>
+983 prune: <span style="letter-spacing:-0.03em;"></span>
+983 strip: <span style="letter-spacing:-0.03em;"></span>
+983 whitewash: <span></span>
+984 escape: <span style="color:rgb(255, 0, 0);"></span>
+984 prune: <span style="color:rgb(255, 0, 0);"></span>
+984 strip: <span style="color:rgb(255, 0, 0);"></span>
+984 whitewash: <span></span>
+985 escape: <div style="height:10Q;"></div>
+985 prune: <div style="height:10Q;"></div>
+985 strip: <div style="height:10Q;"></div>
+985 whitewash: <div></div>
+986 escape: <div style="max-width:100%;"></div>
+986 prune: <div style="max-width:100%;"></div>
+986 strip: <div style="max-width:100%;"></div>
+986 whitewash: <div></div>
+987 escape: <div style="flex:none;"></div>
+987 prune: <div style="flex:none;"></div>
+987 strip: <div style="flex:none;"></div>
+987 whitewash: <div></div>
+988 escape: <div style="page-break-inside:auto;"></div>
+988 prune: <div style="page-break-inside:auto;"></div>
+988 strip: <div style="page-break-inside:auto;"></div>
+988 whitewash: <div></div>
+989 escape: <div style="width:42vmax;"></div>
+989 prune: <div style="width:42vmax;"></div>
+989 strip: <div style="width:42vmax;"></div>
+989 whitewash: <div></div>
+990 escape: <div alt="this &lt; that">wave</div>
+990 prune: <div alt="this &lt; that">wave</div>
+990 strip: <div alt="this &lt; that">wave</div>
+990 whitewash: <div>wave</div>
+991 escape: <div> this &lt;&lt;</div>
+991 prune: <div> this &lt;&lt;</div>
+991 strip: <div> this &lt;&lt;</div>
+991 whitewash: <div> this &lt;&lt;</div>
+992 escape: <div> this &lt; that </div>
+992 prune: <div> this &lt; that </div>
+992 strip: <div> this &lt; that </div>
+992 whitewash: <div> this &lt; that </div>
+993 escape: <div> this &amp; that </div>
+993 prune: <div> this &amp; that </div>
+993 strip: <div> this &amp; that </div>
+993 whitewash: <div> this &amp; that </div>
+994 escape: <div> this &gt; that </div>
+994 prune: <div> this &gt; that </div>
+994 strip: <div> this &gt; that </div>
+994 whitewash: <div> this &gt; that </div>
+995 escape: <div> this &lt; that </div>
+995 prune: <div> this &lt; that </div>
+995 strip: <div> this &lt; that </div>
+995 whitewash: <div> this &lt; that </div>
+996 escape: text<p>fragment</p>text
+996 prune: text<p>fragment</p>text
+996 strip: text<p>fragment</p>text
+996 whitewash: text<p>fragment</p>text
+997 escape: <p>This fragment is in a p.</p>foo<strong>bar</strong>
+997 prune: <p>This fragment is in a p.</p>foo<strong>bar</strong>
+997 strip: <p>This fragment is in a p.</p>foo<strong>bar</strong>
+997 whitewash: <p>This fragment is in a p.</p>foo<strong>bar</strong>
+998 escape: <div role="application" aria-label="calendar" aria-description="Game schedule for the Boston Red Sox 2021 Season">
+  <h1>Red Sox 2021</h1>
+</div>
+998 prune: <div role="application" aria-label="calendar" aria-description="Game schedule for the Boston Red Sox 2021 Season">
+  <h1>Red Sox 2021</h1>
+</div>
+998 strip: <div role="application" aria-label="calendar" aria-description="Game schedule for the Boston Red Sox 2021 Season">
+  <h1>Red Sox 2021</h1>
+</div>
+998 whitewash: <div>
+  <h1>Red Sox 2021</h1>
+</div>
+999 escape: This fragment has no tags.
+999 prune: This fragment has no tags.
+999 strip: This fragment has no tags.
+999 whitewash: This fragment has no tags.
+1000 escape: <p class="bar" abbr="bar"></p>
+1000 prune: <p class="bar" abbr="bar"></p>
+1000 strip: <p class="bar" abbr="bar"></p>
+1000 whitewash: <p></p>
+1001 escape: <table style="border-collapse:collapse;"></table>
+<table style="border-collapse:separate;"></table>
+<table></table>
+<table style="border-collapse:inherit;"></table>
+<table style="border-collapse:initial;"></table>
+<table style="border-collapse:revert;"></table>
+<table style="border-collapse:unset;"></table>
+1001 prune: <table style="border-collapse:collapse;"></table>
+<table style="border-collapse:separate;"></table>
+<table></table>
+<table style="border-collapse:inherit;"></table>
+<table style="border-collapse:initial;"></table>
+<table style="border-collapse:revert;"></table>
+<table style="border-collapse:unset;"></table>
+1001 strip: <table style="border-collapse:collapse;"></table>
+<table style="border-collapse:separate;"></table>
+<table></table>
+<table style="border-collapse:inherit;"></table>
+<table style="border-collapse:initial;"></table>
+<table style="border-collapse:revert;"></table>
+<table style="border-collapse:unset;"></table>
+1001 whitewash: <table></table>
+<table></table>
+<table></table>
+<table></table>
+<table></table>
+<table></table>
+<table></table>
+1002 escape: following this there should be no jim tag
+&lt;jim&gt;jim&lt;/jim&gt;
+was there?
+1002 prune: following this there should be no jim tag
+
+was there?
+1002 strip: following this there should be no jim tag
+jim
+was there?
+1002 whitewash: following this there should be no jim tag
+
+was there?
+1003 escape: safe&lt;frameset rows="*"&gt;&lt;frame src="http://example.com"&gt;&lt;/frameset&gt; <b>description</b>
+1003 prune: safe <b>description</b>
+1003 strip: safe <b>description</b>
+1003 whitewash: safe <b>description</b>
+1004 escape: <p style="background-color:#000;"></p>
+1004 prune: <p style="background-color:#000;"></p>
+1004 strip: <p style="background-color:#000;"></p>
+1004 whitewash: <p></p>
+1005 escape: <p>This fragment is in a p.</p>
+1005 prune: <p>This fragment is in a p.</p>
+1005 strip: <p>This fragment is in a p.</p>
+1005 whitewash: <p>This fragment is in a p.</p>
+1006 escape: <a>this link should have its href removed because of illegal url</a>
+<a href="http://jim.jim/">this link should be fine</a>
+1006 prune: <a>this link should have its href removed because of illegal url</a>
+<a href="http://jim.jim/">this link should be fine</a>
+1006 strip: <a>this link should have its href removed because of illegal url</a>
+<a href="http://jim.jim/">this link should be fine</a>
+1006 whitewash: <a>this link should have its href removed because of illegal url</a>
+<a>this link should be fine</a>
+1007 escape: <span style="font-size:36px;font-family:'AvenirNext-Regular';">variation 1a</span>
+<span style="font-size:36px;font-family:AvenirNext-Regular;">variation 1b</span>
+<span style="font-size:36px;font-family:'Avenir Next';">variation 2a</span>
+<span style="font-size:36px;font-family:Avenir Next;">variation 2b</span>
+1007 prune: <span style="font-size:36px;font-family:'AvenirNext-Regular';">variation 1a</span>
+<span style="font-size:36px;font-family:AvenirNext-Regular;">variation 1b</span>
+<span style="font-size:36px;font-family:'Avenir Next';">variation 2a</span>
+<span style="font-size:36px;font-family:Avenir Next;">variation 2b</span>
+1007 strip: <span style="font-size:36px;font-family:'AvenirNext-Regular';">variation 1a</span>
+<span style="font-size:36px;font-family:AvenirNext-Regular;">variation 1b</span>
+<span style="font-size:36px;font-family:'Avenir Next';">variation 2a</span>
+<span style="font-size:36px;font-family:Avenir Next;">variation 2b</span>
+1007 whitewash: <span>variation 1a</span>
+<span>variation 1b</span>
+<span>variation 2a</span>
+<span>variation 2b</span>
