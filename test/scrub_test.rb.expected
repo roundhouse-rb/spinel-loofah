@@ -89,6 +89,10 @@
 88 css: font-size:36px;font-family:AvenirNext-Regular;
 89 css: font-size:36px;font-family:'Avenir Next';
 90 css: font-size:36px;font-family:Avenir Next;
+91 css: width:12345678901234567890px;color:red;
+92 css: margin:1234567890.123456789e-10px 99999999999999999999.5em;
+93 css: width:1e99999999999999999999px;
+94 css: padding:0.000000000000000000000001px 9223372036854775807px;
 0 uri: true
 1 uri: true
 2 uri: true

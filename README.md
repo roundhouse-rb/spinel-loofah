@@ -46,8 +46,9 @@ shows every change. There are nine:
   configuration block.
 - **`scrub!` on any Nokogiri node.** The gem adds it only to nodes of a
   Loofah document; here every Nokogiri node has it.
-- **CSS numbers beyond int64** raise `RangeError` in the `style`
-  scrubber; see spinel-crass's README.
+- **CSS numbers past 64 bits** are scrubbed byte-identically to the gem.
+  spinel-crass computes their values as Floats, and the scrubber keeps
+  their text. The corpus includes them.
 
 ## Status
 

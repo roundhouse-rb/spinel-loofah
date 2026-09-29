@@ -155,6 +155,8 @@ puts Loofah::HTML5::Scrub.allowed_element?("svg")
 puts Loofah::HTML5::Scrub.allowed_element?("script")
 
 puts "-- attribute-level scrubbing"
+big = Loofah.html5_fragment('<p style="width: 12345678901234567890px; height: 1234567890.123456789e-10px; color: red">x</p>')
+puts big.scrub!(:strip).to_s
 a = Loofah.html5_fragment('<a href="java&#x09;script:alert(1)" title="t" onclick="x" style="color: red; background: url(x)">l</a>')
 puts a.scrub!(:strip).to_s
 svg = Loofah.html5_fragment('<svg><use xlink:href="http://evil/#x"></use><use xlink:href="#ok"></use><rect fill="url(#g) red" /></svg>')

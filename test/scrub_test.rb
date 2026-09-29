@@ -101,6 +101,10 @@ STYLES = [
   "font-size: 36px; font-family: AvenirNext-Regular;",
   "font-size: 36px; font-family: 'Avenir Next';",
   "font-size: 36px; font-family: Avenir Next;",
+  "width: 12345678901234567890px; color: red",
+  "margin: 1234567890.123456789e-10px 99999999999999999999.5em",
+  "width: 1e99999999999999999999px; top: -1e-5000000px; z-index: 9223372036854775808",
+  "padding: 0.000000000000000000000001px 9223372036854775807px",
 ]
 
 URIS = [

@@ -24,6 +24,15 @@ def literal_array(strings)
   "[\n" + strings.map { |s| "  #{s.inspect},\n" }.join + "]"
 end
 
+# Beyond the suite's inputs: style values whose numbers are past 64 bits
+# (spinel-crass computes those as Floats; the scrubbed text must not change).
+BIG_NUMBERS = [
+  "width: 12345678901234567890px; color: red",
+  "margin: 1234567890.123456789e-10px 99999999999999999999.5em",
+  "width: 1e99999999999999999999px; top: -1e-5000000px; z-index: 9223372036854775808",
+  "padding: 0.000000000000000000000001px 9223372036854775807px",
+]
+
 FRAGMENTS = pick("html4_fragment", "html5_fragment", "scrub_html4_fragment",
                  "scrub_html5_fragment", "fragment", "scrub_fragment")
 DOCUMENTS = pick("html4_document", "html5_document", "scrub_html4_document",
@@ -123,7 +132,7 @@ File.write("test/scrub_test.rb", <<~RUBY)
 
   #{GUARD.strip}
 
-  STYLES = #{literal_array(pick("scrub_css"))}
+  STYLES = #{literal_array(pick("scrub_css") + BIG_NUMBERS)}
 
   URIS = #{literal_array(pick("allowed_uri?"))}
 

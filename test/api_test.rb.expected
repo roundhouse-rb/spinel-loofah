@@ -92,6 +92,7 @@ true
 true
 false
 -- attribute-level scrubbing
+<p style="width:12345678901234567890px;height:1234567890.123456789e-10px;color:red;">x</p>
 <a title="t" style="color:red;">l</a>
 <svg><use></use><use xlink:href="#ok"></use><rect fill="url(#g) red"></rect></svg>
 <img src="a%20b.png" name="n m"><a name="a%20b" href="x%20y">z</a>
