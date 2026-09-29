@@ -1,6 +1,10 @@
 [package]
 name = "loofah"
-version = "2.25.2"
+version = "0.1.0"
+
+# Tracks Loofah 2.25.2 (Mike Dalessio and Bryan Helmkamp, MIT): the gem's
+# lib, with the rewrites marked `# spinel-loofah:` (README). The version is
+# this package's own; the gem's is 2.25.2.
 
 [dependencies]
 nokogiri = { path = "../spinel-nokogiri" }
