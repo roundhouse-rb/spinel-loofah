@@ -86,7 +86,7 @@ puts "-- errors"
 puts guarded { Loofah.html5_fragment("<p>x</p>").scrub!(:nope).to_s }
 puts guarded { Loofah.html5_fragment("<p>x</p>").scrub!("strip").to_s }
 puts guarded { Loofah::Scrubber.new(direction: :sideways) { |n| n }.direction.to_s }
-puts guarded { Loofah::Scrubber.new.traverse(Loofah.html5_fragment("<p>x</p>").children.first).to_s }
+puts guarded { Loofah::Scrubber.new.traverse(Loofah.html5_fragment("<p>x</p>").children.first) }
 
 puts "-- fragments: to_s, serialize, text"
 frag = Loofah.html4_fragment("<body><p>in body &amp; <b>bold</b></p></body>")

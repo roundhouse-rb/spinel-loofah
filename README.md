@@ -71,17 +71,10 @@ values and 212 URIs.
 All snapshots come from the gem (`sh oracle/run.sh --regen`), about 25,000
 lines. None are written by hand.
 
-On Spinel master e6691c7c, with spinel-nokogiri 0d78c5d and two pending
-Spinel changes (`cgi/escape`, and a chained `<<` onto a captured string
-buffer), **5 of 8 match the gem line for line**: `links_html4`,
-`links_html5`, `sanitize_html5`, `scrub`, `text`. The other three fail on
-two open Spinel defects:
-
-- [spinel#5996](https://github.com/matz/spinel/issues/5996): a constant
-  assigned in `class << self` reads as nil. `escape_tags`'s table is one,
-  so `<`, `>` and `&` in a script or style body are deleted, not escaped
-  (`sanitize_html4`, 6 lines).
-- [spinel#5995](https://github.com/matz/spinel/issues/5995): `super` from
-  a class method binds self to the superclass. Loofah's
-  `Document.parse` returns a plain Nokogiri document, without Loofah's
-  `text` (`documents`, `api`).
+On Spinel master 6be3ba03e, with spinel-nokogiri 4facdfc, **7
+of 8 match the gem line for line**. The eighth, `scrub` (every `style`
+value and URI the gem's suite checks), matched on e6691c7c and now fails
+to build on a Spinel regression,
+[spinel#6038](https://github.com/matz/spinel/issues/6038): a String
+parameter mutated in place (`allowed_uri?`'s `downcase!`), fed a block
+variable over literal Strings.
