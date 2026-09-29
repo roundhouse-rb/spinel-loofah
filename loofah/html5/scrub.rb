@@ -278,24 +278,15 @@ module Loofah
           "&" => "&amp;",
         }
 
+        # spinel-loofah: the gem's ascii_compatible? branch alone. A Spinel
+        # String is UTF-8 or binary (docs/limitations.md, "Multi-encoding
+        # strings"), both ASCII-compatible, so the other branch (dummy
+        # encodings, Encoding::Converter) has no string to run on.
         def escape_tags(string)
-          # modified version of CGI.escapeHTML from ruby 3.1
           enc = string.encoding
-          if enc.ascii_compatible?
-            string = string.b
-            string.gsub!(/[<>&]/, TABLE_FOR_ESCAPE_HTML__)
-            string.force_encoding(enc)
-          else
-            if enc.dummy?
-              origenc = enc
-              enc = Encoding::Converter.asciicompat_encoding(enc)
-              string = enc ? string.encode(enc) : string.b
-            end
-            table = Hash[TABLE_FOR_ESCAPE_HTML__.map { |pair| pair.map { |s| s.encode(enc) } }]
-            string = string.gsub(/#{"[<>&]".encode(enc)}/, table)
-            string.encode!(origenc) if origenc
-            string
-          end
+          string = string.b
+          string.gsub!(/[<>&]/, TABLE_FOR_ESCAPE_HTML__)
+          string.force_encoding(enc)
         end
 
         private

@@ -8,10 +8,15 @@ module Loofah
     #  See Loofah::ScrubBehavior and Loofah::TextBehavior for additional methods.
     #
     class Document < Nokogiri::HTML4::Document
-      include Loofah::ScrubBehavior::Node
-      include Loofah::DocumentDecorator
       include Loofah::TextBehavior
       include Loofah::HtmlDocumentBehavior
+
+      # spinel-loofah: HtmlDocumentBehavior::ClassMethods#parse, defined here
+      # (see concerns.rb). The gem forwards every argument and the block to
+      # Nokogiri's parse; this takes the markup alone.
+      def self.parse(string)
+        Loofah::HtmlDocumentBehavior.remove_comments_before_html_element(super(string))
+      end
     end
   end
 end

@@ -94,5 +94,9 @@ module Loofah
     LINEBREAKERS = BLOCK_LEVEL + INLINE_LINE_BREAK
   end
 
-  ::Loofah::MetaHelpers.add_downcased_set_members_to_all_set_constants(::Loofah::Elements)
+  # spinel-loofah: every Set constant above, named (see metahelpers.rb).
+  ::Loofah::MetaHelpers.add_downcased_set_members([
+    Elements::STRICT_BLOCK_LEVEL_HTML4, Elements::STRICT_BLOCK_LEVEL_HTML5, Elements::LOOSE_BLOCK_LEVEL,
+    Elements::INLINE_LINE_BREAK, Elements::STRICT_BLOCK_LEVEL, Elements::BLOCK_LEVEL, Elements::LINEBREAKERS,
+  ])
 end

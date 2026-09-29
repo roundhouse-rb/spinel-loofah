@@ -28,36 +28,19 @@ module Loofah
   #  more example usage.
   #
   module ScrubBehavior
-    module Node # :nodoc:
-      def scrub!(scrubber)
-        #
-        #  yes. this should be three separate methods. but nokogiri decorates (or not) based on
-        #  whether the module name has already been included. and since documents get decorated just
-        #  like their constituent nodes, we need to jam all the logic into a single module.
-        #
-        scrubber = ScrubBehavior.resolve_scrubber(scrubber)
-        case self
-        when Nokogiri::XML::Document
-          scrubber.traverse(root) if root
-        when Nokogiri::XML::DocumentFragment
-          children.scrub!(scrubber)
-        else
-          scrubber.traverse(self)
-        end
-        self
-      end
-    end
-
-    module NodeSet # :nodoc:
-      def scrub!(scrubber)
-        each { |node| node.scrub!(scrubber) }
-        self
-      end
-    end
-
+    # spinel-loofah: the gem mixes these in through Nokogiri's per-document
+    # decorators (DocumentDecorator, below in the gem), so only the nodes of a
+    # Loofah document answer +scrub!+. spinel-nokogiri has no decorators, and
+    # its DocumentFragment is not a Node; so +scrub!+ is defined on
+    # Nokogiri::XML::Node, Document, DocumentFragment and NodeSet directly (see
+    # the end of this file), each arm of the gem's +case self+ in its own
+    # class. Any Nokogiri node answers +scrub!+ here, not only a Loofah one's.
     class << self
       def resolve_scrubber(scrubber) # :nodoc:
-        scrubber = Scrubbers::MAP[scrubber].new if Scrubbers::MAP[scrubber]
+        # spinel-loofah: MAP's class, made by name (Scrubbers.named), not
+        # `MAP[scrubber].new` on a class read out of a Hash.
+        named = Scrubbers.named(scrubber)
+        scrubber = named if named
         unless scrubber.is_a?(Loofah::Scrubber)
           raise Loofah::ScrubberNotFound, "not a Scrubber or a scrubber name: #{scrubber.inspect}"
         end
@@ -122,22 +105,15 @@ module Loofah
     end
   end
 
-  module DocumentDecorator # :nodoc:
-    def initialize(*args, &block)
-      super
-      decorators(Nokogiri::XML::Node) << ScrubBehavior::Node
-      decorators(Nokogiri::XML::NodeSet) << ScrubBehavior::NodeSet
-    end
-  end
+  # spinel-loofah: DocumentDecorator is gone with the decorators (see
+  # ScrubBehavior above).
 
   module HtmlDocumentBehavior # :nodoc:
-    module ClassMethods
-      def parse(*args, &block)
-        remove_comments_before_html_element(super)
-      end
-
-      private
-
+    # spinel-loofah: the gem's ClassMethods#parse, extended onto each
+    # including class from an +included+ hook, calls +super+ and then this.
+    # Each Loofah document class defines its own +parse+ that does the same
+    # (html4/document.rb, html5/document.rb).
+    class << self
       # remove comments that exist outside of the HTML element.
       #
       # these comments are allowed by the HTML spec:
@@ -155,44 +131,16 @@ module Loofah
       end
     end
 
-    class << self
-      def included(base)
-        base.extend(ClassMethods)
-      end
-    end
-
     def serialize_root
       at_xpath("/html/body")
     end
   end
 
   module HtmlFragmentBehavior # :nodoc:
-    module ClassMethods
-      def parse(tags, encoding = nil)
-        doc = document_klass.new
-
-        encoding ||= tags.respond_to?(:encoding) ? tags.encoding.name : "UTF-8"
-        doc.encoding = encoding
-
-        new(doc, tags)
-      end
-
-      def document_klass
-        @document_klass ||= if Loofah.html5_support? && self == Loofah::HTML5::DocumentFragment
-          Loofah::HTML5::Document
-        elsif self == Loofah::HTML4::DocumentFragment
-          Loofah::HTML4::Document
-        else
-          raise ArgumentError, "unexpected class: #{self}"
-        end
-      end
-    end
-
-    class << self
-      def included(base)
-        base.extend(ClassMethods)
-      end
-    end
+    # spinel-loofah: the gem's ClassMethods (+parse+ and +document_klass+,
+    # extended from an +included+ hook) are defined on each Loofah fragment
+    # class itself (html4/document_fragment.rb, html5/document_fragment.rb),
+    # where +document_klass+ is a literal rather than a comparison of self.
 
     def to_s
       serialize_root.children.to_s
@@ -202,6 +150,42 @@ module Loofah
 
     def serialize_root
       at_xpath("./body") || self
+    end
+  end
+end
+
+# spinel-loofah: ScrubBehavior's +scrub!+, one per class (see above).
+module Nokogiri
+  module XML
+    class Node
+      def scrub!(scrubber)
+        scrubber = Loofah::ScrubBehavior.resolve_scrubber(scrubber)
+        scrubber.traverse(self)
+        self
+      end
+    end
+
+    class Document
+      def scrub!(scrubber)
+        scrubber = Loofah::ScrubBehavior.resolve_scrubber(scrubber)
+        scrubber.traverse(root) if root
+        self
+      end
+    end
+
+    class DocumentFragment
+      def scrub!(scrubber)
+        scrubber = Loofah::ScrubBehavior.resolve_scrubber(scrubber)
+        children.scrub!(scrubber)
+        self
+      end
+    end
+
+    class NodeSet
+      def scrub!(scrubber)
+        each { |node| node.scrub!(scrubber) }
+        self
+      end
     end
   end
 end

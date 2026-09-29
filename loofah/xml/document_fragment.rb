@@ -11,7 +11,9 @@ module Loofah
       class << self
         def parse(tags)
           doc = Loofah::XML::Document.new
-          doc.encoding = tags.encoding.name if tags.respond_to?(:encoding)
+          # spinel-loofah: the gem guards this with tags.respond_to?(:encoding),
+          # for an IO; the markup here is a String.
+          doc.encoding = tags.encoding.name
           new(doc, tags)
         end
       end

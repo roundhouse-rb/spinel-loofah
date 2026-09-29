@@ -425,6 +425,25 @@ module Loofah
       def scrubber_symbols
         MAP.keys
       end
+
+      # spinel-loofah: a new scrubber of MAP's class for +name+, or nil. The gem
+      # answers `MAP[name].new`, +new+ on a class read out of a Hash; this is
+      # the same table as a +case+.
+      def named(name)
+        case name
+        when :escape then Escape.new
+        when :prune then Prune.new
+        when :whitewash then Whitewash.new
+        when :strip then Strip.new
+        when :nofollow then NoFollow.new
+        when :noopener then NoOpener.new
+        when :noreferrer then NoReferrer.new
+        when :targetblank then TargetBlank.new
+        when :newline_block_elements then NewlineBlockElements.new
+        when :unprintable then Unprintable.new
+        when :double_breakpoint then DoubleBreakpoint.new
+        end
+      end
     end
   end
 end

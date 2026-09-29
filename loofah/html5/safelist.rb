@@ -1053,10 +1053,25 @@ module Loofah
     end
 
     WhiteList = SafeList
-    if Object.respond_to?(:deprecate_constant)
-      deprecate_constant :WhiteList
-    end
+    # spinel-loofah: the gem marks this alias deprecate_constant; Spinel has
+    # no deprecation warnings, so the alias is plain.
 
-    ::Loofah::MetaHelpers.add_downcased_set_members_to_all_set_constants(::Loofah::HTML5::SafeList)
+    # spinel-loofah: every Set constant above, named (see metahelpers.rb).
+    ::Loofah::MetaHelpers.add_downcased_set_members([
+      SafeList::ACCEPTABLE_ELEMENTS, SafeList::MATHML_ELEMENTS, SafeList::SVG_ELEMENTS,
+      SafeList::ACCEPTABLE_ATTRIBUTES, SafeList::MATHML_ATTRIBUTES, SafeList::SVG_ATTRIBUTES,
+      SafeList::ARIA_ATTRIBUTES, SafeList::ATTR_VAL_IS_URI, SafeList::SVG_ATTR_VAL_ALLOWS_REF,
+      SafeList::SVG_HREF_ATTRIBUTES, SafeList::SVG_ALLOW_LOCAL_HREF,
+      SafeList::ACCEPTABLE_CSS_PROPERTIES, SafeList::ACCEPTABLE_CSS_KEYWORDS,
+      SafeList::ACCEPTABLE_CSS_COLORS, SafeList::ACCEPTABLE_CSS_EXTENDED_COLORS,
+      SafeList::ACCEPTABLE_CSS_FUNCTIONS, SafeList::SHORTHAND_CSS_PROPERTIES,
+      SafeList::ACCEPTABLE_SVG_PROPERTIES, SafeList::ACCEPTABLE_PROTOCOLS,
+      SafeList::ACCEPTABLE_URI_DATA_MEDIATYPES, SafeList::ALLOWED_ELEMENTS,
+      SafeList::ALLOWED_ATTRIBUTES, SafeList::ALLOWED_CSS_PROPERTIES,
+      SafeList::ALLOWED_CSS_KEYWORDS, SafeList::ALLOWED_CSS_FUNCTIONS,
+      SafeList::ALLOWED_SVG_PROPERTIES, SafeList::ALLOWED_PROTOCOLS,
+      SafeList::ALLOWED_URI_DATA_MEDIATYPES, SafeList::VOID_ELEMENTS,
+      SafeList::TAGS_SAFE_WITH_LIBXML2, SafeList::ALLOWED_ELEMENTS_WITH_LIBXML2,
+    ])
   end
 end

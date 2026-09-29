@@ -102,9 +102,8 @@ module Loofah
       end
 
       WhiteListSanitizer = SafeListSanitizer
-      if Object.respond_to?(:deprecate_constant)
-        deprecate_constant :WhiteListSanitizer
-      end
+      # spinel-loofah: the gem marks this alias deprecate_constant; Spinel has
+      # no deprecation warnings, so the alias is plain.
     end
   end
 end
