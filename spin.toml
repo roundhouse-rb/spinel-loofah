@@ -7,5 +7,7 @@ version = "0.1.0"
 # this package's own; the gem's is 2.25.2.
 
 [dependencies]
-nokogiri = { path = "../spinel-nokogiri" }
-crass = { path = "../spinel-crass" }
+# Git tags rather than index constraints while their index PRs are open
+# (spin-index #14, #15); the tags are the published releases' commits.
+nokogiri = { git = "https://github.com/rubys/spinel-nokogiri", ref = "v0.3.0" }
+crass = { git = "https://github.com/rubys/spinel-crass", ref = "v0.1.0" }
