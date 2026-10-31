@@ -5,8 +5,8 @@ HTML/XML sanitizer under rails-html-sanitizer, and so under Action View's
 `sanitize` and Action Text. This is the **gem's own source**, Loofah
 2.25.2, with rewrites only where Spinel cannot compile it, and every
 rewrite marked `# spinel-loofah:` in place. It runs over
-[spinel-nokogiri](https://github.com/rubys/spinel-nokogiri) (libxml2 and
-gumbo) and [spinel-crass](https://github.com/rubys/spinel-crass) (the CSS parser behind the
+[spinel-nokogiri](https://github.com/roundhouse-rb/spinel-nokogiri) (libxml2 and
+gumbo) and [spinel-crass](https://github.com/roundhouse-rb/spinel-crass) (the CSS parser behind the
 `style` scrubber). `require "loofah"` and the names are the gem's.
 
 ```ruby

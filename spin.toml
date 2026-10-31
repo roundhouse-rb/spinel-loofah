@@ -9,5 +9,5 @@ version = "0.1.0"
 [dependencies]
 # Git tags rather than index constraints while their index PRs are open
 # (spin-index #14, #15); the tags are the published releases' commits.
-nokogiri = { git = "https://github.com/rubys/spinel-nokogiri", ref = "v0.3.1" }
-crass = { git = "https://github.com/rubys/spinel-crass", ref = "v0.1.0" }
+nokogiri = { git = "https://github.com/roundhouse-rb/spinel-nokogiri", ref = "v0.3.1" }
+crass = { git = "https://github.com/roundhouse-rb/spinel-crass", ref = "v0.1.0" }
